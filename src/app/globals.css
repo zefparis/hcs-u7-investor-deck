@@ -78,21 +78,66 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.1;
 }
 
+/* Mobile typography scaling */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.75rem !important;
+    line-height: 1.2;
+  }
+  
+  h2 {
+    font-size: 1.25rem !important;
+  }
+  
+  h3 {
+    font-size: 1.1rem !important;
+  }
+  
+  /* Smaller text on mobile */
+  .text-4xl, .text-5xl {
+    font-size: 1.75rem !important;
+  }
+  
+  .text-3xl {
+    font-size: 1.5rem !important;
+  }
+  
+  .text-2xl {
+    font-size: 1.25rem !important;
+  }
+  
+  .text-xl {
+    font-size: 1.1rem !important;
+  }
+}
+
 /* Slide container */
 .slide {
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   padding: 48px 80px;
   position: relative;
-  overflow: hidden;
 }
 
+/* Mobile: scrollable slides */
 @media (max-width: 768px) {
   .slide {
-    padding: 24px 32px;
+    padding: 16px 20px;
+    padding-top: 60px; /* Space for top bar */
+    padding-bottom: 80px; /* Space for bottom nav */
+    min-height: auto;
+    height: auto;
+    overflow: visible;
+  }
+}
+
+/* Desktop: fixed height slides */
+@media (min-width: 769px) {
+  .slide {
+    height: 100vh;
+    overflow: hidden;
   }
 }
 
