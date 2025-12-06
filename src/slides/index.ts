@@ -1,0 +1,16 @@
+export { SlideCover } from './01-cover';
+export { SlideShift } from './02-shift';
+export { SlideCost } from './03-cost';
+export { SlideInsight } from './04-insight';
+export { SlideSolution } from './05-solution';
+export { SlideHow } from './06-how';
+export { SlideTechnology } from './07-technology';
+export { SlideValidation } from './08-validation';
+export { SlideMarket } from './09-market';
+export { SlideCompetition } from './10-competition';
+export { SlideBusiness } from './11-business';
+export { SlideTraction } from './12-traction';
+export { SlideGTM } from './13-gtm';
+export { SlideFinancials } from './14-financials';
+export { SlideAsk } from './15-ask';
+export { SlideTeam } from './16-team';
