@@ -88,7 +88,7 @@ export default function Home() {
         onExportPDF={handleExportPDF}
       />
       
-      <main className="min-h-screen bg-surface pt-12 pb-16 md:pt-0 md:pb-16">
+      <main className="min-h-screen bg-surface">
         <AnimatePresence mode="wait">
           <CurrentSlideComponent key={currentSlide} />
         </AnimatePresence>
