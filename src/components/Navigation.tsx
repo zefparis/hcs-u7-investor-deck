@@ -13,6 +13,74 @@ interface NavigationProps {
   onExportPDF: () => void;
 }
 
+// Mobile top bar component
+export function MobileTopBar({
+  onToggleDarkMode,
+  isDarkMode,
+  onExportPDF,
+}: {
+  onToggleDarkMode: () => void;
+  isDarkMode: boolean;
+  onExportPDF: () => void;
+}) {
+  const { language, toggleLanguage } = useLanguage();
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: -10 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.3 }}
+      className="fixed top-0 left-0 right-0 z-50 bg-surface/95 backdrop-blur-sm border-b border-border md:hidden no-print"
+    >
+      <div className="flex items-center justify-between px-4 py-2">
+        {/* Logo/Brand */}
+        <span className="font-mono text-xs font-bold text-accent">HCS-U7</span>
+
+        {/* Controls */}
+        <div className="flex items-center gap-3">
+          {/* Dark mode toggle */}
+          <button
+            onClick={onToggleDarkMode}
+            className="p-2 text-ink-secondary hover:text-ink transition-colors rounded-full bg-surface border border-border"
+            aria-label="Toggle dark mode"
+          >
+            {isDarkMode ? (
+              <svg width="18" height="18" viewBox="0 0 16 16" fill="none">
+                <circle cx="8" cy="8" r="3" stroke="currentColor" strokeWidth="1.5"/>
+                <path d="M8 2V3M8 13V14M2 8H3M13 8H14M3.76 3.76L4.47 4.47M11.53 11.53L12.24 12.24M12.24 3.76L11.53 4.47M4.47 11.53L3.76 12.24" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+              </svg>
+            ) : (
+              <svg width="18" height="18" viewBox="0 0 16 16" fill="none">
+                <path d="M14 10.5A6 6 0 115.5 2a4.5 4.5 0 008.5 8.5z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            )}
+          </button>
+
+          {/* Language toggle */}
+          <button
+            onClick={toggleLanguage}
+            className="px-3 py-1.5 text-sm font-mono font-bold border border-border rounded-full bg-surface flex items-center gap-1"
+            aria-label="Toggle language"
+          >
+            <span className={language === 'fr' ? 'text-accent' : 'text-ink-tertiary'}>FR</span>
+            <span className="text-ink-tertiary">|</span>
+            <span className={language === 'en' ? 'text-accent' : 'text-ink-tertiary'}>EN</span>
+          </button>
+
+          {/* PDF export */}
+          <button
+            onClick={onExportPDF}
+            className="px-3 py-1.5 text-sm font-medium text-white bg-accent hover:bg-accent/90 transition-colors rounded-full"
+            aria-label="Export PDF"
+          >
+            PDF
+          </button>
+        </div>
+      </div>
+    </motion.div>
+  );
+}
+
 export function Navigation({
   currentSlide,
   totalSlides,
@@ -87,95 +155,52 @@ export function Navigation({
       className="fixed bottom-0 left-0 right-0 z-50 bg-surface border-t border-border no-print"
     >
       <div className="max-w-[960px] mx-auto px-3 py-2 md:px-4 md:py-3">
-        {/* Mobile: Two rows layout */}
-        <div className="flex flex-col gap-2 md:hidden">
-          {/* Row 1: Navigation arrows + slide counter */}
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-2">
-              <button
-                onClick={goPrev}
-                disabled={currentSlide === 0}
-                className="p-2 text-ink-secondary hover:text-ink disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
-                aria-label="Previous slide"
-              >
-                <svg width="20" height="20" viewBox="0 0 16 16" fill="none">
-                  <path d="M10 12L6 8L10 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </button>
-              
-              <span className="font-mono text-sm text-ink min-w-[60px] text-center">
-                {currentSlide + 1} / {totalSlides}
-              </span>
-              
-              <button
-                onClick={goNext}
-                disabled={currentSlide === totalSlides - 1}
-                className="p-2 text-ink-secondary hover:text-ink disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
-                aria-label="Next slide"
-              >
-                <svg width="20" height="20" viewBox="0 0 16 16" fill="none">
-                  <path d="M6 4L10 8L6 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </button>
+        {/* Mobile: Simple bottom nav with arrows and dots */}
+        <div className="flex md:hidden items-center justify-between">
+          {/* Previous button */}
+          <button
+            onClick={goPrev}
+            disabled={currentSlide === 0}
+            className="p-3 text-ink-secondary hover:text-ink disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+            aria-label="Previous slide"
+          >
+            <svg width="24" height="24" viewBox="0 0 16 16" fill="none">
+              <path d="M10 12L6 8L10 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </button>
+
+          {/* Progress dots + counter */}
+          <div className="flex flex-col items-center gap-1">
+            <div className="flex items-center gap-1.5">
+              {Array.from({ length: totalSlides }).map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => onNavigate(i)}
+                  className={`h-2 rounded-full transition-all ${
+                    i === currentSlide
+                      ? 'bg-accent w-4'
+                      : 'bg-border hover:bg-ink-tertiary w-2'
+                  }`}
+                  aria-label={`Go to slide ${i + 1}`}
+                />
+              ))}
             </div>
-
-            {/* Settings buttons */}
-            <div className="flex items-center gap-2">
-              {/* Dark mode toggle */}
-              <button
-                onClick={onToggleDarkMode}
-                className="p-2.5 text-ink-secondary hover:text-ink transition-colors border border-border rounded-lg"
-                aria-label="Toggle dark mode"
-              >
-                {isDarkMode ? (
-                  <svg width="18" height="18" viewBox="0 0 16 16" fill="none">
-                    <circle cx="8" cy="8" r="3" stroke="currentColor" strokeWidth="1.5"/>
-                    <path d="M8 2V3M8 13V14M2 8H3M13 8H14M3.76 3.76L4.47 4.47M11.53 11.53L12.24 12.24M12.24 3.76L11.53 4.47M4.47 11.53L3.76 12.24" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-                  </svg>
-                ) : (
-                  <svg width="18" height="18" viewBox="0 0 16 16" fill="none">
-                    <path d="M14 10.5A6 6 0 115.5 2a4.5 4.5 0 008.5 8.5z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                )}
-              </button>
-
-              {/* Language toggle */}
-              <button
-                onClick={toggleLanguage}
-                className="px-3 py-2 text-sm font-mono font-medium border border-border rounded-lg flex items-center gap-1"
-                aria-label="Toggle language"
-              >
-                <span className={language === 'fr' ? 'text-accent font-bold' : 'text-ink-tertiary'}>FR</span>
-                <span className="text-ink-tertiary">/</span>
-                <span className={language === 'en' ? 'text-accent font-bold' : 'text-ink-tertiary'}>EN</span>
-              </button>
-
-              {/* PDF export */}
-              <button
-                onClick={onExportPDF}
-                className="px-3 py-2 text-sm font-medium text-accent border border-accent hover:bg-accent-muted transition-colors rounded-lg"
-                aria-label="Export PDF"
-              >
-                PDF
-              </button>
-            </div>
+            <span className="font-mono text-xs text-ink-tertiary">
+              {currentSlide + 1} / {totalSlides}
+            </span>
           </div>
 
-          {/* Row 2: Progress dots (scrollable) */}
-          <div className="flex items-center justify-center gap-1.5 overflow-x-auto py-1">
-            {Array.from({ length: totalSlides }).map((_, i) => (
-              <button
-                key={i}
-                onClick={() => onNavigate(i)}
-                className={`flex-shrink-0 h-2 rounded-full transition-all ${
-                  i === currentSlide
-                    ? 'bg-accent w-5'
-                    : 'bg-border hover:bg-ink-tertiary w-2'
-                }`}
-                aria-label={`Go to slide ${i + 1}`}
-              />
-            ))}
-          </div>
+          {/* Next button */}
+          <button
+            onClick={goNext}
+            disabled={currentSlide === totalSlides - 1}
+            className="p-3 text-ink-secondary hover:text-ink disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+            aria-label="Next slide"
+          >
+            <svg width="24" height="24" viewBox="0 0 16 16" fill="none">
+              <path d="M6 4L10 8L6 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </button>
         </div>
 
         {/* Desktop: Single row layout */}
