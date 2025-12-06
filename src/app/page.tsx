@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useCallback } from 'react';
 import { AnimatePresence } from 'framer-motion';
-import { Navigation } from '@/components/Navigation';
+import { Navigation, MobileTopBar } from '@/components/Navigation';
 import { LanguageProvider } from '@/lib/LanguageContext';
 import {
   SlideCover,
@@ -81,7 +81,14 @@ export default function Home() {
 
   return (
     <LanguageProvider>
-      <main className="min-h-screen bg-surface pb-24 md:pb-16">
+      {/* Mobile top bar - only visible on mobile */}
+      <MobileTopBar
+        onToggleDarkMode={handleToggleDarkMode}
+        isDarkMode={isDarkMode}
+        onExportPDF={handleExportPDF}
+      />
+      
+      <main className="min-h-screen bg-surface pt-12 pb-16 md:pt-0 md:pb-16">
         <AnimatePresence mode="wait">
           <CurrentSlideComponent key={currentSlide} />
         </AnimatePresence>
