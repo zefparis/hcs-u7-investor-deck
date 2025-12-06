@@ -81,7 +81,7 @@ export default function Home() {
 
   return (
     <LanguageProvider>
-      <main className="min-h-screen bg-surface pb-16">
+      <main className="min-h-screen bg-surface pb-24 md:pb-16">
         <AnimatePresence mode="wait">
           <CurrentSlideComponent key={currentSlide} />
         </AnimatePresence>
