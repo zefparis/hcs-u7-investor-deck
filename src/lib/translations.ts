@@ -397,7 +397,7 @@ export const translations = {
       fr: ['15+ ans tech & sécurité', 'Recherche en psychologie cognitive', 'Full-stack (React, Node, Python)', '2 brevets déposés, thèse doctorale'],
       en: ['15+ years tech & security', 'Cognitive psychology research', 'Full-stack (React, Node, Python)', '2 patents filed, doctoral thesis'],
     },
-    founded: { fr: 'Alès, France · Fondée en 2001', en: 'Alès, France · Founded 2001' },
+    founded: { fr: 'Alès, France', en: 'Alès, France' },
     tagline: {
       fr: "Le seul système d'authentification cognitive breveté résistant à l'IA générative.",
       en: 'The only patented cognitive authentication system resistant to generative AI.',
