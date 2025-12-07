@@ -3,7 +3,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { AnimatePresence } from 'framer-motion';
 import { Navigation, MobileTopBar } from '@/components/Navigation';
-import { LanguageProvider } from '@/lib/LanguageContext';
+import { LanguageProvider, useLanguage } from '@/lib/LanguageContext';
 import {
   SlideCover,
   SlideShift,

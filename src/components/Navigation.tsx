@@ -69,7 +69,7 @@ export function MobileTopBar({
 
           {/* PDF export */}
           <button
-            onClick={onExportPDF}
+            onClick={() => window.open(`/print?lang=${language}`, '_blank')}
             className="px-3 py-1.5 text-sm font-medium text-white bg-accent hover:bg-accent/90 transition-colors rounded-full"
             aria-label="Export PDF"
           >
@@ -280,7 +280,7 @@ export function Navigation({
             </button>
 
             <button
-              onClick={onExportPDF}
+              onClick={() => window.open(`/print?lang=${language}`, '_blank')}
               className="px-3 py-1.5 text-xs font-medium text-accent border border-accent hover:bg-accent-muted transition-colors rounded"
               aria-label="Export PDF"
             >
