@@ -571,8 +571,8 @@ export const translations = {
       frontend: { 
         title: { fr: 'Couche Frontend', en: 'Frontend Layer' }, 
         items: {
-          fr: ['→ Next.js 16 + React 19', '→ Admin: hcs-u7.info', '→ Client: hcs-u7.online', '→ Marketing: hcs-u7.com'],
-          en: ['→ Next.js 16 + React 19', '→ Admin: hcs-u7.info', '→ Client: hcs-u7.online', '→ Marketing: hcs-u7.com']
+          fr: ['→ Next.js 16 + React 19', '→ Admin: hcs-u7.info', '→ Client: hcs-u7.com', '→ Marketing: hcs-u7.com'],
+          en: ['→ Next.js 16 + React 19', '→ Admin: hcs-u7.info', '→ Client: hcs-u7.com', '→ Marketing: hcs-u7.com']
         }
       },
       backend: { 
@@ -735,11 +735,11 @@ export const translations = {
     subtitle: { fr: 'Une technologie, deux marchés', en: 'One technology, dual markets' },
     products: {
       fr: [
-        { name: 'HCS-U7', tagline: 'Moteur d\'Authentification Cognitive', market: 'Cybersécurité Entreprise', revenue: 'SaaS (€99-€2499/user/an)', stage: 'Production (hcs-u7.online)', tam: '€50M (logiciel auth)', customers: 'Fintech, E-commerce, Gaming', diff: '99.6% détection bot • Conforme PSD2 • Sécu 8 couches' },
+        { name: 'HCS-U7', tagline: 'Moteur d\'Authentification Cognitive', market: 'Cybersécurité Entreprise', revenue: 'SaaS (€99-€2499/user/an)', stage: 'Production (hcs-u7.com)', tam: '€50M (logiciel auth)', customers: 'Fintech, E-commerce, Gaming', diff: '99.6% détection bot • Conforme PSD2 • Sécu 8 couches' },
         { name: 'HCS-SHIELD', tagline: 'Planification de Mission Tactique', market: 'Défense & Ops Critiques', revenue: 'Licences (€79-€499/appareil/an)', stage: 'Prêt au combat (shield.ia-solution.fr)', tam: '€50M (logiciel drones tactique)', customers: 'Forces Spéciales, Pompiers, Industriel', diff: '100% hors-ligne • Lié au matériel • Panic wipe <3s' }
       ],
       en: [
-        { name: 'HCS-U7', tagline: 'Cognitive Authentication Engine', market: 'Enterprise Cybersecurity', revenue: 'SaaS (€99-€2499/user/year)', stage: 'Production (hcs-u7.online)', tam: '€50M (auth software)', customers: 'Fintech, E-commerce, Gaming', diff: '99.6% bot detection • PSD2 compliant • 8-layer security' },
+        { name: 'HCS-U7', tagline: 'Cognitive Authentication Engine', market: 'Enterprise Cybersecurity', revenue: 'SaaS (€99-€2499/user/year)', stage: 'Production (hcs-u7.com)', tam: '€50M (auth software)', customers: 'Fintech, E-commerce, Gaming', diff: '99.6% bot detection • PSD2 compliant • 8-layer security' },
         { name: 'HCS-SHIELD', tagline: 'Tactical Mission Planning', market: 'Defense & Critical Ops', revenue: 'Licenses (€79-€499/device/year)', stage: 'Combat-ready (shield.ia-solution.fr)', tam: '€50M (tactical drones SW)', customers: 'Special Forces, Firefighters, Industrial', diff: '100% offline • Hardware-bound • Panic wipe <3s' }
       ]
     },
