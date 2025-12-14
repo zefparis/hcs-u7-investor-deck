@@ -19,7 +19,7 @@ export function SlideCost() {
     <SlideLayout showMatrixBackground matrixColor="#00F0FF">
       <SectionTitle 
         title={t(tr.title, language)} 
-        subtitle="The Economic Impact of Insecurity"
+        subtitle={t(tr.subtitle, language)}
       />
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
@@ -29,7 +29,7 @@ export function SlideCost() {
             value={metric.value}
             label={metric.label}
             icon={icons[i % icons.length]}
-            trend={trends[i % trends.length]}
+            trend={t(tr.trends, language)[i % 4]}
             trendUp={trendUps[i % trendUps.length]}
           />
         ))}
@@ -37,7 +37,7 @@ export function SlideCost() {
 
       <div className="mt-12 p-6 border border-accent/20 bg-accent/5 rounded-lg backdrop-blur-sm">
         <p className="text-center text-lg text-ink-secondary font-mono">
-          "Traditional security measures are failing to distinguish between advanced AI agents and human users."
+          {t(tr.quote, language)}
         </p>
       </div>
     </SlideLayout>

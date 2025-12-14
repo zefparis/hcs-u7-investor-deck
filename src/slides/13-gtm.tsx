@@ -18,7 +18,7 @@ export function SlideGTM() {
     <SlideLayout showMatrixBackground matrixColor="#00F0FF">
       <SectionTitle 
         title={t(tr.title, language)} 
-        subtitle="Go-to-Market Strategy"
+        subtitle={t(tr.subtitle, language)}
       />
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
@@ -61,7 +61,7 @@ export function SlideGTM() {
                   </ul>
 
                   <div className="mt-auto pt-4 border-t border-white/10">
-                    <p className="text-xs text-ink-tertiary uppercase tracking-wider mb-1">Target</p>
+                    <p className="text-xs text-ink-tertiary uppercase tracking-wider mb-1">{t(tr.targetLabel, language)}</p>
                     <p className="font-mono text-xl font-bold text-accent text-glow">{phase.target}</p>
                   </div>
                 </div>
@@ -83,7 +83,7 @@ export function SlideGTM() {
               <Target className="w-6 h-6 text-accent" />
             </div>
             <div>
-              <span className="text-xs uppercase tracking-wider text-accent font-bold">Ideal Customer Profile (ICP)</span>
+              <span className="text-xs uppercase tracking-wider text-accent font-bold">{t(tr.icpLabel, language)}</span>
               <p className="text-sm md:text-base text-ink mt-1">
                 {t(tr.icp, language)}
               </p>

@@ -3,61 +3,40 @@
 import { motion } from 'framer-motion';
 import { SlideLayout } from '@/components/SlideLayout';
 import { Shield, Lock, Hash, Zap } from 'lucide-react';
+import { useLanguage } from '@/lib/LanguageContext';
+import { translations, t } from '@/lib/translations';
 
 export function SlideCrypto() {
+  const { language } = useLanguage();
+  const tr = translations.crypto;
+
   const algorithms = [
     {
       icon: Shield,
-      name: 'QSIG',
-      title: 'Quantum-Safe Signature',
-      tech: 'HMAC-SHA256 + Time Windows',
-      features: [
-        'Rotation 30s',
-        'Timing-safe validation',
-        'Patent FR2514274'
-      ],
+      ...t(tr.algorithms, language)[0],
       color: 'cyan'
     },
     {
       icon: Hash,
-      name: 'B3',
-      title: 'BLAKE3 Canonical Hash',
-      tech: 'Modern cryptographic hash',
-      features: [
-        '3x faster SHA-256',
-        'Collision-resistant',
-        'Code canonicalization'
-      ],
+      ...t(tr.algorithms, language)[1],
       color: 'green'
     },
     {
       icon: Lock,
-      name: 'Hieroglyphic Shield',
-      title: 'Memory-Hard Encryption',
-      tech: 'scrypt + AES-256-GCM',
-      features: [
-        '16 MB memory cost',
-        '50-100ms derivation',
-        'Anti-brute-force'
-      ],
+      ...t(tr.algorithms, language)[2],
       color: 'purple'
     },
     {
       icon: Zap,
-      name: 'Celestial Entropy',
-      title: 'Astronomical CSPRNG',
-      tech: 'Planetary positions + CSPRNG',
-      features: [
-        '512 bits entropy',
-        'Patent FR2514546',
-        'Deterministic + secure'
-      ],
+      ...t(tr.algorithms, language)[3],
       color: 'yellow'
     }
   ];
 
+  const layers = t(tr.layers, language);
+
   return (
-    <SlideLayout title="Cryptographic Innovation" subtitle="Proprietary algorithms securing HCS-U7">
+    <SlideLayout title={t(tr.title, language)} subtitle={t(tr.subtitle, language)}>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {algorithms.map((algo, idx) => {
           const Icon = algo.icon;
@@ -68,8 +47,6 @@ export function SlideCrypto() {
             yellow: 'border-warning bg-warning/5 text-warning'
           };
           
-          // Fallback for purple if not defined in globals, though prompt uses it.
-          // Adjusting to use theme colors where possible or hardcoded values if needed.
           const colors = colorClasses[algo.color as keyof typeof colorClasses];
 
           return (
@@ -111,16 +88,11 @@ export function SlideCrypto() {
         transition={{ delay: 0.5 }}
         className="mt-8 p-6 border border-accent/30 bg-surface-elevated rounded-lg"
       >
-        <h4 className="text-lg font-bold text-accent mb-3">8-Layer Defense Architecture</h4>
+        <h4 className="text-lg font-bold text-accent mb-3">{t(tr.architectureTitle, language)}</h4>
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 text-sm">
-          <div className="text-ink-secondary">1. QSIG + B3 Dual Signature</div>
-          <div className="text-ink-secondary">2. Hieroglyphic Shield</div>
-          <div className="text-ink-secondary">3. Celestial Entropy</div>
-          <div className="text-ink-secondary">4. AES-256-GCM</div>
-          <div className="text-ink-secondary">5. Timing-Safe Validation</div>
-          <div className="text-ink-secondary">6. Proof-of-Work</div>
-          <div className="text-ink-secondary">7. Rate Limiting</div>
-          <div className="text-ink-secondary">8. Audit Blockchain</div>
+          {layers.map((layer, idx) => (
+            <div key={idx} className="text-ink-secondary">{layer}</div>
+          ))}
         </div>
       </motion.div>
     </SlideLayout>

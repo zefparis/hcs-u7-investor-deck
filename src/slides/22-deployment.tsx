@@ -3,74 +3,35 @@
 import { motion } from 'framer-motion';
 import { SlideLayout } from '@/components/SlideLayout';
 import { Cloud, Server, Lock, Globe } from 'lucide-react';
+import { useLanguage } from '@/lib/LanguageContext';
+import { translations, t } from '@/lib/translations';
 
 export function SlideDeployment() {
+  const { language } = useLanguage();
+  const tr = translations.deployment;
+
   const options = [
     {
       icon: Cloud,
-      title: 'HCS-AUTH Cloud (B2B SaaS)',
-      subtitle: 'Multi-tenant SaaS platform',
-      features: [
-        'Fully managed infrastructure',
-        'Auto-scaling (1-100K users)',
-        '99.9% SLA uptime',
-        'Global CDN distribution',
-        'SOC2 Type II compliant',
-        'GDPR/CCPA ready'
-      ],
-      pricing: '$50-500/user/year',
-      deployment: '< 24h onboarding',
+      ...t(tr.options, language)[0],
       color: 'cyan',
       icon2: '☁️'
     },
     {
       icon: Server,
-      title: 'HCS-AUTH On-Premise (Enterprise)',
-      subtitle: 'Self-hosted deployment',
-      features: [
-        'Docker/Kubernetes ready',
-        'Air-gapped installation',
-        'Custom LDAP/AD integration',
-        'VPN/firewall isolation',
-        'Dedicated support engineer',
-        'Source code escrow option'
-      ],
-      pricing: '$50K/year base + $500/user',
-      deployment: '2-4 weeks setup',
+      ...t(tr.options, language)[1],
       color: 'purple',
       icon2: '🏢'
     },
     {
       icon: Lock,
-      title: 'HCS-SHIELD Offline (Defense)',
-      subtitle: 'Tactical offline PWA',
-      features: [
-        '100% offline operation',
-        'No RF emissions (OPSEC)',
-        'Sovereign hosting (France)',
-        'Mission encryption (AES-256)',
-        'QR code sealing',
-        'Combat-hardened UX'
-      ],
-      pricing: '$5K-50K/unit/year',
-      deployment: 'Instant (PWA install)',
+      ...t(tr.options, language)[2],
       color: 'green',
       icon2: '🚁'
     },
     {
       icon: Globe,
-      title: 'HCS-HYBRID (Global Orgs)',
-      subtitle: 'Multi-region deployment',
-      features: [
-        'Cloud (HQ) + On-prem (sites)',
-        'Active-active replication',
-        'Regional compliance',
-        'Centralized analytics',
-        'Unified SSO',
-        'Disaster recovery'
-      ],
-      pricing: 'Custom (volume discount)',
-      deployment: '4-8 weeks rollout',
+      ...t(tr.options, language)[3],
       color: 'yellow',
       icon2: '🌍'
     }
@@ -104,7 +65,7 @@ export function SlideDeployment() {
   };
 
   return (
-    <SlideLayout title="Deployment Options" subtitle="Flexible architecture for every environment">
+    <SlideLayout title={t(tr.title, language)} subtitle={t(tr.subtitle, language)}>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {options.map((option, idx) => {
           const Icon = option.icon;
@@ -139,14 +100,14 @@ export function SlideDeployment() {
 
               <div className="pt-4 border-t border-border space-y-2">
                 <div className="flex justify-between text-sm">
-                  <span className="text-ink-tertiary">Pricing:</span>
+                  <span className="text-ink-tertiary">{t(tr.labels.pricing, language)}</span>
                   <span className={`font-mono font-bold ${colors.text}`}>
                     {option.pricing}
                   </span>
                 </div>
                 <div className="flex justify-between text-sm">
-                  <span className="text-ink-tertiary">Deployment:</span>
-                  <span className="text-ink">{option.deployment}</span>
+                  <span className="text-ink-tertiary">{t(tr.labels.deployment, language)}</span>
+                  <span className="text-ink">{option.time}</span>
                 </div>
               </div>
             </motion.div>
@@ -162,9 +123,7 @@ export function SlideDeployment() {
       >
         <div className="text-center">
           <p className="text-ink-secondary text-sm">
-            <span className="text-accent font-bold">4 deployment models</span> • 
-            <span className="text-success font-bold"> Cloud to air-gapped</span> • 
-            <span className="text-purple-400 font-bold"> Custom integrations available</span>
+            {t(tr.footer, language)}
           </p>
         </div>
       </motion.div>

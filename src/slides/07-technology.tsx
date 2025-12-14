@@ -17,7 +17,7 @@ export function SlideTechnology() {
     <SlideLayout showMatrixBackground matrixColor="#00F0FF">
       <SectionTitle 
         title={t(tr.title, language)} 
-        subtitle="Defense-in-Depth Architecture"
+        subtitle={t(tr.subtitle, language)}
       />
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
@@ -56,7 +56,7 @@ export function SlideTechnology() {
           <div className="flex items-center gap-3 p-4 border border-success/20 bg-success/5 rounded-lg backdrop-blur-sm">
             <ShieldCheck className="w-6 h-6 text-success" />
             <div>
-              <p className="text-xs text-success font-bold uppercase tracking-wider">Status</p>
+              <p className="text-xs text-success font-bold uppercase tracking-wider">{t(tr.statusLabel, language)}</p>
               <p className="text-sm text-ink-secondary">
                 {t(tr.status, language)}
               </p>

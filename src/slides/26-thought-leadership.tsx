@@ -3,65 +3,70 @@
 import { motion } from 'framer-motion';
 import { SlideLayout } from '@/components/SlideLayout';
 import { Linkedin, FileText, Users, TrendingUp } from 'lucide-react';
+import { useLanguage } from '@/lib/LanguageContext';
+import { translations, t } from '@/lib/translations';
 
 export function SlideThoughtLeadership() {
+  const { language } = useLanguage();
+  const tr = translations.leadership;
+
   const metrics = [
     {
       icon: Linkedin,
       value: '2.5K+',
-      label: 'LinkedIn Followers',
-      trend: '+340% (6 months)',
+      label: t(tr.metrics, language)[0].label,
+      trend: t(tr.metrics, language)[0].trend,
       color: 'text-accent'
     },
     {
       icon: FileText,
       value: '45+',
-      label: 'Technical Posts',
-      trend: '120K impressions',
+      label: t(tr.metrics, language)[1].label,
+      trend: t(tr.metrics, language)[1].trend,
       color: 'text-success'
     },
     {
       icon: Users,
       value: '180+',
-      label: 'Engaged CISOs',
-      trend: 'Active discussions',
+      label: t(tr.metrics, language)[2].label,
+      trend: t(tr.metrics, language)[2].trend,
       color: 'text-purple-400'
     },
     {
       icon: TrendingUp,
       value: '12%',
-      label: 'Engagement Rate',
-      trend: '3x industry avg',
+      label: t(tr.metrics, language)[3].label,
+      trend: t(tr.metrics, language)[3].trend,
       color: 'text-warning'
     }
   ];
 
   const posts = [
     {
-      title: 'GPT-4V broke CAPTCHAs. What now?',
-      date: 'Dec 2024',
+      title: t(tr.posts, language)[0].title,
+      date: t(tr.posts, language)[0].date,
       engagement: '1.2K reactions • 85 comments',
-      impact: 'Featured in TechCrunch article',
+      impact: t(tr.posts, language)[0].impact,
       link: 'linkedin.com/in/benjaminbarrere'
     },
     {
-      title: 'Social Engineering vs Automation: Which threat scales?',
-      date: 'Dec 2024',
+      title: t(tr.posts, language)[1].title,
+      date: t(tr.posts, language)[1].date,
       engagement: '890 reactions • 62 comments',
-      impact: 'Sparked CISO debate (Gilles Soubrier thread)',
+      impact: t(tr.posts, language)[1].impact,
       link: 'linkedin.com/in/benjaminbarrere'
     },
     {
-      title: 'Why timing-safe ops matter in 2025',
-      date: 'Nov 2024',
+      title: t(tr.posts, language)[2].title,
+      date: t(tr.posts, language)[2].date,
       engagement: '1.5K reactions • 93 comments',
-      impact: 'Shared by 3 VCs, 12 security firms',
+      impact: t(tr.posts, language)[2].impact,
       link: 'linkedin.com/in/benjaminbarrere'
     }
   ];
 
   return (
-    <SlideLayout title="Thought Leadership" subtitle="Building brand authority in cognitive security">
+    <SlideLayout title={t(tr.title, language)} subtitle={t(tr.subtitle, language)}>
       {/* Metrics */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
         {metrics.map((metric, idx) => {
@@ -91,7 +96,7 @@ export function SlideThoughtLeadership() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.3 }}
       >
-        <h3 className="text-lg font-bold text-ink mb-4">Viral Technical Posts</h3>
+        <h3 className="text-lg font-bold text-ink mb-4">{t(tr.postsTitle, language)}</h3>
         <div className="space-y-3">
           {posts.map((post, idx) => (
             <motion.div
@@ -122,27 +127,24 @@ export function SlideThoughtLeadership() {
         transition={{ delay: 0.7 }}
         className="mt-8 p-6 border border-purple-500/30 bg-purple-500/5 rounded-lg"
       >
-        <h4 className="text-lg font-bold text-purple-400 mb-3">Content Strategy</h4>
+        <h4 className="text-lg font-bold text-purple-400 mb-3">{t(tr.strategyTitle, language)}</h4>
         <div className="grid md:grid-cols-3 gap-6 text-sm">
           <div>
-            <div className="font-semibold text-ink mb-2">Educational</div>
+            <div className="font-semibold text-ink mb-2">{t(tr.strategy, language)[0].title}</div>
             <div className="text-ink-tertiary text-xs">
-              Deep-dives on timing attacks, prompt injection, cognitive biometrics. 
-              Build trust through technical expertise.
+              {t(tr.strategy, language)[0].desc}
             </div>
           </div>
           <div>
-            <div className="font-semibold text-ink mb-2">Provocative</div>
+            <div className="font-semibold text-ink mb-2">{t(tr.strategy, language)[1].title}</div>
             <div className="text-ink-tertiary text-xs">
-              Challenge industry assumptions ("CAPTCHAs are dead"). 
-              Spark debates that position HCS-U7 as the alternative.
+              {t(tr.strategy, language)[1].desc}
             </div>
           </div>
           <div>
-            <div className="font-semibold text-ink mb-2">Transparent</div>
+            <div className="font-semibold text-ink mb-2">{t(tr.strategy, language)[2].title}</div>
             <div className="text-ink-tertiary text-xs">
-              Acknowledge limitations (social engineering). 
-              Builds credibility and differentiates from hype-driven competitors.
+              {t(tr.strategy, language)[2].desc}
             </div>
           </div>
         </div>
@@ -157,14 +159,14 @@ export function SlideThoughtLeadership() {
       >
         <div className="flex items-center justify-between">
           <div>
-            <div className="text-sm font-bold text-accent">Business Impact</div>
+            <div className="text-sm font-bold text-accent">{t(tr.impact, language).title}</div>
             <div className="text-xs text-ink-tertiary mt-1">
-              45% of inbound leads attribute first touch to LinkedIn content
+              {t(tr.impact, language).desc}
             </div>
           </div>
           <div className="text-right">
             <div className="text-2xl font-bold text-accent">18</div>
-            <div className="text-xs text-ink-tertiary">Enterprise demos booked</div>
+            <div className="text-xs text-ink-tertiary">{t(tr.impact, language).stat}</div>
           </div>
         </div>
       </motion.div>

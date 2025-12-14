@@ -3,6 +3,8 @@
 import { motion } from 'framer-motion';
 import { SlideLayout } from '@/components/SlideLayout';
 import { Shield, Link2 } from 'lucide-react';
+import { useLanguage } from '@/lib/LanguageContext';
+import { translations, t } from '@/lib/translations';
 
 // Drone icon is not exported directly from lucide-react in some versions or might be named differently.
 // Using a safe fallback or checking if it exists. 
@@ -11,30 +13,21 @@ import { Shield, Link2 } from 'lucide-react';
 import { Drone } from 'lucide-react'; 
 
 export function SlidePortfolio() {
+  const { language } = useLanguage();
+  const tr = translations.portfolio;
+
   const products = [
     {
       icon: Shield,
-      name: 'HCS-U7',
-      tagline: 'Cognitive Authentication Engine',
-      market: 'Enterprise Cybersecurity',
-      revenue: 'SaaS (€99-€2499/user/year)',
-      stage: 'Production (hcs-u7.online)',
-      tam: '€50M (auth software)',
-      customers: 'Fintech, E-commerce, Gaming',
-      differentiation: '99.6% bot detection • PSD2 compliant • 8-layer security',
+      ...t(tr.products, language)[0],
+      differentiation: t(tr.products, language)[0].diff,
       color: 'cyan',
       patents: 'FR2514274, FR2514546'
     },
     {
       icon: Drone,
-      name: 'HCS-SHIELD',
-      tagline: 'Tactical Mission Planning',
-      market: 'Defense & Critical Ops',
-      revenue: 'Licenses (€79-€499/device/year)',
-      stage: 'Combat-ready (shield.ia-solution.fr)',
-      tam: '€50M (tactical drones SW)',
-      customers: 'Special Forces, Firefighters, Industrial',
-      differentiation: '100% offline • Hardware-bound • Panic wipe <3s',
+      ...t(tr.products, language)[1],
+      differentiation: t(tr.products, language)[1].diff,
       color: 'green',
       patents: 'FR2514274 (QR encryption), FR2514546 (entropy)'
     }
@@ -45,8 +38,10 @@ export function SlidePortfolio() {
     green: 'border-success bg-success/5 text-success'
   };
 
+  const revenueMix = t(tr.revenueMix, language);
+
   return (
-    <SlideLayout title="Product Portfolio" subtitle="One technology, dual markets">
+    <SlideLayout title={t(tr.title, language)} subtitle={t(tr.subtitle, language)}>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         {products.map((product, idx) => {
           const Icon = product.icon;
@@ -73,37 +68,37 @@ export function SlidePortfolio() {
 
               <div className="space-y-3 text-sm">
                 <div>
-                  <span className="text-ink-tertiary">Market:</span>{' '}
+                  <span className="text-ink-tertiary">{t(tr.labels.market, language)}</span>{' '}
                   <span className="text-ink font-semibold">{product.market}</span>
                 </div>
                 <div>
-                  <span className="text-ink-tertiary">Revenue Model:</span>{' '}
+                  <span className="text-ink-tertiary">{t(tr.labels.revenue, language)}</span>{' '}
                   <span className="text-ink">{product.revenue}</span>
                 </div>
                 <div>
-                  <span className="text-ink-tertiary">Stage:</span>{' '}
+                  <span className="text-ink-tertiary">{t(tr.labels.stage, language)}</span>{' '}
                   <span className={`font-mono`}>
                     {product.stage}
                   </span>
                 </div>
                 <div>
-                  <span className="text-ink-tertiary">TAM:</span>{' '}
+                  <span className="text-ink-tertiary">{t(tr.labels.tam, language)}</span>{' '}
                   <span className="text-ink">{product.tam}</span>
                 </div>
                 <div>
-                  <span className="text-ink-tertiary">Customers:</span>{' '}
+                  <span className="text-ink-tertiary">{t(tr.labels.customers, language)}</span>{' '}
                   <span className="text-ink">{product.customers}</span>
                 </div>
                 
                 <div className="pt-3 border-t border-border">
-                  <div className="text-ink-tertiary mb-2">Key Differentiators:</div>
+                  <div className="text-ink-tertiary mb-2">{t(tr.labels.diff, language)}</div>
                   <p className={`text-xs`}>
                     {product.differentiation}
                   </p>
                 </div>
 
                 <div className="pt-3 border-t border-border">
-                  <div className="text-ink-tertiary mb-1">Patent Coverage:</div>
+                  <div className="text-ink-tertiary mb-1">{t(tr.labels.patents, language)}</div>
                   <p className="text-xs text-ink-secondary font-mono">{product.patents}</p>
                 </div>
               </div>
@@ -122,20 +117,14 @@ export function SlidePortfolio() {
         <div className="flex items-start gap-4">
           <Link2 className="text-purple-400 w-8 h-8 shrink-0" />
           <div>
-            <h4 className="text-lg font-bold text-purple-400 mb-2">Shared Technology Stack</h4>
+            <h4 className="text-lg font-bold text-purple-400 mb-2">{t(tr.synergies.title, language)}</h4>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm text-ink-secondary">
-              <div>• QSIG + B3 Signatures</div>
-              <div>• AES-256-GCM Encryption</div>
-              <div>• Celestial Entropy</div>
-              <div>• WebAuthn Hardware Binding</div>
-              <div>• Timing-Safe Validation</div>
-              <div>• Cognitive Testing Engine</div>
-              <div>• Proof-of-Work</div>
-              <div>• Audit Blockchain</div>
+              {t(tr.synergies.items, language).map((item, idx) => (
+                <div key={idx}>{item}</div>
+              ))}
             </div>
             <p className="text-xs text-ink-tertiary mt-4">
-              <span className="text-purple-400 font-bold">85% code reuse</span> between products → 
-              R&D efficiency + faster innovation cycles
+              {t(tr.synergies.desc, language)}
             </p>
           </div>
         </div>
@@ -149,19 +138,19 @@ export function SlidePortfolio() {
         className="mt-4 grid grid-cols-3 gap-4 text-center"
       >
         <div className="p-4 border border-border bg-surface-elevated rounded-lg">
-          <div className="text-3xl font-bold text-accent">60%</div>
-          <div className="text-xs text-ink-tertiary mt-1">Revenue from HCS-U7</div>
-          <div className="text-xs text-ink-secondary">(Enterprise SaaS)</div>
+          <div className="text-3xl font-bold text-accent">{revenueMix[0].val}</div>
+          <div className="text-xs text-ink-tertiary mt-1">{revenueMix[0].label}</div>
+          <div className="text-xs text-ink-secondary">{revenueMix[0].sub}</div>
         </div>
         <div className="p-4 border border-border bg-surface-elevated rounded-lg">
-          <div className="text-3xl font-bold text-success">40%</div>
-          <div className="text-xs text-ink-tertiary mt-1">Revenue from HCS-SHIELD</div>
-          <div className="text-xs text-ink-secondary">(Defense/Critical)</div>
+          <div className="text-3xl font-bold text-success">{revenueMix[1].val}</div>
+          <div className="text-xs text-ink-tertiary mt-1">{revenueMix[1].label}</div>
+          <div className="text-xs text-ink-secondary">{revenueMix[1].sub}</div>
         </div>
         <div className="p-4 border border-border bg-surface-elevated rounded-lg">
-          <div className="text-3xl font-bold text-purple-400">€7.5M</div>
-          <div className="text-xs text-ink-tertiary mt-1">Combined ARR Y3</div>
-          <div className="text-xs text-ink-secondary">(dual revenue streams)</div>
+          <div className="text-3xl font-bold text-purple-400">{revenueMix[2].val}</div>
+          <div className="text-xs text-ink-tertiary mt-1">{revenueMix[2].label}</div>
+          <div className="text-xs text-ink-secondary">{revenueMix[2].sub}</div>
         </div>
       </motion.div>
     </SlideLayout>

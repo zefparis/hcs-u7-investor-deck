@@ -20,7 +20,7 @@ export function SlideBusiness() {
     <SlideLayout showMatrixBackground matrixColor="#00F0FF">
       <SectionTitle 
         title={t(tr.title, language)} 
-        subtitle="Scalable SaaS Model with High Margins"
+        subtitle={t(tr.subtitle, language)}
       />
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 h-[450px]">

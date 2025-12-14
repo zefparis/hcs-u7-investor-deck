@@ -18,7 +18,7 @@ export function SlideValidation() {
     <SlideLayout showMatrixBackground matrixColor="#00FF9D">
       <SectionTitle 
         title={t(tr.title, language)} 
-        subtitle="Scientific & Adversarial Validation"
+        subtitle={t(tr.subtitle, language)}
       />
 
       <div className="mt-8 mb-12">
@@ -35,7 +35,7 @@ export function SlideValidation() {
             <CheckCircle2 className="w-6 h-6 text-success shrink-0 mt-1" />
             <div>
               <p className="text-lg text-white font-medium mb-2">
-                "Frontier Model Resistance Confirmed"
+                {t(tr.confirmed, language)}
               </p>
               <p className="text-ink-secondary leading-relaxed">
                 {t(tr.callout, language)}
