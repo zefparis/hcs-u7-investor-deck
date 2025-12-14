@@ -21,6 +21,17 @@ import {
   SlideFinancials,
   SlideAsk,
   SlideTeam,
+  SlideCrypto,
+  SlideUseCases,
+  SlideArchitecture,
+  SlideIP,
+  SlideAudit,
+  SlideDeployment,
+  SlidePortfolio,
+  SlideLimitations,
+  SlideEcosystem,
+  SlideThoughtLeadership,
+  SlideRisks,
 } from '@/slides';
 
 const slides = [
@@ -39,6 +50,17 @@ const slides = [
   SlideGTM,
   SlideFinancials,
   SlideAsk,
+  SlideCrypto,
+  SlideUseCases,
+  SlideArchitecture,
+  SlideIP,
+  SlideAudit,
+  SlideDeployment,
+  SlidePortfolio,
+  SlideLimitations,
+  SlideEcosystem,
+  SlideThoughtLeadership,
+  SlideRisks,
   SlideTeam,
 ];
 

@@ -83,6 +83,31 @@ export function SlideTeam() {
               </div>
             </div>
 
+            <div className="p-6 border border-accent bg-accent/5 rounded-lg">
+              <h3 className="text-lg font-bold text-accent mb-3">Live Demos</h3>
+              <div className="space-y-2 text-ink-secondary font-mono text-sm">
+                <div className="flex items-center gap-2">
+                  <span className="text-accent">🔐 HCS-AUTH:</span> 
+                  <a href="https://hcs-u7.online" target="_blank" className="hover:text-white transition-colors">hcs-u7.online</a>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="text-success">🚁 HCS-SHIELD:</span> 
+                  <a href="https://shield.ia-solution.fr" target="_blank" className="hover:text-white transition-colors">shield.ia-solution.fr</a>
+                </div>
+              </div>
+            </div>
+            
+            <div className="text-sm text-ink-tertiary">
+              Patents: 
+              <span className="text-success font-mono ml-2">
+                FR2514274 (RECEVABLE)
+              </span>
+              {' | '}
+              <span className="text-success font-mono">
+                FR2514546 (RECEVABLE)
+              </span>
+            </div>
+
             <div className="flex flex-col gap-3">
               <a
                 href="mailto:contact@ia-solution.fr"

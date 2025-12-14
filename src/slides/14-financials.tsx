@@ -11,7 +11,43 @@ import { TrendingUp, ArrowRight } from 'lucide-react';
 export function SlideFinancials() {
   const { language } = useLanguage();
   const tr = translations.financials;
-  const chartData = tr.chartData[language];
+  
+  // Custom data structure for dual bar chart (Cyber vs Defense)
+  const chartData = [
+    {
+      label: language === 'fr' ? 'Année 1' : 'Year 1',
+      value: [
+        { label: 'Cyber', value: 0.01, color: 'cyan' },
+        { label: 'Defense', value: 0.05, color: 'red' }
+      ],
+      displayValue: '€60K',
+      subItems: language === 'fr' 
+        ? ['100 utilisateurs Cyber', '10 unités Défense']
+        : ['100 Cyber users', '10 Defense units']
+    },
+    {
+      label: language === 'fr' ? 'Année 2' : 'Year 2',
+      value: [
+        { label: 'Cyber', value: 0.4, color: 'cyan' },
+        { label: 'Defense', value: 1.5, color: 'red' }
+      ],
+      displayValue: '€1.9M',
+      subItems: language === 'fr'
+        ? ['2K utilisateurs Cyber', '500 unités Défense']
+        : ['2K Cyber users', '500 Defense units']
+    },
+    {
+      label: language === 'fr' ? 'Année 3' : 'Year 3',
+      value: [
+        { label: 'Cyber', value: 3.5, color: 'cyan' },
+        { label: 'Defense', value: 4.0, color: 'red' }
+      ],
+      displayValue: '€7.5M',
+      subItems: language === 'fr'
+        ? ['10K utilisateurs Cyber', '2K unités Défense']
+        : ['10K Cyber users', '2K Defense units']
+    }
+  ];
 
   return (
     <SlideLayout showMatrixBackground matrixColor="#00F0FF">
@@ -21,7 +57,19 @@ export function SlideFinancials() {
       />
 
       <div className="mt-8 mb-12">
-        <BarChart items={chartData} maxValue={3.5} />
+        <BarChart items={chartData} maxValue={7.5} />
+        
+        {/* Legend */}
+        <div className="flex justify-center gap-8 mt-4">
+          <div className="flex items-center gap-2">
+            <div className="w-3 h-3 bg-accent/20 border border-accent rounded-full" />
+            <span className="text-xs text-ink-secondary">Cyber (SaaS)</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <div className="w-3 h-3 bg-danger/20 border border-danger rounded-full" />
+            <span className="text-xs text-ink-secondary">Defense (Offline)</span>
+          </div>
+        </div>
       </div>
 
       <motion.div
@@ -49,6 +97,41 @@ export function SlideFinancials() {
             </div>
           </div>
         </CyberCard>
+      </motion.div>
+
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.9 }}
+        className="mt-6 p-6 border border-purple-500/30 bg-purple-500/5 rounded-lg"
+      >
+        <h4 className="text-lg font-bold text-purple-400 mb-4">Revenue Mix Evolution</h4>
+        <div className="grid grid-cols-3 gap-6 text-center">
+          <div>
+            <div className="text-sm text-ink-tertiary mb-2">{language === 'fr' ? 'Année 1' : 'Year 1'}</div>
+            <div className="space-y-1 text-sm">
+              <div className="text-accent">Cyber: 20% (€12K)</div>
+              <div className="text-success">Defense: 80% (€48K)</div>
+            </div>
+          </div>
+          <div>
+            <div className="text-sm text-ink-tertiary mb-2">{language === 'fr' ? 'Année 2' : 'Year 2'}</div>
+            <div className="space-y-1 text-sm">
+              <div className="text-accent">Cyber: 35% (€665K)</div>
+              <div className="text-success">Defense: 65% (€1.2M)</div>
+            </div>
+          </div>
+          <div>
+            <div className="text-sm text-ink-tertiary mb-2">{language === 'fr' ? 'Année 3' : 'Year 3'}</div>
+            <div className="space-y-1 text-sm">
+              <div className="text-accent">Cyber: 50% (€3.75M)</div>
+              <div className="text-success">Defense: 50% (€3.75M)</div>
+            </div>
+          </div>
+        </div>
+        <p className="text-xs text-ink-tertiary mt-4 text-center">
+          Balanced dual-revenue strategy reduces dependency risk
+        </p>
       </motion.div>
     </SlideLayout>
   );
