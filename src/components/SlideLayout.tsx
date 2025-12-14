@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { ReactNode } from 'react';
-import { MatrixRain } from '@/components/MatrixRain';
+import { DigitalRain } from '@/components/DigitalRain';
 import clsx from 'clsx';
 
 interface SlideLayoutProps {
@@ -36,7 +36,7 @@ export function SlideLayout({
       <div className="absolute inset-0 z-0 bg-surface cyber-grid opacity-30 pointer-events-none" />
       
       {showMatrixBackground && (
-        <MatrixRain color={matrixColor} opacity={0.15} />
+        <DigitalRain color={matrixColor} opacity={0.2} />
       )}
       
       {/* Glow effects */}
