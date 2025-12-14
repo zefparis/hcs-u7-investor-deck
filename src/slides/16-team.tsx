@@ -84,16 +84,16 @@ export function SlideTeam() {
             </div>
 
             <div className="p-6 border border-accent bg-accent/5 rounded-lg">
-              <h3 className="text-lg font-bold text-accent mb-3">Live Demos</h3>
+              <h3 className="text-lg font-bold text-accent mb-3">{t(tr.liveDemos, language)}</h3>
               <div className="space-y-2 text-ink-secondary font-mono text-sm">
-                <div className="flex items-center gap-2">
-                  <span className="text-accent">🔐 HCS-AUTH:</span> 
-                  <a href="https://hcs-u7.online" target="_blank" className="hover:text-white transition-colors">hcs-u7.online</a>
-                </div>
-                <div className="flex items-center gap-2">
-                  <span className="text-success">🚁 HCS-SHIELD:</span> 
-                  <a href="https://shield.ia-solution.fr" target="_blank" className="hover:text-white transition-colors">shield.ia-solution.fr</a>
-                </div>
+                {tr.demos.map((demo) => (
+                  <div key={demo.name} className="flex items-center gap-2">
+                    <span className="text-accent">{demo.icon} {demo.name}:</span> 
+                    <a href={demo.url} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+                      {demo.url.replace('https://', '')}
+                    </a>
+                  </div>
+                ))}
               </div>
             </div>
             
