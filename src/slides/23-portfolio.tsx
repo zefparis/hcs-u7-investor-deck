@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { SlideLayout } from '@/components/SlideLayout';
-import { Shield, icons, Link2 } from 'lucide-react';
+import { Shield, Link2 } from 'lucide-react';
 
 // Drone icon is not exported directly from lucide-react in some versions or might be named differently.
 // Using a safe fallback or checking if it exists. 
