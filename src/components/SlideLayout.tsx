@@ -27,7 +27,7 @@ export function SlideLayout({
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5, ease: 'easeInOut' }}
       className={clsx(
-        "slide relative overflow-hidden bg-surface",
+        "slide relative overflow-x-hidden bg-surface",
         centered ? 'items-center justify-center text-center' : '',
         className
       )}

@@ -80,7 +80,7 @@ export function SlideCover() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1, duration: 1 }}
-          className="absolute bottom-[-10vh] left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-2"
+          className="absolute bottom-32 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-2"
         >
           <span className="text-[10px] uppercase tracking-[0.2em] text-ink-tertiary animate-pulse">Initialize</span>
           <div className="w-px h-12 bg-linear-to-b from-accent to-transparent" />

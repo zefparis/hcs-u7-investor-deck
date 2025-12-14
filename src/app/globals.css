@@ -131,13 +131,14 @@ h1 {
   flex-direction: column;
   padding: 48px 80px;
   position: relative;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 /* Mobile responsive */
 @media (max-width: 768px) {
   .slide {
-    padding: 24px;
+    padding: 24px 24px 120px 24px;
     padding-top: 80px;
     height: auto;
     min-height: 100vh;

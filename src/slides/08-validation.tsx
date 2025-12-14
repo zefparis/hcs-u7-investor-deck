@@ -45,9 +45,11 @@ export function SlideValidation() {
         </CyberCard>
       </motion.div>
 
-      <footer className="absolute bottom-8 right-8 text-xs text-ink-tertiary font-mono flex items-center gap-2">
-        <div className="w-2 h-2 bg-success rounded-full animate-pulse" />
-        {t(tr.source, language)}
+      <footer className="w-full flex justify-end mt-auto pt-8">
+        <div className="flex items-center gap-2 text-xs text-ink-tertiary font-mono">
+          <div className="w-2 h-2 bg-success rounded-full animate-pulse" />
+          {t(tr.source, language)}
+        </div>
       </footer>
     </SlideLayout>
   );
