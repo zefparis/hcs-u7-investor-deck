@@ -20,7 +20,7 @@ export function SlideTraction() {
     <SlideLayout showMatrixBackground matrixColor="#00F0FF">
       <SectionTitle 
         title={t(tr.title, language)} 
-        subtitle="Execution Velocity & Assets"
+        subtitle={t(tr.subtitle, language)}
       />
 
       <div className="mt-8 mb-16">

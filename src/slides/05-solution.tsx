@@ -18,7 +18,7 @@ export function SlideSolution() {
     <SlideLayout showMatrixBackground matrixColor="#00F0FF">
       <SectionTitle 
         title={t(tr.title, language)} 
-        subtitle="The Paradigm Shift: From Task to Cognition"
+        subtitle={t(tr.subtitle, language)}
       />
 
       <div className="grid grid-cols-1 md:grid-cols-5 gap-8 mb-8">

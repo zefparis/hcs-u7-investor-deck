@@ -2,10 +2,15 @@
 
 import { motion } from 'framer-motion';
 import { SlideLayout } from '@/components/SlideLayout';
+import { useLanguage } from '@/lib/LanguageContext';
+import { translations, t } from '@/lib/translations';
 
 export function SlideArchitecture() {
+  const { language } = useLanguage();
+  const tr = translations.architecture;
+
   return (
-    <SlideLayout title="Architecture Deep-Dive" subtitle="Production-grade dual deployment">
+    <SlideLayout title={t(tr.title, language)} subtitle={t(tr.subtitle, language)}>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         {/* CLOUD ARCHITECTURE */}
         <motion.div
@@ -14,50 +19,35 @@ export function SlideArchitecture() {
           className="border border-accent bg-accent/5 p-6 rounded-lg"
         >
           <h3 className="text-xl font-bold text-accent mb-4 flex items-center gap-2">
-            <span>☁️</span> HCS-AUTH (Cloud)
+            <span>☁️</span> {t(tr.cloud.title, language)}
           </h3>
 
           <div className="space-y-3 font-mono text-sm">
             <div className="bg-surface-elevated p-3 rounded border border-border">
-              <div className="text-accent font-bold mb-2">Frontend Layer</div>
+              <div className="text-accent font-bold mb-2">{t(tr.cloud.frontend.title, language)}</div>
               <div className="text-ink-secondary text-xs space-y-1">
-                <div>→ Next.js 16 + React 19</div>
-                <div>→ Admin: hcs-u7.info</div>
-                <div>→ Client: hcs-u7.online</div>
-                <div>→ Marketing: hcs-u7.com</div>
+                {t(tr.cloud.frontend.items, language).map((item, i) => <div key={i}>{item}</div>)}
               </div>
             </div>
 
             <div className="bg-surface-elevated p-3 rounded border border-border">
-              <div className="text-accent font-bold mb-2">Backend Layer</div>
+              <div className="text-accent font-bold mb-2">{t(tr.cloud.backend.title, language)}</div>
               <div className="text-ink-secondary text-xs space-y-1">
-                <div>→ Fastify (Node.js)</div>
-                <div>→ Railway deployment</div>
-                <div>→ 88 files production</div>
-                <div>→ Siege-Wall audited</div>
+                {t(tr.cloud.backend.items, language).map((item, i) => <div key={i}>{item}</div>)}
               </div>
             </div>
 
             <div className="bg-surface-elevated p-3 rounded border border-border">
-              <div className="text-accent font-bold mb-2">Security Layers (8)</div>
+              <div className="text-accent font-bold mb-2">{t(tr.cloud.security.title, language)}</div>
               <div className="text-ink-secondary text-xs space-y-1">
-                <div>1. QSIG + B3 signatures</div>
-                <div>2. Hieroglyphic Shield</div>
-                <div>3. Celestial Entropy</div>
-                <div>4. AES-256-GCM</div>
-                <div>5. Timing-safe (150ms min)</div>
-                <div>6. Proof-of-Work</div>
-                <div>7. Rate limiting</div>
-                <div>8. Audit blockchain</div>
+                {t(tr.cloud.security.items, language).map((item, i) => <div key={i}>{item}</div>)}
               </div>
             </div>
 
             <div className="bg-surface-elevated p-3 rounded border border-border">
-              <div className="text-accent font-bold mb-2">Database</div>
+              <div className="text-accent font-bold mb-2">{t(tr.cloud.db.title, language)}</div>
               <div className="text-ink-secondary text-xs space-y-1">
-                <div>→ PostgreSQL (Railway)</div>
-                <div>→ Redis (caching)</div>
-                <div>→ Encrypted at rest</div>
+                {t(tr.cloud.db.items, language).map((item, i) => <div key={i}>{item}</div>)}
               </div>
             </div>
           </div>
@@ -65,7 +55,7 @@ export function SlideArchitecture() {
           <div className="mt-4 p-3 bg-success/10 border border-success rounded">
             <div className="text-success font-bold text-sm">Security Audit</div>
             <div className="text-ink-secondary text-xs mt-1">
-              518 attacks blocked • 0 breaches • 15 days continuous
+              {t(tr.cloud.audit, language)}
             </div>
           </div>
         </motion.div>
@@ -78,50 +68,35 @@ export function SlideArchitecture() {
           className="border border-success bg-success/5 p-6 rounded-lg"
         >
           <h3 className="text-xl font-bold text-success mb-4 flex items-center gap-2">
-            <span>📱</span> HCS-SHIELD (Offline)
+            <span>📱</span> {t(tr.offline.title, language)}
           </h3>
 
           <div className="space-y-3 font-mono text-sm">
             <div className="bg-surface-elevated p-3 rounded border border-border">
-              <div className="text-success font-bold mb-2">PWA Application</div>
+              <div className="text-success font-bold mb-2">{t(tr.offline.pwa.title, language)}</div>
               <div className="text-ink-secondary text-xs space-y-1">
-                <div>→ Next.js 16 PWA</div>
-                <div>→ shield.ia-solution.fr</div>
-                <div>→ Offline-first</div>
-                <div>→ IndexedDB storage</div>
+                {t(tr.offline.pwa.items, language).map((item, i) => <div key={i}>{item}</div>)}
               </div>
             </div>
 
             <div className="bg-surface-elevated p-3 rounded border border-border">
-              <div className="text-success font-bold mb-2">Cognitive Tests (7)</div>
+              <div className="text-success font-bold mb-2">{t(tr.offline.tests.title, language)}</div>
               <div className="text-ink-secondary text-xs space-y-1">
-                <div>1. Reaction (V)</div>
-                <div>2. Memory</div>
-                <div>3. Tracing (F)</div>
-                <div>4. Pattern (Cr)</div>
-                <div>5. Scroll (S)</div>
-                <div>6. Coordination (S)</div>
-                <div>7. Stroop (C)</div>
+                {t(tr.offline.tests.items, language).map((item, i) => <div key={i}>{item}</div>)}
               </div>
             </div>
 
             <div className="bg-surface-elevated p-3 rounded border border-border">
-              <div className="text-success font-bold mb-2">Crypto Embedded</div>
+              <div className="text-success font-bold mb-2">{t(tr.offline.crypto.title, language)}</div>
               <div className="text-ink-secondary text-xs space-y-1">
-                <div>→ QSIG (HMAC-SHA256 local)</div>
-                <div>→ B3 (BLAKE3 local)</div>
-                <div>→ AES-256-GCM (QR)</div>
-                <div>→ Web Crypto API</div>
+                {t(tr.offline.crypto.items, language).map((item, i) => <div key={i}>{item}</div>)}
               </div>
             </div>
 
             <div className="bg-surface-elevated p-3 rounded border border-border">
-              <div className="text-success font-bold mb-2">Mission Planning</div>
+              <div className="text-success font-bold mb-2">{t(tr.offline.mission.title, language)}</div>
               <div className="text-ink-secondary text-xs space-y-1">
-                <div>→ MapBox integration</div>
-                <div>→ Waypoints GPS</div>
-                <div>→ QR code generation</div>
-                <div>→ Offline operations</div>
+                {t(tr.offline.mission.items, language).map((item, i) => <div key={i}>{item}</div>)}
               </div>
             </div>
           </div>
@@ -129,7 +104,7 @@ export function SlideArchitecture() {
           <div className="mt-4 p-3 bg-purple-500/10 border border-purple-500 rounded">
             <div className="text-purple-400 font-bold text-sm">Deployment</div>
             <div className="text-ink-secondary text-xs mt-1">
-              LWS France • ISO 27001 • Sovereign hosting
+              {t(tr.offline.deployment, language)}
             </div>
           </div>
         </motion.div>
@@ -145,12 +120,12 @@ export function SlideArchitecture() {
           <div>
             <div className="text-warning font-bold">Production Stats</div>
             <div className="text-ink-secondary text-sm mt-1">
-              88 backend files • 7 cognitive tests • 8 security layers • 100% uptime
+              {t(tr.stats, language)}
             </div>
           </div>
           <div className="text-right">
             <div className="text-3xl font-bold text-warning">99.9%</div>
-            <div className="text-xs text-ink-tertiary">Reliability</div>
+            <div className="text-xs text-ink-tertiary">{t(tr.reliability, language)}</div>
           </div>
         </div>
       </motion.div>

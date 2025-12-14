@@ -25,7 +25,7 @@ export function SlideShift() {
         <div>
           <SectionTitle 
             title={t(tr.title, language)} 
-            subtitle="The Collapse of Traditional Auth"
+            subtitle={t(tr.subtitle, language)}
           />
 
           <div className="space-y-6 mb-12">
@@ -33,7 +33,7 @@ export function SlideShift() {
               <CyberProgressBar 
                 key={d.year} 
                 value={d.rate} 
-                label={`AI CAPTCHA SOLVE RATE (${d.year})`}
+                label={`${t(tr.chartLabel, language)} (${d.year})`}
                 color={d.color as any}
               />
             ))}
@@ -53,8 +53,8 @@ export function SlideShift() {
               </div>
               <div>
                 <h3 className="text-2xl font-bold text-white mb-1">$68B</h3>
-                <p className="text-sm text-ink-secondary uppercase tracking-wider">Annual Fraud Cost (2024)</p>
-                <p className="text-xs text-danger mt-2">+15% YoY Increase</p>
+                <p className="text-sm text-ink-secondary uppercase tracking-wider">{t(tr.card1, language).label}</p>
+                <p className="text-xs text-danger mt-2">{t(tr.card1, language).sub}</p>
               </div>
             </div>
           </CyberCard>
@@ -66,8 +66,8 @@ export function SlideShift() {
               </div>
               <div>
                 <h3 className="text-2xl font-bold text-white mb-1">32%</h3>
-                <p className="text-sm text-ink-secondary uppercase tracking-wider">Automated Web Traffic</p>
-                <p className="text-xs text-warning mt-2">1 in 3 visitors is a bot</p>
+                <p className="text-sm text-ink-secondary uppercase tracking-wider">{t(tr.card2, language).label}</p>
+                <p className="text-xs text-warning mt-2">{t(tr.card2, language).sub}</p>
               </div>
             </div>
           </CyberCard>
@@ -79,8 +79,8 @@ export function SlideShift() {
               </div>
               <div>
                 <h3 className="text-2xl font-bold text-white mb-1">90%</h3>
-                <p className="text-sm text-ink-secondary uppercase tracking-wider">CAPTCHA Bypass Rate</p>
-                <p className="text-xs text-accent mt-2">By GPT-4V Agents</p>
+                <p className="text-sm text-ink-secondary uppercase tracking-wider">{t(tr.card3, language).label}</p>
+                <p className="text-xs text-accent mt-2">{t(tr.card3, language).sub}</p>
               </div>
             </div>
           </CyberCard>
@@ -89,7 +89,7 @@ export function SlideShift() {
       </div>
 
       <footer className="w-full text-right mt-auto pt-8 text-xs text-ink-tertiary font-mono">
-        SOURCE_DATA: JUNIPER_RESEARCH_2024 // IMPERVA_THREAT_REPORT
+        {t(tr.source, language)}
       </footer>
     </SlideLayout>
   );

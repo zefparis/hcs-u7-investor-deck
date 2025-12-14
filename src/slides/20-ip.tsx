@@ -3,36 +3,25 @@
 import { motion } from 'framer-motion';
 import { SlideLayout } from '@/components/SlideLayout';
 import { Award, Shield, Lock, FileCheck } from 'lucide-react';
+import { useLanguage } from '@/lib/LanguageContext';
+import { translations, t } from '@/lib/translations';
 
 export function SlideIP() {
+  const { language } = useLanguage();
+  const tr = translations.ip;
+
   const patents = [
     {
       number: 'FR2514274',
-      title: 'HCS System & Signature',
-      status: 'RECEVABLE',
+      ...t(tr.patents, language)[0],
       filed: 'Dec 2024',
-      scope: [
-        'Cognitive biometric authentication method',
-        'QSIG signature algorithm',
-        'Time-window rotation system',
-        'Multi-test aggregation',
-        'Code generation & validation'
-      ],
       protection: '20 years',
       color: 'cyan'
     },
     {
       number: 'FR2514546',
-      title: 'Celestial Entropy Generation',
-      status: 'RECEVABLE',
+      ...t(tr.patents, language)[1],
       filed: 'Dec 2024',
-      scope: [
-        'Astronomical entropy source',
-        'Planetary position calculation',
-        'Deterministic CSPRNG',
-        'Cryptographic enhancement',
-        'Hybrid entropy mixing'
-      ],
       protection: '20 years',
       color: 'purple'
     }
@@ -41,36 +30,28 @@ export function SlideIP() {
   const moat = [
     {
       icon: Award,
-      title: 'Patent Protection',
-      desc: '20-year exclusive rights',
-      impact: 'Legal moat',
+      ...t(tr.moat, language)[0],
       color: 'text-warning'
     },
     {
       icon: Shield,
-      title: 'Technical Complexity',
-      desc: '8-layer crypto architecture',
-      impact: '5-7 years replication',
+      ...t(tr.moat, language)[1],
       color: 'text-accent'
     },
     {
       icon: Lock,
-      title: 'Proprietary Algorithms',
-      desc: 'QSIG, B3, Hieroglyphic Shield',
-      impact: 'Trade secrets',
+      ...t(tr.moat, language)[2],
       color: 'text-success'
     },
     {
       icon: FileCheck,
-      title: 'First-Mover',
-      desc: 'Cognitive auth pioneer',
-      impact: 'Brand recognition',
+      ...t(tr.moat, language)[3],
       color: 'text-purple-400'
     }
   ];
 
   return (
-    <SlideLayout title="Intellectual Property" subtitle="20-year patent protection moat">
+    <SlideLayout title={t(tr.title, language)} subtitle={t(tr.subtitle, language)}>
       {/* Patents */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
         {patents.map((patent, idx) => (
@@ -95,17 +76,17 @@ export function SlideIP() {
 
             <div className="space-y-3">
               <div className="text-xs text-ink-tertiary">
-                <span className="font-semibold">Filed:</span> {patent.filed}
+                <span className="font-semibold">{t(tr.labels.filed, language)}:</span> {patent.filed}
                 {' • '}
-                <span className="font-semibold">Protection:</span> {patent.protection}
+                <span className="font-semibold">{t(tr.labels.protection, language)}:</span> {patent.protection}
               </div>
 
               <div>
-                <div className="text-sm font-semibold text-ink mb-2">Scope:</div>
+                <div className="text-sm font-semibold text-ink mb-2">{t(tr.labels.scope, language)}:</div>
                 <ul className="space-y-1">
                   {patent.scope.map((item, i) => (
                     <li key={i} className="text-xs text-ink-secondary flex items-start gap-2">
-                      <span className={`mt-1.5 w-1 h-1 rounded-full flex-shrink-0 ${patent.color === 'cyan' ? 'bg-accent' : 'bg-purple-400'}`} />
+                      <span className={`mt-1.5 w-1 h-1 rounded-full shrink-0 ${patent.color === 'cyan' ? 'bg-accent' : 'bg-purple-400'}`} />
                       <span>{item}</span>
                     </li>
                   ))}
@@ -122,7 +103,7 @@ export function SlideIP() {
         whileInView={{ opacity: 1 }}
         transition={{ delay: 0.3 }}
       >
-        <h3 className="text-lg font-bold text-ink mb-4">Competitive Moat</h3>
+        <h3 className="text-lg font-bold text-ink mb-4">{t(tr.moatTitle, language)}</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           {moat.map((item, idx) => {
             const Icon = item.icon;
@@ -153,17 +134,16 @@ export function SlideIP() {
         transition={{ delay: 0.6 }}
         className="mt-6 p-4 border border-border bg-surface-elevated rounded-lg"
       >
-        <h4 className="text-sm font-bold text-ink mb-2">Patent Extensions Roadmap</h4>
+        <h4 className="text-sm font-bold text-ink mb-2">{t(tr.roadmapTitle, language)}</h4>
         <div className="flex items-center gap-8 text-xs text-ink-tertiary">
-          <div>
-            <span className="text-accent font-bold">Q2 2025:</span> European Patent Office (EPO)
-          </div>
-          <div>
-            <span className="text-success font-bold">Q3 2025:</span> US Patent Office (USPTO)
-          </div>
-          <div>
-            <span className="text-purple-400 font-bold">Q4 2025:</span> Japan, China, Korea
-          </div>
+          {t(tr.roadmap, language).map((item, i) => (
+             <div key={i}>
+                <span className={`${i === 0 ? 'text-accent' : i === 1 ? 'text-success' : 'text-purple-400'} font-bold`}>
+                  {item.split(':')[0]}:
+                </span>
+                {item.split(':')[1]}
+             </div>
+          ))}
         </div>
       </motion.div>
     </SlideLayout>

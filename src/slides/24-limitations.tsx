@@ -3,35 +3,24 @@
 import { motion } from 'framer-motion';
 import { SlideLayout } from '@/components/SlideLayout';
 import { CheckCircle, XCircle, AlertTriangle } from 'lucide-react';
+import { useLanguage } from '@/lib/LanguageContext';
+import { translations, t } from '@/lib/translations';
 
 export function SlideLimitations() {
+  const { language } = useLanguage();
+  const tr = translations.limitations;
+
   const scope = {
     what_we_do: [
       {
-        title: 'Automated Attacks (95% of fraud)',
-        items: [
-          'Bots & scrapers (99.6% detection)',
-          'Credential stuffing (scalable)',
-          'Prompt injection (LLM jailbreaks)',
-          'Click fraud (scripts)',
-          'Account takeover (mass attacks)'
-        ],
-        impact: '€95B/year global cost (FBI IC3)',
+        ...t(tr.do.cats, language)[0],
         icon: CheckCircle,
         color: 'text-success'
       }
     ],
     what_we_dont: [
       {
-        title: 'Manual Targeted Attacks (5% of volume)',
-        items: [
-          'Social engineering (Mitnick-style)',
-          'Insider threats (malicious employees)',
-          'Supply chain attacks (SolarWinds)',
-          'Zero-days (hardware vulnerabilities)',
-          'Physical access (stolen devices)'
-        ],
-        impact: 'High impact but not scalable',
+        ...t(tr.dont.cats, language)[0],
         icon: XCircle,
         color: 'text-danger'
       }
@@ -39,7 +28,7 @@ export function SlideLimitations() {
   };
 
   return (
-    <SlideLayout title="What We DON'T Do" subtitle="Honest scope = credible product">
+    <SlideLayout title={t(tr.title, language)} subtitle={t(tr.subtitle, language)}>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         {/* What We Do */}
         <motion.div
@@ -50,8 +39,8 @@ export function SlideLimitations() {
           <div className="flex items-center gap-3 mb-4">
             <CheckCircle className="text-success w-8 h-8" />
             <div>
-              <h3 className="text-xl font-bold text-success">What HCS-U7 Blocks</h3>
-              <p className="text-sm text-ink-tertiary">Attacks that scale</p>
+              <h3 className="text-xl font-bold text-success">{t(tr.do.title, language)}</h3>
+              <p className="text-sm text-ink-tertiary">{t(tr.do.subtitle, language)}</p>
             </div>
           </div>
 
@@ -85,8 +74,8 @@ export function SlideLimitations() {
           <div className="flex items-center gap-3 mb-4">
             <XCircle className="text-danger w-8 h-8" />
             <div>
-              <h3 className="text-xl font-bold text-danger">What HCS-U7 Doesn't Block</h3>
-              <p className="text-sm text-ink-tertiary">Manual targeted attacks</p>
+              <h3 className="text-xl font-bold text-danger">{t(tr.dont.title, language)}</h3>
+              <p className="text-sm text-ink-tertiary">{t(tr.dont.subtitle, language)}</p>
             </div>
           </div>
 
@@ -121,30 +110,23 @@ export function SlideLimitations() {
         <div className="flex items-start gap-4">
           <AlertTriangle className="text-warning w-8 h-8 shrink-0" />
           <div>
-            <h4 className="text-lg font-bold text-warning mb-3">Complete Defense Strategy</h4>
+            <h4 className="text-lg font-bold text-warning mb-3">{t(tr.strategy.title, language)}</h4>
             <div className="grid md:grid-cols-2 gap-6">
               <div>
-                <div className="text-sm font-semibold text-ink mb-2">For Automated Threats (95%):</div>
+                <div className="text-sm font-semibold text-ink mb-2">{t(tr.strategy.autoTitle, language)}</div>
                 <div className="text-sm text-ink-secondary space-y-1">
-                  <div>✅ HCS-U7 (cognitive biometrics)</div>
-                  <div>✅ WAF (web application firewall)</div>
-                  <div>✅ Rate limiting</div>
-                  <div>✅ IP reputation</div>
+                  {t(tr.strategy.autoItems, language).map((item, i) => <div key={i}>{item}</div>)}
                 </div>
               </div>
               <div>
-                <div className="text-sm font-semibold text-ink mb-2">For Manual Threats (5%):</div>
+                <div className="text-sm font-semibold text-ink mb-2">{t(tr.strategy.manualTitle, language)}</div>
                 <div className="text-sm text-ink-secondary space-y-1">
-                  <div>🎓 Employee training (awareness)</div>
-                  <div>🔒 Access controls (least privilege)</div>
-                  <div>👥 SOC team (24/7 monitoring)</div>
-                  <div>📋 Incident response plan</div>
+                  {t(tr.strategy.manualItems, language).map((item, i) => <div key={i}>{item}</div>)}
                 </div>
               </div>
             </div>
             <p className="text-xs text-ink-tertiary mt-4">
-              <span className="text-warning font-bold">Key insight:</span> Automate defense against 95% of attacks → 
-              Free up security teams for the critical 5% (APT, insider threats)
+              {t(tr.strategy.insight, language)}
             </p>
           </div>
         </div>
@@ -159,9 +141,7 @@ export function SlideLimitations() {
       >
         <div className="text-center">
           <p className="text-ink-secondary text-sm">
-            <span className="text-accent font-bold">Transparency builds trust.</span> We don't claim to be a silver bullet. 
-            We solve the <span className="text-success font-bold">scalable threat problem</span> (95% of fraud), 
-            so CISOs can focus resources on <span className="text-danger font-bold">targeted APTs</span> (5% but critical).
+            {t(tr.trust, language)}
           </p>
         </div>
       </motion.div>

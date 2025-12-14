@@ -49,17 +49,17 @@ export function SlideCover() {
           <div className="flex flex-col items-center p-4 border border-accent/20 bg-surface-card/50 backdrop-blur-sm rounded-lg hover:border-accent/50 transition-colors">
             <Fingerprint className="w-8 h-8 text-accent mb-2" />
             <span className="text-3xl font-bold text-white text-glow">98.9%</span>
-            <span className="text-xs text-ink-secondary uppercase tracking-wider">Accuracy</span>
+            <span className="text-xs text-ink-secondary uppercase tracking-wider">{t(tr.stats, language).accuracy}</span>
           </div>
           <div className="flex flex-col items-center p-4 border border-success/20 bg-surface-card/50 backdrop-blur-sm rounded-lg hover:border-success/50 transition-colors">
             <ShieldCheck className="w-8 h-8 text-success mb-2" />
             <span className="text-3xl font-bold text-white text-glow-success">0%</span>
-            <span className="text-xs text-ink-secondary uppercase tracking-wider">Breaches</span>
+            <span className="text-xs text-ink-secondary uppercase tracking-wider">{t(tr.stats, language).breaches}</span>
           </div>
           <div className="flex flex-col items-center p-4 border border-accent/20 bg-surface-card/50 backdrop-blur-sm rounded-lg hover:border-accent/50 transition-colors">
             <Timer className="w-8 h-8 text-accent mb-2" />
             <span className="text-3xl font-bold text-white text-glow">48s</span>
-            <span className="text-xs text-ink-secondary uppercase tracking-wider">Auth Time</span>
+            <span className="text-xs text-ink-secondary uppercase tracking-wider">{t(tr.stats, language).authTime}</span>
           </div>
         </motion.div>
 
@@ -82,7 +82,7 @@ export function SlideCover() {
           transition={{ delay: 1, duration: 1 }}
           className="absolute bottom-32 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-2"
         >
-          <span className="text-[10px] uppercase tracking-[0.2em] text-ink-tertiary animate-pulse">Initialize</span>
+          <span className="text-[10px] uppercase tracking-[0.2em] text-ink-tertiary animate-pulse">{t(tr.stats, language).initialize}</span>
           <div className="w-px h-12 bg-linear-to-b from-accent to-transparent" />
         </motion.div>
       </div>

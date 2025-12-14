@@ -20,7 +20,7 @@ export function SlideMarket() {
     <SlideLayout showMatrixBackground matrixColor="#00F0FF">
       <SectionTitle 
         title={t(tr.title, language)} 
-        subtitle="Addressable Market & Growth Vectors"
+        subtitle={t(tr.subtitle, language)}
       />
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-8">
@@ -68,9 +68,9 @@ export function SlideMarket() {
 
           <div className="mt-8 p-4 border border-accent/20 bg-accent/5 rounded-lg">
             <p className="text-sm text-ink-secondary font-mono">
-              MARKET_CAGR: +24% (2024-2030)
+              {t(tr.cagr, language)}
               <br/>
-              REGULATORY_TAILWINDS: STRONG
+              {t(tr.tailwinds, language)}
             </p>
           </div>
         </div>

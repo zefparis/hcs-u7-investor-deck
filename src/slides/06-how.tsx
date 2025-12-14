@@ -18,7 +18,7 @@ export function SlideHow() {
     <SlideLayout showMatrixBackground matrixColor="#00F0FF">
       <SectionTitle 
         title={t(tr.title, language)} 
-        subtitle="The Biological Firewall"
+        subtitle={t(tr.subtitle, language)}
       />
 
       <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mt-8 mb-8">

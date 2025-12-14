@@ -3,25 +3,30 @@
 import { motion } from 'framer-motion';
 import { SlideLayout } from '@/components/SlideLayout';
 import { Zap, Cloud, Shield, Cpu } from 'lucide-react';
+import { useLanguage } from '@/lib/LanguageContext';
+import { translations, t } from '@/lib/translations';
 
 export function SlideEcosystem() {
+  const { language } = useLanguage();
+  const tr = translations.ecosystem;
+
   const partnerships = [
     {
       icon: Zap,
-      category: 'AI Infrastructure',
+      category: t(tr.cats, language)[0].name,
       partners: [
         {
-          name: 'Mistral AI',
+          name: t(tr.cats, language)[0].items[0].name,
           logo: '🇫🇷',
-          status: 'Integration planned',
-          value: 'LLM-powered cognitive test generation',
+          status: t(tr.cats, language)[0].items[0].status,
+          value: t(tr.cats, language)[0].items[0].val,
           timeline: 'Q2 2025'
         },
         {
-          name: 'Anthropic (Claude)',
+          name: t(tr.cats, language)[0].items[1].name,
           logo: '🤖',
-          status: 'API integrated',
-          value: 'Advanced prompt injection detection',
+          status: t(tr.cats, language)[0].items[1].status,
+          value: t(tr.cats, language)[0].items[1].val,
           timeline: 'Live'
         }
       ],
@@ -29,27 +34,27 @@ export function SlideEcosystem() {
     },
     {
       icon: Cloud,
-      category: 'Cloud & Infrastructure',
+      category: t(tr.cats, language)[1].name,
       partners: [
         {
-          name: 'Railway',
+          name: t(tr.cats, language)[1].items[0].name,
           logo: '🚂',
-          status: 'Production deployment',
-          value: 'Backend hosting (hcs-u7.online)',
+          status: t(tr.cats, language)[1].items[0].status,
+          value: t(tr.cats, language)[1].items[0].val,
           timeline: 'Live'
         },
         {
-          name: 'Vercel',
+          name: t(tr.cats, language)[1].items[1].name,
           logo: '▲',
-          status: 'Production deployment',
-          value: 'Frontend hosting (Next.js)',
+          status: t(tr.cats, language)[1].items[1].status,
+          value: t(tr.cats, language)[1].items[1].val,
           timeline: 'Live'
         },
         {
-          name: 'Cloudflare',
+          name: t(tr.cats, language)[1].items[2].name,
           logo: '☁️',
-          status: 'Active',
-          value: 'CDN + DDoS protection (200+ datacenters)',
+          status: t(tr.cats, language)[1].items[2].status,
+          value: t(tr.cats, language)[1].items[2].val,
           timeline: 'Live'
         }
       ],
@@ -57,20 +62,20 @@ export function SlideEcosystem() {
     },
     {
       icon: Shield,
-      category: 'Defense & Tactical',
+      category: t(tr.cats, language)[2].name,
       partners: [
         {
-          name: 'ArduPilot / PX4',
+          name: t(tr.cats, language)[2].items[0].name,
           logo: '🚁',
-          status: 'Integration planned',
-          value: 'Open-source drone autopilot integration',
+          status: t(tr.cats, language)[2].items[0].status,
+          value: t(tr.cats, language)[2].items[0].val,
           timeline: 'Q1 2025'
         },
         {
-          name: 'ATAK (TAK.gov)',
+          name: t(tr.cats, language)[2].items[1].name,
           logo: '🎖️',
-          status: 'Evaluation',
-          value: 'Android Team Awareness Kit plugin',
+          status: t(tr.cats, language)[2].items[1].status,
+          value: t(tr.cats, language)[2].items[1].val,
           timeline: 'Q2 2025'
         }
       ],
@@ -78,20 +83,20 @@ export function SlideEcosystem() {
     },
     {
       icon: Cpu,
-      category: 'Hardware & Security',
+      category: t(tr.cats, language)[3].name,
       partners: [
         {
-          name: 'YubiKey (Yubico)',
+          name: t(tr.cats, language)[3].items[0].name,
           logo: '🔑',
-          status: 'Roadmap',
-          value: 'HSM integration for HCS-SHIELD',
+          status: t(tr.cats, language)[3].items[0].status,
+          value: t(tr.cats, language)[3].items[0].val,
           timeline: 'Q3 2025'
         },
         {
-          name: 'AWS KMS',
+          name: t(tr.cats, language)[3].items[1].name,
           logo: '☁️',
-          status: 'Active',
-          value: 'Secret management (non-extractible keys)',
+          status: t(tr.cats, language)[3].items[1].status,
+          value: t(tr.cats, language)[3].items[1].val,
           timeline: 'Live'
         }
       ],
@@ -107,7 +112,7 @@ export function SlideEcosystem() {
   };
 
   return (
-    <SlideLayout title="Ecosystem & Partnerships" subtitle="Strategic integrations for market expansion">
+    <SlideLayout title={t(tr.title, language)} subtitle={t(tr.subtitle, language)}>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {partnerships.map((cat, idx) => {
           const Icon = cat.icon;
@@ -158,27 +163,24 @@ export function SlideEcosystem() {
         transition={{ delay: 0.5 }}
         className="mt-8 p-6 border border-border bg-surface-elevated rounded-lg"
       >
-        <h4 className="text-lg font-bold text-ink mb-4">Partnership Strategy</h4>
+        <h4 className="text-lg font-bold text-ink mb-4">{t(tr.strategyTitle, language)}</h4>
         <div className="grid md:grid-cols-3 gap-6">
           <div>
-            <div className="text-sm font-semibold text-accent mb-2">Technology Partners</div>
+            <div className="text-sm font-semibold text-accent mb-2">{t(tr.strategy, language)[0].title}</div>
             <p className="text-xs text-ink-tertiary">
-              Leverage best-in-class infrastructure (Mistral AI, Cloudflare) 
-              to accelerate time-to-market and reduce R&D costs.
+              {t(tr.strategy, language)[0].desc}
             </p>
           </div>
           <div>
-            <div className="text-sm font-semibold text-success mb-2">Distribution Partners</div>
+            <div className="text-sm font-semibold text-success mb-2">{t(tr.strategy, language)[1].title}</div>
             <p className="text-xs text-ink-tertiary">
-              Integrate with existing tactical platforms (ATAK, ArduPilot) 
-              to reach defense customers through established channels.
+              {t(tr.strategy, language)[1].desc}
             </p>
           </div>
           <div>
-            <div className="text-sm font-semibold text-purple-400 mb-2">Security Partners</div>
+            <div className="text-sm font-semibold text-purple-400 mb-2">{t(tr.strategy, language)[2].title}</div>
             <p className="text-xs text-ink-tertiary">
-              Hardware integration (YubiKey, AWS KMS) for enterprise customers 
-              requiring HSM-grade key protection.
+              {t(tr.strategy, language)[2].desc}
             </p>
           </div>
         </div>
@@ -192,20 +194,20 @@ export function SlideEcosystem() {
         className="mt-4 grid grid-cols-4 gap-4 text-center"
       >
         <div className="p-3 border border-border bg-surface-elevated rounded">
-          <div className="text-2xl font-bold text-purple-400">12+</div>
-          <div className="text-xs text-ink-tertiary">Partners</div>
+          <div className="text-2xl font-bold text-purple-400">{t(tr.stats, language)[0].val}</div>
+          <div className="text-xs text-ink-tertiary">{t(tr.stats, language)[0].label}</div>
         </div>
         <div className="p-3 border border-border bg-surface-elevated rounded">
-          <div className="text-2xl font-bold text-accent">6</div>
-          <div className="text-xs text-ink-tertiary">Live integrations</div>
+          <div className="text-2xl font-bold text-accent">{t(tr.stats, language)[1].val}</div>
+          <div className="text-xs text-ink-tertiary">{t(tr.stats, language)[1].label}</div>
         </div>
         <div className="p-3 border border-border bg-surface-elevated rounded">
-          <div className="text-2xl font-bold text-success">4</div>
-          <div className="text-xs text-ink-tertiary">Defense channels</div>
+          <div className="text-2xl font-bold text-success">{t(tr.stats, language)[2].val}</div>
+          <div className="text-xs text-ink-tertiary">{t(tr.stats, language)[2].label}</div>
         </div>
         <div className="p-3 border border-border bg-surface-elevated rounded">
-          <div className="text-2xl font-bold text-warning">€0</div>
-          <div className="text-xs text-ink-tertiary">Integration cost</div>
+          <div className="text-2xl font-bold text-warning">{t(tr.stats, language)[3].val}</div>
+          <div className="text-xs text-ink-tertiary">{t(tr.stats, language)[3].label}</div>
         </div>
       </motion.div>
     </SlideLayout>

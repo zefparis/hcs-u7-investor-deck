@@ -18,7 +18,7 @@ export function SlideAsk() {
     <SlideLayout showMatrixBackground matrixColor="#00FF9D">
       <SectionTitle 
         title={t(tr.title, language)} 
-        subtitle="Investment Opportunity"
+        subtitle={t(tr.subtitle, language)}
       />
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-8">

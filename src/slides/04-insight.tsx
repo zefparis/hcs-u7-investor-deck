@@ -52,8 +52,8 @@ export function SlideInsight() {
                     <Cpu className="w-8 h-8 text-ink-secondary" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-ink-secondary">Behavioral Analysis</h3>
-                    <p className="text-sm text-ink-tertiary">Can be simulated by AI agents</p>
+                    <h3 className="text-xl font-bold text-ink-secondary">{t(tr.behAnalysis, language)}</h3>
+                    <p className="text-sm text-ink-tertiary">{t(tr.simulated, language)}</p>
                   </div>
                 </div>
 
@@ -68,8 +68,8 @@ export function SlideInsight() {
                     <BrainCircuit className="w-8 h-8 text-accent" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-white text-glow">Cognitive Biometrics</h3>
-                    <p className="text-sm text-accent-muted">Impossible to fake without AGI</p>
+                    <h3 className="text-xl font-bold text-white text-glow">{t(tr.cogBio, language)}</h3>
+                    <p className="text-sm text-accent-muted">{t(tr.impossible, language)}</p>
                   </div>
                 </div>
               </div>
