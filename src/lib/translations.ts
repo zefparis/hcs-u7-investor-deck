@@ -284,30 +284,30 @@ export const translations = {
     assetsLabel: { fr: 'Actifs Construits', en: 'Assets Built' },
     timeline: {
       fr: [
-        { date: 'T3 2024', title: 'Recherche', items: ['Thèse', '6 protocoles', '98.9% précision'] },
-        { date: 'T4 2024', title: 'MVP', items: ['Site Next.js', 'Backend Railway', 'SDKs JS/Python'] },
-        { date: 'NOV 2025', title: 'PI Déposée', items: ['FR2514274', 'FR2514546', 'Validé INPI'] },
-        { date: 'MAINTENANT', title: 'Prêt au Lancement', items: ['Docs complètes', 'Dashboard client', 'Pitch investisseur'] },
+        { date: 'T4 2024', title: 'Brevets RECEVABLES', items: ['FR2514274 (Système HCS) - RECEVABLE', 'FR2514546 (Entropie) - RECEVABLE', 'Backend production (88 fichiers)', 'Audit Siege-Wall: 99.9/100'] },
+        { date: 'T4 2024', title: 'Déploiement Prod', items: ['Backend HCS-AUTH live', 'PWA HCS-SHIELD déployée', 'Dashboard Admin', 'Portail Client'] },
+        { date: 'T1 2025', title: 'Validation Marché', items: ['5 Pilotes B2B Enterprise', 'Démos Défense B2G', 'Levée Seed €500K', 'Expansion équipe (3→6)'] },
+        { date: '2025+', title: 'Accélération', items: ['Certification SOC2', 'Extensions Brevets US/EU', 'Partenariats Stratégiques'] },
       ],
       en: [
-        { date: 'Q3 2024', title: 'Research', items: ['Thesis', '6 protocols', '98.9% accuracy'] },
-        { date: 'Q4 2024', title: 'MVP', items: ['Next.js site', 'Railway backend', 'SDKs JS/Python'] },
-        { date: 'NOV 2025', title: 'IP Filed', items: ['FR2514274', 'FR2514546', 'INPI validated'] },
-        { date: 'NOW', title: 'Launch Ready', items: ['Full docs', 'Client dashboard', 'Investor pitch'] },
+        { date: 'Q4 2024', title: 'Patents RECEVABLE', items: ['FR2514274 (HCS System) - RECEVABLE', 'FR2514546 (Entropy) - RECEVABLE', 'Backend production (88 files)', 'Siege-Wall audit: 99.9/100'] },
+        { date: 'Q4 2024', title: 'Production Deployment', items: ['HCS-AUTH backend live', 'HCS-SHIELD PWA deployed', 'Admin dashboard', 'Client portal'] },
+        { date: 'Q1 2025', title: 'Market Validation', items: ['5 B2B Enterprise pilots', 'B2G Defense demos', 'Seed fundraising €500K', 'Team expansion (3→6)'] },
+        { date: '2025+', title: 'Acceleration', items: ['SOC2 Certification', 'US/EU Patent Extensions', 'Strategic Partnerships'] },
       ],
     },
     assets: {
       fr: [
-        { value: '6', label: 'Tests cognitifs' },
-        { value: '16', label: 'Couches de sécurité' },
-        { value: '2', label: 'Langages SDK' },
-        { value: '20+', label: 'Endpoints API' },
+        { value: '7', label: 'Tests cognitifs' },
+        { value: '8', label: 'Couches sécurité' },
+        { value: '2', label: 'Brevets Recevables' },
+        { value: '100%', label: 'Déployé' },
       ],
       en: [
-        { value: '6', label: 'Cognitive tests' },
-        { value: '16', label: 'Security layers' },
-        { value: '2', label: 'SDK languages' },
-        { value: '20+', label: 'API endpoints' },
+        { value: '7', label: 'Cognitive tests' },
+        { value: '8', label: 'Security layers' },
+        { value: '2', label: 'Patents Recevable' },
+        { value: '100%', label: 'Deployed' },
       ],
     },
   },
@@ -319,12 +319,12 @@ export const translations = {
       fr: [
         { phase: 'PHASE 1', period: 'M1-6', title: 'Atterrir', items: ['3-5 pilotes (gratuit)', 'Études de cas', 'Preuve PSD2'], target: '€50K ARR' },
         { phase: 'PHASE 2', period: 'M6-12', title: 'Étendre', items: ['Conversion payant', 'Partenariats PSP', 'Contenu + SEO'], target: '€500K ARR' },
-        { phase: 'PHASE 3', period: 'A2-3', title: 'Scaler', items: ['Équipe Enterprise', 'Certification SOC2', 'Expansion UK/DACH'], target: '€3M ARR' },
+        { phase: 'PHASE 3', period: 'A2-3', title: 'Scaler', items: ['Équipe Enterprise', 'Certification SOC2', 'Expansion UK/DACH'], target: '€3.5M ARR' },
       ],
       en: [
         { phase: 'PHASE 1', period: 'M1-6', title: 'Land', items: ['3-5 pilots (free)', 'Case studies', 'PSD2 proof'], target: '€50K ARR' },
         { phase: 'PHASE 2', period: 'M6-12', title: 'Expand', items: ['Convert to paid', 'PSP partnerships', 'Content + SEO'], target: '€500K ARR' },
-        { phase: 'PHASE 3', period: 'Y2-3', title: 'Scale', items: ['Enterprise team', 'SOC2 certification', 'UK/DACH expansion'], target: '€3M ARR' },
+        { phase: 'PHASE 3', period: 'Y2-3', title: 'Scale', items: ['Enterprise team', 'SOC2 certification', 'UK/DACH expansion'], target: '€3.5M ARR' },
       ],
     },
     icp: {
@@ -335,19 +335,22 @@ export const translations = {
 
   // Slide 14 - Financials
   financials: {
-    title: { fr: '€500K → €3.5M ARR en 36 mois', en: '€500K → €3.5M ARR in 36 months' },
+    title: { fr: '€500K → €7.5M ARR en 36 mois', en: '€500K → €7.5M ARR in 36 months' },
     profitLabel: { fr: 'Chemin vers la Rentabilité', en: 'Path to Profitability' },
     profitText: { fr: 'Rentabilité à ~€2.5M ARR (Mois 30)', en: 'Break-even at ~€2.5M ARR (Month 30)' },
+    // Simplified structure for the translation file, but we will likely use hardcoded logic for the dual bar chart in the component 
+    // to match the specific "cyber + defense" requirement properly. 
+    // Keeping a basic structure here for fallback/reference.
     chartData: {
       fr: [
-        { label: 'Année 1', value: 0.5, displayValue: '€0.5M', subItems: ['15 clients', '€33K ACV', '3 personnes', '€25K/mois burn'] },
-        { label: 'Année 2', value: 1.5, displayValue: '€1.5M', subItems: ['50 clients', '€30K ACV', '8 personnes', '€60K/mois burn'] },
-        { label: 'Année 3', value: 3.5, displayValue: '€3.5M', subItems: ['150 clients', '€23K ACV', '18 personnes', 'Rentabilité'] },
+        { label: 'Année 1', value: 0.06, displayValue: '€60K', subItems: ['100 utilisateurs Cyber', '10 unités Défense'] },
+        { label: 'Année 2', value: 1.9, displayValue: '€1.9M', subItems: ['2K utilisateurs Cyber', '500 unités Défense'] },
+        { label: 'Année 3', value: 7.5, displayValue: '€7.5M', subItems: ['10K utilisateurs Cyber', '2K unités Défense'] },
       ],
       en: [
-        { label: 'Year 1', value: 0.5, displayValue: '€0.5M', subItems: ['15 customers', '€33K ACV', '3 team', '€25K/mo burn'] },
-        { label: 'Year 2', value: 1.5, displayValue: '€1.5M', subItems: ['50 customers', '€30K ACV', '8 team', '€60K/mo burn'] },
-        { label: 'Year 3', value: 3.5, displayValue: '€3.5M', subItems: ['150 customers', '€23K ACV', '18 team', 'Break-even'] },
+        { label: 'Year 1', value: 0.06, displayValue: '€60K', subItems: ['100 Cyber users', '10 Defense units'] },
+        { label: 'Year 2', value: 1.9, displayValue: '€1.9M', subItems: ['2K Cyber users', '500 Defense units'] },
+        { label: 'Year 3', value: 7.5, displayValue: '€7.5M', subItems: ['10K Cyber users', '2K Defense units'] },
       ],
     },
   },

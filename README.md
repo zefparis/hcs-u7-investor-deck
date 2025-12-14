@@ -11,10 +11,11 @@ A 16-slide investor pitch deck for HCS-U7, a French deep-tech cybersecurity star
 - **16 navigable slides** with smooth Framer Motion transitions
 - **Keyboard navigation** (← → arrow keys, spacebar)
 - **Touch/swipe navigation** for mobile devices
-- **Dark mode toggle** with system preference detection
-- **PDF export** via browser print (Ctrl/Cmd + P)
+- **"Cyberpunk 2030" design system** — High-contrast neon aesthetics
+- **Interactive Data Visualization** — Animated charts and diagrams
+- **Digital Rain Effect** — Matrix-style background animations
 - **Responsive design** optimized for desktop and mobile
-- **"2030 Institutional" design system** — Goldman Sachs meets Dieter Rams
+- **PDF export** via browser print (Ctrl/Cmd + P)
 
 ## Getting Started
 
@@ -41,43 +42,44 @@ Open [http://localhost:3000](http://localhost:3000) to view the presentation.
 | Next slide | → or Space | Swipe left |
 | Previous slide | ← | Swipe right |
 | Go to slide | Click progress dot | Tap progress dot |
-| Toggle dark mode | Click moon/sun icon | Tap moon/sun icon |
+| Toggle language | Click EN/FR | Tap EN/FR |
 | Export PDF | Click PDF button | Tap PDF button |
 
 ## Design System
 
+**"Cyberpunk 2030"** — High-contrast neon aesthetics optimized for dark environments.
+
 ### Colors
-- **Surface**: `#FAFAFA` (light) / `#0A0A0A` (dark)
-- **Ink**: `#0A0A0A` (light) / `#FAFAFA` (dark)
-- **Accent**: `#0066FF`
-- **Success**: `#059669`
-- **Danger**: `#DC2626`
+- **Surface**: `#050505` (Deep Black)
+- **Ink**: `#FFFFFF` (White) / `#94A3B8` (Secondary)
+- **Accent**: `#00F0FF` (Cyber Blue)
+- **Success**: `#00FF9D` (Neon Green)
+- **Danger**: `#FF003C` (Neon Red)
+- **Warning**: `#FIEE00` (Neon Yellow)
 
 ### Typography
-- **Headlines**: Inter, 700 weight, -0.02em tracking
-- **Body**: Inter, 400 weight, 1.5 line-height
-- **Data/Numbers**: JetBrains Mono
+- **Headlines**: 'Inter', sans-serif
+- **Mono**: 'JetBrains Mono', monospace (for data & technical details)
 
 ## Project Structure
 
 ```
 src/
 ├── app/
-│   ├── globals.css      # Design system & print styles
-│   ├── layout.tsx       # Root layout with fonts
+│   ├── globals.css      # Cyberpunk design system
+│   ├── layout.tsx       # Root layout
 │   └── page.tsx         # Main presentation controller
 ├── components/
-│   ├── SlideLayout.tsx  # Base slide wrapper
-│   ├── MetricCard.tsx   # Large metric display
-│   ├── ProgressBar.tsx  # Animated progress bars
-│   ├── ComparisonTable.tsx
-│   ├── TestCard.tsx
-│   ├── LayerDiagram.tsx
-│   ├── FunnelChart.tsx
-│   ├── PricingTier.tsx
-│   ├── Timeline.tsx
-│   ├── BarChart.tsx
-│   └── Navigation.tsx   # Bottom navigation bar
+│   ├── SlideLayout.tsx  # Base slide wrapper with animations
+│   ├── Navigation.tsx   # Bottom navigation bar
+│   ├── CyberComponents.tsx # Glitch text, cyber cards, buttons
+│   ├── DigitalRain.tsx  # Matrix-style background effect
+│   ├── LayerDiagram.tsx # Architecture visualization
+│   ├── ComparisonTable.tsx # Feature comparison
+│   ├── FunnelChart.tsx  # Sales funnel visualization
+│   ├── BarChart.tsx     # Data visualization
+│   ├── PricingTier.tsx  # Business model cards
+│   └── Timeline.tsx     # Roadmap visualization
 └── slides/
     ├── 01-cover.tsx     # Cover slide
     ├── 02-shift.tsx     # AI broke authentication
@@ -94,7 +96,7 @@ src/
     ├── 13-gtm.tsx       # Go-to-market
     ├── 14-financials.tsx
     ├── 15-ask.tsx       # The ask
-    └── 16-team.tsx      # Team & contact
+    ├── 16-team.tsx      # Team & contact
 ```
 
 ## Deployment

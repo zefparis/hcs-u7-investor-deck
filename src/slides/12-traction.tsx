@@ -44,10 +44,10 @@ export function SlideTraction() {
                 <div className="flex justify-center mb-3">
                   <Icon className="w-6 h-6 text-accent opacity-70 group-hover:opacity-100 transition-opacity" />
                 </div>
-                <span className="block font-mono text-3xl font-bold text-white text-glow mb-1">
+                <span className="block font-mono text-2xl md:text-3xl font-bold text-white text-glow mb-1">
                   {asset.value}
                 </span>
-                <span className="block text-xs text-ink-secondary uppercase tracking-wider">
+                <span className="block text-xs text-ink-secondary uppercase tracking-wider leading-tight">
                   {asset.label}
                 </span>
               </CyberCard>

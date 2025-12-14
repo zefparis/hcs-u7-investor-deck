@@ -11,6 +11,8 @@ interface SlideLayoutProps {
   centered?: boolean;
   showMatrixBackground?: boolean;
   matrixColor?: string;
+  title?: string;
+  subtitle?: string;
 }
 
 export function SlideLayout({ 
@@ -18,7 +20,9 @@ export function SlideLayout({
   className = '', 
   centered = false,
   showMatrixBackground = false,
-  matrixColor
+  matrixColor,
+  title,
+  subtitle
 }: SlideLayoutProps) {
   return (
     <motion.section
@@ -48,6 +52,30 @@ export function SlideLayout({
         "relative z-10 w-full max-w-[1200px] mx-auto flex-1 flex flex-col",
         centered ? 'items-center justify-center' : ''
       )}>
+        {(title || subtitle) && (
+          <div className="mb-8">
+            {title && (
+              <motion.h2 
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="text-3xl md:text-4xl font-bold text-ink mb-2"
+              >
+                {title}
+              </motion.h2>
+            )}
+            {subtitle && (
+              <motion.p 
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.1 }}
+                className="text-xl text-accent"
+              >
+                {subtitle}
+              </motion.p>
+            )}
+            <div className="h-px w-full bg-linear-to-r from-accent/50 to-transparent mt-6" />
+          </div>
+        )}
         {children}
       </div>
     </motion.section>
