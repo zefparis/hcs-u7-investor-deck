@@ -88,7 +88,7 @@ export function SlideShift() {
 
       </div>
 
-      <footer className="absolute bottom-8 right-8 text-xs text-ink-tertiary font-mono">
+      <footer className="w-full text-right mt-auto pt-8 text-xs text-ink-tertiary font-mono">
         SOURCE_DATA: JUNIPER_RESEARCH_2024 // IMPERVA_THREAT_REPORT
       </footer>
     </SlideLayout>

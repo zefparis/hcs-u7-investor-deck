@@ -34,7 +34,7 @@ export function SlideInsight() {
                 as="h1" 
                 className="text-5xl md:text-7xl font-bold leading-tight text-white mb-8"
               />
-              <div className="h-1 w-32 bg-gradient-to-r from-accent to-transparent" />
+              <div className="h-1 w-32 bg-linear-to-r from-accent to-transparent" />
             </motion.div>
           </div>
 
@@ -59,7 +59,7 @@ export function SlideInsight() {
 
                 {/* Arrow Down */}
                 <div className="flex justify-center">
-                  <div className="w-px h-8 bg-gradient-to-b from-ink-secondary/20 to-accent" />
+                  <div className="w-px h-8 bg-linear-to-b from-ink-secondary/20 to-accent" />
                 </div>
 
                 {/* Human Representation */}

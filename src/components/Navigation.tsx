@@ -32,7 +32,7 @@ export function MobileTopBar({
       initial={{ opacity: 0, y: -10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.3 }}
-      className="fixed top-0 left-0 right-0 z-50 bg-surface/80 backdrop-blur-md border-b border-accent/20 no-print"
+      className="fixed top-0 left-0 right-0 z-50 bg-surface/80 backdrop-blur-md border-b border-accent/20 no-print md:hidden"
     >
       <div className="flex items-center justify-between px-4 py-3">
         {/* Logo/Brand */}
