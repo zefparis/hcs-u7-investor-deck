@@ -69,7 +69,7 @@ export function SlideInsight() {
                   </div>
                   <div>
                     <h3 className="text-xl font-bold text-white text-glow">Cognitive Biometrics</h3>
-                    <p className="text-sm text-accent-muted text-accent">Impossible to fake without AGI</p>
+                    <p className="text-sm text-accent-muted">Impossible to fake without AGI</p>
                   </div>
                 </div>
               </div>
