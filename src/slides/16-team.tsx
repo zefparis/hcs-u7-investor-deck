@@ -117,13 +117,13 @@ export function SlideTeam() {
                 <span className="text-sm font-mono text-white group-hover:text-accent transition-colors">contact@ia-solution.fr</span>
               </a>
               <a
-                href="https://hcs-u7.com"
+                href="https://ia-solution.fr"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 p-3 border border-accent/20 bg-accent/5 hover:bg-accent/10 transition-colors group"
               >
                 <ExternalLink className="w-5 h-5 text-accent" />
-                <span className="text-sm font-mono text-white group-hover:text-accent transition-colors">hcs-u7.com</span>
+                <span className="text-sm font-mono text-white group-hover:text-accent transition-colors">ia-solution.fr</span>
               </a>
             </div>
           </motion.div>

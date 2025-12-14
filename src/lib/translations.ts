@@ -455,7 +455,7 @@ export const translations = {
     },
     liveDemos: { fr: 'Démos Live', en: 'Live Demos' },
     demos: [
-      { name: 'HCS-AUTH', url: 'https://hcs-u7.online', icon: '🔐' },
+      { name: 'HCS-AUTH', url: 'https://hcs-u7.com', icon: '🔐' },
       { name: 'HCS-SHIELD', url: 'https://shield.ia-solution.fr', icon: '🚁' },
       { name: 'HCS-SIEGE', url: 'https://app.hcs-u7.org/', icon: '🛡️' },
     ],
