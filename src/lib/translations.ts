@@ -134,7 +134,7 @@ export const translations = {
 
   // Slide 6 - How
   how: {
-    title: { fr: '6 tests. 15-30 secondes. Infalsifiable.', en: '6 tests. 15-30 seconds. Unforgeable.' },
+    title: { fr: '7 tests. 15-30 secondes. Infalsifiable.', en: '7 tests. 15-30 seconds. Unforgeable.' },
     subtitle: { fr: 'Le pare-feu biologique', en: 'The Biological Firewall' },
     footer: {
       fr: 'Tous les tests validés par la recherche depuis 1868-2024',
@@ -168,7 +168,7 @@ export const translations = {
       fr: [
         { name: 'Couche 1', description: 'Cloudflare WAF + Rate Limiting' },
         { name: 'Couche 2', description: 'Clé API + Signature HMAC-SHA256' },
-        { name: 'Couche 3', description: 'Batterie de 6 Tests Cognitifs' },
+        { name: 'Couche 3', description: 'Batterie de 7 Tests Cognitifs' },
         { name: 'Couche 4', description: 'Entropie Céleste (FR2514546)', isPatent: true },
         { name: 'Couche 5', description: 'Fenêtres Temporelles Rotatives (10min)' },
         { name: 'Couche 6', description: 'Liaison Post-Quantique QSIG/B3' },
@@ -177,7 +177,7 @@ export const translations = {
       en: [
         { name: 'Layer 1', description: 'Cloudflare WAF + Rate Limiting' },
         { name: 'Layer 2', description: 'API Key + HMAC-SHA256 Signing' },
-        { name: 'Layer 3', description: '6-Test Cognitive Battery' },
+        { name: 'Layer 3', description: '7-Test Cognitive Battery' },
         { name: 'Layer 4', description: 'Celestial Entropy (FR2514546)', isPatent: true },
         { name: 'Layer 5', description: 'Rotating Time Windows (10min)' },
         { name: 'Layer 6', description: 'QSIG/B3 Post-Quantum Binding' },
@@ -453,6 +453,12 @@ export const translations = {
       fr: "Le seul système d'authentification cognitive breveté résistant à l'IA générative.",
       en: 'The only patented cognitive authentication system resistant to generative AI.',
     },
+    liveDemos: { fr: 'Démos Live', en: 'Live Demos' },
+    demos: [
+      { name: 'HCS-AUTH', url: 'https://hcs-u7.online', icon: '🔐' },
+      { name: 'HCS-SHIELD', url: 'https://shield.ia-solution.fr', icon: '🚁' },
+      { name: 'HCS-SIEGE', url: 'https://app.hcs-u7.org/', icon: '🛡️' },
+    ],
   },
 
   // Slide 17 - Crypto
