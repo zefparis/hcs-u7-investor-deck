@@ -3,7 +3,7 @@ export type Language = 'fr' | 'en';
 export const translations = {
   // Slide 1 - Cover
   cover: {
-    subtitle: { fr: 'Signature Cognitive Humaine', en: 'Human Cognitive Signature' },
+    subtitle: { fr: 'Signature Cognitive Humaine v8.1', en: 'Human Cognitive Signature v8.1' },
     tagline: {
       fr: "Authentification biométrique cognitive résistante à l'IA générative",
       en: 'Cognitive biometric authentication resistant to generative AI',
@@ -162,8 +162,8 @@ export const translations = {
 
   // Slide 7 - Technology
   technology: {
-    title: { fr: 'Architecture Défense en Profondeur', en: 'Defense-in-Depth Architecture' },
-    subtitle: { fr: 'Architecture de défense en profondeur', en: 'Defense-in-Depth Architecture' },
+    title: { fr: 'Architecture Défense 9 Couches', en: '9-Layer Defense Architecture' },
+    subtitle: { fr: 'Architecture de défense en profondeur v8.1', en: 'Defense-in-Depth Architecture v8.1' },
     layers: {
       fr: [
         { name: 'Couche 1', description: 'Cloudflare WAF + Rate Limiting' },
@@ -173,6 +173,8 @@ export const translations = {
         { name: 'Couche 5', description: 'Fenêtres Temporelles Rotatives (10min)' },
         { name: 'Couche 6', description: 'Liaison Post-Quantique QSIG/B3' },
         { name: 'Couche 7', description: 'Cache Anti-Rejeu Redis' },
+        { name: 'Couche 8', description: 'Honeypot Trap Layer (122 endpoints pièges)' },
+        { name: 'Couche 9', description: 'Device Fingerprint Module (15 patterns bot)' },
       ],
       en: [
         { name: 'Layer 1', description: 'Cloudflare WAF + Rate Limiting' },
@@ -182,6 +184,8 @@ export const translations = {
         { name: 'Layer 5', description: 'Rotating Time Windows (10min)' },
         { name: 'Layer 6', description: 'QSIG/B3 Post-Quantum Binding' },
         { name: 'Layer 7', description: 'Redis Anti-Replay Cache' },
+        { name: 'Layer 8', description: 'Honeypot Trap Layer (122 fake endpoints)' },
+        { name: 'Layer 9', description: 'Device Fingerprint Module (15 bot patterns)' },
       ],
     },
     patent1: { fr: 'Brevet #1', en: 'Patent #1' },
@@ -221,6 +225,28 @@ export const translations = {
     source: {
       fr: 'Source : Recherche doctorale · 10 chapitres · Protocoles validés par les pairs',
       en: 'Source: Doctoral research · 10 chapters · Peer-reviewed protocols',
+    },
+    operationalTitle: { fr: 'Sécurité Opérationnelle (15 jours)', en: 'Operational Security (15-day metrics)' },
+    operational: {
+      fr: [
+        { value: '518', label: 'Attaques bloquées', sub: 'Détection temps réel' },
+        { value: '0', label: 'Brèches', sub: 'Zéro compromission' },
+        { value: '556+', label: 'Tests automatisés', sub: 'CI/CD' },
+        { value: '12', label: 'Types d\'attaques', sub: 'Siege Wall simulés' },
+      ],
+      en: [
+        { value: '518', label: 'Attacks blocked', sub: 'Real-time detection' },
+        { value: '0', label: 'Breaches', sub: 'Zero compromise' },
+        { value: '556+', label: 'Automated tests', sub: 'CI/CD' },
+        { value: '12', label: 'Attack types', sub: 'Siege Wall simulated' },
+      ],
+    },
+    siegeWall: {
+      title: { fr: 'Siege Wall Framework', en: 'Siege Wall Framework' },
+      attacks: {
+        fr: ['honeypot-scan (24 chemins)', 'bot-fingerprint (5 types)', 'ip-rotation (vélocité)', 'ua-spoofing', 'evasion (7 techniques)'],
+        en: ['honeypot-scan (24 paths)', 'bot-fingerprint (5 types)', 'ip-rotation (velocity)', 'ua-spoofing', 'evasion (7 techniques)'],
+      },
     },
   },
 
@@ -343,15 +369,30 @@ export const translations = {
     assets: {
       fr: [
         { value: '7', label: 'Tests cognitifs' },
-        { value: '8', label: 'Couches sécurité' },
+        { value: '9', label: 'Couches sécurité' },
         { value: '2', label: 'Brevets Recevables' },
         { value: '100%', label: 'Déployé' },
       ],
       en: [
         { value: '7', label: 'Cognitive tests' },
-        { value: '8', label: 'Security layers' },
+        { value: '9', label: 'Security layers' },
         { value: '2', label: 'Patents Recevable' },
         { value: '100%', label: 'Deployed' },
+      ],
+    },
+    maturityLabel: { fr: 'Maturité Produit (Déc 2025)', en: 'Product Maturity (Dec 2025)' },
+    maturity: {
+      fr: [
+        { value: '30+', label: 'Routes live', sub: 'Support bilingue complet' },
+        { value: '126', label: 'Composants React', sub: 'Production-grade' },
+        { value: '2', label: 'Packages NPM', sub: '@hcs-u7/widget, siege-wall' },
+        { value: '17', label: 'Endpoints API', sub: 'Backend Railway' },
+      ],
+      en: [
+        { value: '30+', label: 'Live routes', sub: 'Full bilingual support' },
+        { value: '126', label: 'React components', sub: 'Production-grade' },
+        { value: '2', label: 'NPM packages', sub: '@hcs-u7/widget, siege-wall' },
+        { value: '17', label: 'API endpoints', sub: 'Railway backend' },
       ],
     },
   },
@@ -377,6 +418,25 @@ export const translations = {
     icp: {
       fr: 'Fintech/Néobanques (PSD2 obligatoire) · Banques régionales · E-commerce premium · Gaming',
       en: 'Fintech/Neobanks (PSD2 mandated) · Regional banks · Premium e-commerce · Gaming',
+    },
+    contentLabel: { fr: 'Assets Marketing (Live)', en: 'Content Marketing Assets (Live)' },
+    contentAssets: {
+      fr: [
+        { path: '/why-hcs-u7', label: 'Comparatif concurrentiel' },
+        { path: '/use-cases', label: '4 pages industries' },
+        { path: '/whitepaper', label: 'Livre blanc technique' },
+        { path: '/ai-act', label: 'Conformité EU AI Act' },
+        { path: '/the-proof', label: 'Validations scientifiques' },
+        { path: '/patents', label: 'Portfolio PI' },
+      ],
+      en: [
+        { path: '/why-hcs-u7', label: 'Competitive comparison' },
+        { path: '/use-cases', label: '4 industry-specific pages' },
+        { path: '/whitepaper', label: 'Technical white paper' },
+        { path: '/ai-act', label: 'EU AI Act compliance' },
+        { path: '/the-proof', label: 'Scientific validations' },
+        { path: '/patents', label: 'IP portfolio details' },
+      ],
     },
   },
 
@@ -479,10 +539,10 @@ export const translations = {
         { name: 'Celestial Entropy', title: 'Astronomical CSPRNG', tech: 'Planetary positions + CSPRNG', features: ['512 bits entropy', 'Patent FR2514546', 'Deterministic + secure'] }
       ]
     },
-    architectureTitle: { fr: 'Architecture de Défense à 8 Couches', en: '8-Layer Defense Architecture' },
+    architectureTitle: { fr: 'Architecture de Défense à 9 Couches', en: '9-Layer Defense Architecture' },
     layers: {
-      fr: ['1. Double Signature QSIG + B3', '2. Bouclier Hiéroglyphique', '3. Entropie Céleste', '4. AES-256-GCM', '5. Validation Timing-Safe', '6. Preuve de Travail', '7. Limitation de Débit', '8. Blockchain d\'Audit'],
-      en: ['1. QSIG + B3 Dual Signature', '2. Hieroglyphic Shield', '3. Celestial Entropy', '4. AES-256-GCM', '5. Timing-Safe Validation', '6. Proof-of-Work', '7. Rate Limiting', '8. Audit Blockchain']
+      fr: ['1. Double Signature QSIG + B3', '2. Bouclier Hiéroglyphique', '3. Entropie Céleste', '4. AES-256-GCM', '5. Validation Timing-Safe', '6. Preuve de Travail', '7. Limitation de Débit', '8. Honeypot Trap Layer', '9. Device Fingerprint Module'],
+      en: ['1. QSIG + B3 Dual Signature', '2. Hieroglyphic Shield', '3. Celestial Entropy', '4. AES-256-GCM', '5. Timing-Safe Validation', '6. Proof-of-Work', '7. Rate Limiting', '8. Honeypot Trap Layer', '9. Device Fingerprint Module']
     }
   },
 
@@ -582,9 +642,9 @@ export const translations = {
           en: ['→ Fastify (Node.js)', '→ Railway deployment', '→ 88 files production', '→ Siege-Wall audited']
         }
       },
-      security: { title: { fr: 'Couches Sécurité (8)', en: 'Security Layers (8)' }, items: {
-        fr: ['1. Signatures QSIG + B3', '2. Bouclier Hiéroglyphique', '3. Entropie Céleste', '4. AES-256-GCM', '5. Timing-safe (150ms min)', '6. Preuve de Travail', '7. Limitation de débit', '8. Blockchain d\'audit'],
-        en: ['1. QSIG + B3 signatures', '2. Hieroglyphic Shield', '3. Celestial Entropy', '4. AES-256-GCM', '5. Timing-safe (150ms min)', '6. Proof-of-Work', '7. Rate limiting', '8. Audit blockchain']
+      security: { title: { fr: 'Couches Sécurité (9)', en: 'Security Layers (9)' }, items: {
+        fr: ['1. Signatures QSIG + B3', '2. Bouclier Hiéroglyphique', '3. Entropie Céleste', '4. AES-256-GCM', '5. Timing-safe (150ms min)', '6. Preuve de Travail', '7. Limitation de débit', '8. Honeypot Trap', '9. Device Fingerprint'],
+        en: ['1. QSIG + B3 signatures', '2. Hieroglyphic Shield', '3. Celestial Entropy', '4. AES-256-GCM', '5. Timing-safe (150ms min)', '6. Proof-of-Work', '7. Rate limiting', '8. Honeypot Trap', '9. Device Fingerprint']
       }},
       db: { 
         title: { fr: 'Base de Données', en: 'Database' }, 
@@ -637,14 +697,16 @@ export const translations = {
     subtitle: { fr: 'Fossé de protection par brevet de 20 ans', en: '20-year patent protection moat' },
     patents: {
       fr: [
-        { title: 'Système HCS & Signature', status: 'RECEVABLE', scope: ['Méthode auth biométrique cognitive', 'Algorithme signature QSIG', 'Système rotation temporelle', 'Agrégation multi-tests', 'Génération & validation code'] },
-        { title: 'Génération Entropie Céleste', status: 'RECEVABLE', scope: ['Source entropie astronomique', 'Calcul position planétaire', 'CSPRNG déterministe', 'Renforcement cryptographique', 'Mixage entropie hybride'] }
+        { number: 'FR2514274', title: 'Système auth biométrique cognitive multi-couches', status: 'PENDING', scope: ['Mécanisme auth cognitif principal', 'Architecture 9 couches', 'Algorithme scoring combiné (70% cognitif + 30% comportemental)', 'Agrégation multi-tests', 'Génération & validation code'] },
+        { number: 'FR2514546', title: 'Architecture distribuée pour auth biométrique cognitive', status: 'PENDING', scope: ['Source entropie astronomique', 'Scalabilité déploiement enterprise', 'CSPRNG déterministe', 'Renforcement cryptographique', 'Mixage entropie hybride'] }
       ],
       en: [
-        { title: 'HCS System & Signature', status: 'RECEVABLE', scope: ['Cognitive biometric authentication method', 'QSIG signature algorithm', 'Time-window rotation system', 'Multi-test aggregation', 'Code generation & validation'] },
-        { title: 'Celestial Entropy Generation', status: 'RECEVABLE', scope: ['Astronomical entropy source', 'Planetary position calculation', 'Deterministic CSPRNG', 'Cryptographic enhancement', 'Hybrid entropy mixing'] }
+        { number: 'FR2514274', title: 'Multi-layer cognitive biometric authentication system', status: 'PENDING', scope: ['Core cognitive auth mechanism', '9-layer architecture', 'Combined scoring algorithm (70% cognitive + 30% behavioral)', 'Multi-test aggregation', 'Code generation & validation'] },
+        { number: 'FR2514546', title: 'Distributed architecture for cognitive biometric authentication', status: 'PENDING', scope: ['Astronomical entropy source', 'Scalability and enterprise deployment', 'Deterministic CSPRNG', 'Cryptographic enhancement', 'Hybrid entropy mixing'] }
       ]
     },
+    filedDate: { fr: 'Dépôt : 30 Novembre 2025 | INPI France', en: 'Filed: November 30, 2025 | INPI France' },
+    licenseInfo: { fr: 'Licence commerciale : LICENSE-COMMERCIAL.md', en: 'Commercial licensing: LICENSE-COMMERCIAL.md' },
     labels: {
       filed: { fr: 'Dépôt', en: 'Filed' },
       protection: { fr: 'Protection', en: 'Protection' },
@@ -654,13 +716,13 @@ export const translations = {
     moat: {
       fr: [
         { title: 'Protection Brevet', desc: 'Droits exclusifs 20 ans', impact: 'Barrière légale' },
-        { title: 'Complexité Technique', desc: 'Architecture crypto 8 couches', impact: '5-7 ans réplication' },
+        { title: 'Complexité Technique', desc: 'Architecture crypto 9 couches', impact: '5-7 ans réplication' },
         { title: 'Algorithmes Propriétaires', desc: 'QSIG, B3, Bouclier Hiéroglyphique', impact: 'Secrets commerciaux' },
         { title: 'Premier Entrant', desc: 'Pionnier auth cognitive', impact: 'Reconnaissance marque' }
       ],
       en: [
         { title: 'Patent Protection', desc: '20-year exclusive rights', impact: 'Legal moat' },
-        { title: 'Technical Complexity', desc: '8-layer crypto architecture', impact: '5-7 years replication' },
+        { title: 'Technical Complexity', desc: '9-layer crypto architecture', impact: '5-7 years replication' },
         { title: 'Proprietary Algorithms', desc: 'QSIG, B3, Hieroglyphic Shield', impact: 'Trade secrets' },
         { title: 'First-Mover', desc: 'Cognitive auth pioneer', impact: 'Brand recognition' }
       ]
@@ -677,22 +739,40 @@ export const translations = {
       fr: [
         { label: 'Attaques Bloquées', sub: '15 jours continus' },
         { label: 'Brèches', sub: 'Zéro compromission' },
-        { label: 'Score Sécurité', sub: 'Audit Siege-Wall' },
-        { label: 'Fichiers Audités', sub: 'Backend production' }
+        { label: 'Tests Automatisés', sub: 'CI/CD passés' },
+        { label: 'Types Attaques', sub: 'Siege Wall simulés' }
       ],
       en: [
         { label: 'Attacks Blocked', sub: '15 days continuous' },
         { label: 'Breaches', sub: 'Zero compromise' },
-        { label: 'Security Score', sub: 'Siege-Wall audit' },
-        { label: 'Files Audited', sub: 'Backend production' }
+        { label: 'Automated Tests', sub: 'CI/CD passed' },
+        { label: 'Attack Types', sub: 'Siege Wall simulated' }
       ]
     },
     attacksTitle: { fr: 'Types d\'Attaques Bloquées', en: 'Attack Types Blocked' },
-    defenseTitle: { fr: 'Défense à 8 Couches', en: '8-Layer Defense' },
+    defenseTitle: { fr: 'Défense à 9 Couches', en: '9-Layer Defense' },
     layers: {
-      fr: ['Double signature validation', 'KDF Memory-hard (coût 16 MB)', 'Entropie céleste', 'Chiffrement AES-256', 'Empêche attaques temporelles', 'Preuve de travail', 'Limitation débit', 'Piste audit immuable'],
-      en: ['Double signature validation', 'Memory-hard KDF (16 MB cost)', 'Celestial entropy', 'AES-256 encryption', 'Prevents timing attacks', 'Proof-of-work', 'Rate limiting', 'Immutable audit trail']
+      fr: ['Double signature validation', 'KDF Memory-hard (coût 16 MB)', 'Entropie céleste', 'Chiffrement AES-256', 'Empêche attaques temporelles', 'Preuve de travail', 'Limitation débit', 'Honeypot Trap (122 endpoints)', 'Device Fingerprint (15 patterns)'],
+      en: ['Double signature validation', 'Memory-hard KDF (16 MB cost)', 'Celestial entropy', 'AES-256 encryption', 'Prevents timing attacks', 'Proof-of-work', 'Rate limiting', 'Honeypot Trap (122 endpoints)', 'Device Fingerprint (15 patterns)']
     },
+    siegeWallTitle: { fr: 'Framework Siege Wall', en: 'Siege Wall Framework' },
+    siegeWall: {
+      fr: [
+        { type: 'honeypot-scan', desc: '24 chemins pièges' },
+        { type: 'bot-fingerprint', desc: '5 types de bots' },
+        { type: 'ip-rotation', desc: 'Détection vélocité' },
+        { type: 'ua-spoofing', desc: 'User-Agent spoofing' },
+        { type: 'evasion', desc: '7 techniques contournement' },
+      ],
+      en: [
+        { type: 'honeypot-scan', desc: '24 trap paths' },
+        { type: 'bot-fingerprint', desc: '5 bot types' },
+        { type: 'ip-rotation', desc: 'Velocity detection' },
+        { type: 'ua-spoofing', desc: 'User-Agent spoofing' },
+        { type: 'evasion', desc: '7 bypass techniques' },
+      ],
+    },
+    targetRate: { fr: 'Objectif : 100% taux détection', en: 'Target: 100% detection rate' },
     conclusionTitle: { fr: 'Conclusion de l\'Audit', en: 'Audit Conclusion' },
     conclusion: {
       fr: "\"Architecture de sécurité de niveau militaire. Aucune vulnérabilité critique trouvée. Prêt pour déploiement en production dans environnements haute sécurité.\"",
@@ -726,7 +806,17 @@ export const translations = {
     footer: {
       fr: '4 modèles de déploiement • Cloud à Air-gapped • Intégrations sur mesure disponibles',
       en: '4 deployment models • Cloud to air-gapped • Custom integrations available'
-    }
+    },
+    widgetTitle: { fr: 'Distribution Widget', en: 'Widget Distribution' },
+    widget: {
+      cdn: 'https://cdn.hcs-u7.com/widget.js',
+      embed: '<div id="hcs-captcha" data-sitekey="YOUR_SITE_KEY"></div>',
+    },
+    npmTitle: { fr: 'Packages NPM', en: 'NPM Packages' },
+    npm: [
+      { name: '@hcs-u7/widget', desc: { fr: 'Widget JavaScript embarquable', en: 'Embeddable JavaScript widget' } },
+      { name: '@hcs-u7/siege-wall', desc: { fr: 'Framework de tests de sécurité', en: 'Security testing framework' } },
+    ],
   },
 
   // Slide 23 - Portfolio
@@ -735,11 +825,11 @@ export const translations = {
     subtitle: { fr: 'Une technologie, deux marchés', en: 'One technology, dual markets' },
     products: {
       fr: [
-        { name: 'HCS-U7', tagline: 'Moteur d\'Authentification Cognitive', market: 'Cybersécurité Entreprise', revenue: 'SaaS (€99-€2499/user/an)', stage: 'Production (hcs-u7.com)', tam: '€50M (logiciel auth)', customers: 'Fintech, E-commerce, Gaming', diff: '99.6% détection bot • Conforme PSD2 • Sécu 8 couches' },
+        { name: 'HCS-U7', tagline: 'Moteur d\'Authentification Cognitive', market: 'Cybersécurité Entreprise', revenue: 'SaaS (€99-€2499/user/an)', stage: 'Production (hcs-u7.com)', tam: '€50M (logiciel auth)', customers: 'Fintech, E-commerce, Gaming', diff: '99.6% détection bot • Conforme PSD2 • Sécu 9 couches' },
         { name: 'HCS-SHIELD', tagline: 'Planification de Mission Tactique', market: 'Défense & Ops Critiques', revenue: 'Licences (€79-€499/appareil/an)', stage: 'Prêt au combat (shield.ia-solution.fr)', tam: '€50M (logiciel drones tactique)', customers: 'Forces Spéciales, Pompiers, Industriel', diff: '100% hors-ligne • Lié au matériel • Panic wipe <3s' }
       ],
       en: [
-        { name: 'HCS-U7', tagline: 'Cognitive Authentication Engine', market: 'Enterprise Cybersecurity', revenue: 'SaaS (€99-€2499/user/year)', stage: 'Production (hcs-u7.com)', tam: '€50M (auth software)', customers: 'Fintech, E-commerce, Gaming', diff: '99.6% bot detection • PSD2 compliant • 8-layer security' },
+        { name: 'HCS-U7', tagline: 'Cognitive Authentication Engine', market: 'Enterprise Cybersecurity', revenue: 'SaaS (€99-€2499/user/year)', stage: 'Production (hcs-u7.com)', tam: '€50M (auth software)', customers: 'Fintech, E-commerce, Gaming', diff: '99.6% bot detection • PSD2 compliant • 9-layer security' },
         { name: 'HCS-SHIELD', tagline: 'Tactical Mission Planning', market: 'Defense & Critical Ops', revenue: 'Licenses (€79-€499/device/year)', stage: 'Combat-ready (shield.ia-solution.fr)', tam: '€50M (tactical drones SW)', customers: 'Special Forces, Firefighters, Industrial', diff: '100% offline • Hardware-bound • Panic wipe <3s' }
       ]
     },

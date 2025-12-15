@@ -10,18 +10,17 @@ export function SlideIP() {
   const { language } = useLanguage();
   const tr = translations.ip;
 
+  const patentData = t(tr.patents, language);
   const patents = [
     {
-      number: 'FR2514274',
-      ...t(tr.patents, language)[0],
-      filed: 'Dec 2024',
+      ...patentData[0],
+      filed: 'Nov 30, 2025',
       protection: '20 years',
       color: 'cyan'
     },
     {
-      number: 'FR2514546',
-      ...t(tr.patents, language)[1],
-      filed: 'Dec 2024',
+      ...patentData[1],
+      filed: 'Nov 30, 2025',
       protection: '20 years',
       color: 'purple'
     }

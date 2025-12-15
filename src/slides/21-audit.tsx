@@ -31,7 +31,7 @@ export function SlideAudit() {
     },
     {
       icon: TrendingUp,
-      value: '99.9',
+      value: '556+',
       label: t(tr.stats, language)[2].label,
       sublabel: t(tr.stats, language)[2].sub,
       color: 'text-purple-400',
@@ -40,7 +40,7 @@ export function SlideAudit() {
     },
     {
       icon: AlertTriangle,
-      value: '88',
+      value: '12',
       label: t(tr.stats, language)[3].label,
       sublabel: t(tr.stats, language)[3].sub,
       color: 'text-warning',

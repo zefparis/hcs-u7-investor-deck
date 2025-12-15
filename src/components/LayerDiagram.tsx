@@ -15,7 +15,7 @@ interface LayerDiagramProps {
 }
 
 export function LayerDiagram({ layers }: LayerDiagramProps) {
-  const icons = [Globe, Key, Cpu, Database, Lock, Shield, FileKey];
+  const icons = [Globe, Key, Cpu, Database, Lock, Shield, FileKey, Globe, Cpu];
 
   return (
     <div className="relative py-8">
