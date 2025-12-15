@@ -71,26 +71,45 @@ export function SlideGTM() {
         })}
       </div>
 
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ delay: 0.6 }}
-        className="relative"
-      >
-        <CyberCard className="bg-surface-elevated/50 border-accent/20">
-          <div className="flex items-center gap-4">
-            <div className="p-3 bg-accent/10 rounded-full border border-accent/30 shrink-0">
-              <Target className="w-6 h-6 text-accent" />
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ delay: 0.6 }}
+        >
+          <CyberCard className="bg-surface-elevated/50 border-accent/20 h-full">
+            <div className="flex items-center gap-4">
+              <div className="p-3 bg-accent/10 rounded-full border border-accent/30 shrink-0">
+                <Target className="w-6 h-6 text-accent" />
+              </div>
+              <div>
+                <span className="text-xs uppercase tracking-wider text-accent font-bold">{t(tr.icpLabel, language)}</span>
+                <p className="text-sm text-ink mt-1">
+                  {t(tr.icp, language)}
+                </p>
+              </div>
             </div>
-            <div>
-              <span className="text-xs uppercase tracking-wider text-accent font-bold">{t(tr.icpLabel, language)}</span>
-              <p className="text-sm md:text-base text-ink mt-1">
-                {t(tr.icp, language)}
-              </p>
+          </CyberCard>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ delay: 0.7 }}
+        >
+          <CyberCard className="bg-purple-500/5 border-purple-500/30 h-full">
+            <span className="text-xs uppercase tracking-wider text-purple-400 font-bold">{t(tr.contentLabel, language)}</span>
+            <div className="grid grid-cols-2 gap-2 mt-3">
+              {tr.contentAssets[language].map((asset: { path: string; label: string }, idx: number) => (
+                <div key={idx} className="flex items-center gap-2 text-xs">
+                  <span className="text-success">✓</span>
+                  <span className="font-mono text-purple-400">{asset.path}</span>
+                </div>
+              ))}
             </div>
-          </div>
-        </CyberCard>
-      </motion.div>
+          </CyberCard>
+        </motion.div>
+      </div>
     </SlideLayout>
   );
 }

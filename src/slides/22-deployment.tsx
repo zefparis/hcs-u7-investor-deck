@@ -115,14 +115,50 @@ export function SlideDeployment() {
         })}
       </div>
 
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-6">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ delay: 0.5 }}
+          className="p-4 border border-accent/30 bg-accent/5 rounded-lg"
+        >
+          <h4 className="text-sm font-bold text-accent mb-3">{t(tr.widgetTitle, language)}</h4>
+          <div className="space-y-2">
+            <code className="block text-[10px] font-mono bg-surface p-2 rounded text-ink-secondary overflow-x-auto">
+              &lt;script src=&quot;{tr.widget.cdn}&quot;&gt;&lt;/script&gt;
+            </code>
+            <code className="block text-[10px] font-mono bg-surface p-2 rounded text-ink-secondary overflow-x-auto">
+              {tr.widget.embed}
+            </code>
+          </div>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ delay: 0.6 }}
+          className="p-4 border border-purple-500/30 bg-purple-500/5 rounded-lg"
+        >
+          <h4 className="text-sm font-bold text-purple-400 mb-3">{t(tr.npmTitle, language)}</h4>
+          <div className="space-y-2">
+            {tr.npm.map((pkg: { name: string; desc: { fr: string; en: string } }, idx: number) => (
+              <div key={idx} className="flex items-center justify-between">
+                <code className="text-[11px] font-mono text-success">npm install {pkg.name}</code>
+                <span className="text-[9px] text-ink-tertiary">{t(pkg.desc, language)}</span>
+              </div>
+            ))}
+          </div>
+        </motion.div>
+      </div>
+
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        transition={{ delay: 0.5 }}
-        className="mt-6 p-4 border border-border bg-surface-elevated rounded-lg"
+        transition={{ delay: 0.7 }}
+        className="mt-4 p-3 border border-border bg-surface-elevated rounded-lg"
       >
         <div className="text-center">
-          <p className="text-ink-secondary text-sm">
+          <p className="text-ink-secondary text-xs">
             {t(tr.footer, language)}
           </p>
         </div>
