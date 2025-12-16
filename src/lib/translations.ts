@@ -346,33 +346,37 @@ export const translations = {
 
   // Slide 11 - Business
   business: {
-    title: { fr: 'SaaS + Usage. 85% de marge brute.', en: 'SaaS + Usage. 85% gross margin.' },
-    subtitle: { fr: 'Modèle SaaS scalable à forte marge', en: 'Scalable SaaS Model with High Margins' },
+    title: { fr: 'SaaS + Usage. 94% de marge brute.', en: 'SaaS + Usage. 94% gross margin.' },
+    subtitle: { fr: 'Technologie biométrique cognitive premium • Essai 30 jours • Pas de gratuit permanent', en: 'Premium cognitive biometric technology • Trial 30 days • No permanent free tier' },
     tiers: {
       fr: [
-        { name: 'Starter', price: 'Gratuit', features: ['1K vérifications', 'Widget intégré', 'Analytics basiques', 'Support communauté'] },
-        { name: 'Business', price: '€1 499/mois', features: ['100K inclus', '+ €0.50/1K suppl.', 'SDKs JS/Python', 'SLA 99.9%', 'Support prioritaire'], highlighted: true },
-        { name: 'Enterprise', price: 'Sur mesure', features: ['Illimité', 'Option on-premise', 'CSM dédié', 'Support SOC2', 'Intégrations custom'] },
+        { name: 'Startup', price: '249€/mois', features: ['10K vérifications/mois', '3 domaines', 'Support email (48h)', 'Dashboard analytics', 'Branding personnalisé', 'SLA 99,5%'] },
+        { name: 'Scale', price: '599€/mois', features: ['50K vérifications/mois', '10 domaines', 'Support prioritaire (12h)', 'Analytics avancés', 'Webhooks & Zapier', 'Intégrations LLM', 'SLA 99,7%'], highlighted: true },
+        { name: 'Business', price: '1 899€/mois', features: ['250K vérifications/mois', 'Domaines illimités', 'Support prioritaire (4h)', 'API analytics temps réel', 'Rapports RGPD', 'Account manager dédié', 'SLA 99,9%'] },
       ],
       en: [
-        { name: 'Starter', price: 'Free', features: ['1K verifications', 'Widget embed', 'Basic analytics', 'Community support'] },
-        { name: 'Business', price: '€1,499/mo', features: ['100K included', '+ €0.50/1K overage', 'JS/Python SDKs', '99.9% SLA', 'Priority support'], highlighted: true },
-        { name: 'Enterprise', price: 'Custom', features: ['Unlimited', 'On-premise option', 'Dedicated CSM', 'SOC2 support', 'Custom integrations'] },
+        { name: 'Startup', price: '€249/mo', features: ['10K verifications/month', '3 domains', 'Email support (48h)', 'Analytics dashboard', 'Custom branding', '99.5% SLA'] },
+        { name: 'Scale', price: '€599/mo', features: ['50K verifications/month', '10 domains', 'Priority support (12h)', 'Advanced analytics', 'Webhooks & Zapier', 'LLM integrations', '99.7% SLA'], highlighted: true },
+        { name: 'Business', price: '€1,899/mo', features: ['250K verifications/month', 'Unlimited domains', 'Priority support (4h)', 'Real-time analytics API', 'GDPR reports', 'Dedicated manager', '99.9% SLA'] },
       ],
     },
     economics: {
       fr: [
-        { label: 'Coût/1K', value: '€0.50' },
-        { label: 'Marge Brute', value: '85%' },
-        { label: 'ACV Moyen', value: '€18K' },
-        { label: 'Objectif LTV/CAC', value: '12 mois' },
+        { label: 'CAC', value: '5K€' },
+        { label: 'LTV', value: '300K€' },
+        { label: 'LTV/CAC', value: '60:1' },
+        { label: 'Marge Brute', value: '94%' },
       ],
       en: [
-        { label: 'Cost/1K', value: '€0.50' },
-        { label: 'Gross Margin', value: '85%' },
-        { label: 'Avg ACV', value: '€18K' },
-        { label: 'LTV/CAC Target', value: '12mo' },
+        { label: 'CAC', value: '€5K' },
+        { label: 'LTV', value: '€300K' },
+        { label: 'LTV/CAC', value: '60:1' },
+        { label: 'Gross Margin', value: '94%' },
       ],
+    },
+    note: {
+      fr: '* Plan Starter (99€/mois, essai 30j) disponible pour PME. Enterprise (5K+€/mois) pour banques.',
+      en: '* Starter plan (€99/mo, 30-day trial) available for SMBs. Enterprise (€5K+/mo) for banks.',
     },
   },
 
@@ -433,12 +437,12 @@ export const translations = {
     targetLabel: { fr: 'Cible', en: 'Target' },
     phases: {
       fr: [
-        { phase: 'PHASE 1', period: 'M1-6', title: 'Atterrir', items: ['3-5 pilotes (gratuit)', 'Études de cas', 'Preuve PSD2'], target: '€50K ARR' },
+        { phase: 'PHASE 1', period: 'M1-6', title: 'Atterrir', items: ['3-5 pilotes (essai 30j)', 'Études de cas', 'Preuve PSD2'], target: '€50K ARR' },
         { phase: 'PHASE 2', period: 'M6-12', title: 'Étendre', items: ['Conversion payant', 'Partenariats PSP', 'Contenu + SEO'], target: '€500K ARR' },
         { phase: 'PHASE 3', period: 'A2-3', title: 'Scaler', items: ['Équipe Enterprise', 'Certification SOC2', 'Expansion UK/DACH'], target: '€3.5M ARR' },
       ],
       en: [
-        { phase: 'PHASE 1', period: 'M1-6', title: 'Land', items: ['3-5 pilots (free)', 'Case studies', 'PSD2 proof'], target: '€50K ARR' },
+        { phase: 'PHASE 1', period: 'M1-6', title: 'Land', items: ['3-5 pilots (30-day trial)', 'Case studies', 'PSD2 proof'], target: '€50K ARR' },
         { phase: 'PHASE 2', period: 'M6-12', title: 'Expand', items: ['Convert to paid', 'PSP partnerships', 'Content + SEO'], target: '€500K ARR' },
         { phase: 'PHASE 3', period: 'Y2-3', title: 'Scale', items: ['Enterprise team', 'SOC2 certification', 'UK/DACH expansion'], target: '€3.5M ARR' },
       ],
