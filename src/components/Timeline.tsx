@@ -23,7 +23,7 @@ export function Timeline({ items }: TimelineProps) {
       <div className="grid grid-cols-4 gap-4">
         {items.map((item, index) => (
           <motion.div
-            key={item.date}
+            key={`${item.date}-${index}`}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: index * 0.15 }}
