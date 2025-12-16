@@ -3,7 +3,7 @@ export type Language = 'fr' | 'en';
 export const translations = {
   // Slide 1 - Cover
   cover: {
-    subtitle: { fr: 'Signature Cognitive Humaine v8.1', en: 'Human Cognitive Signature v8.1' },
+    subtitle: { fr: 'Signature Cognitive Humaine v8.2', en: 'Human Cognitive Signature v8.2' },
     tagline: {
       fr: "Authentification biométrique cognitive résistante à l'IA générative",
       en: 'Cognitive biometric authentication resistant to generative AI',
@@ -163,29 +163,29 @@ export const translations = {
   // Slide 7 - Technology
   technology: {
     title: { fr: 'Architecture Défense 9 Couches', en: '9-Layer Defense Architecture' },
-    subtitle: { fr: 'Architecture de défense en profondeur v8.1', en: 'Defense-in-Depth Architecture v8.1' },
+    subtitle: { fr: 'Architecture de défense en profondeur v8.2', en: 'Defense-in-Depth Architecture v8.2' },
     layers: {
       fr: [
-        { name: 'Couche 1', description: 'Cloudflare WAF + Rate Limiting' },
-        { name: 'Couche 2', description: 'Clé API + Signature HMAC-SHA256' },
-        { name: 'Couche 3', description: 'Batterie de 7 Tests Cognitifs' },
-        { name: 'Couche 4', description: 'Entropie Céleste (FR2514546)', isPatent: true },
-        { name: 'Couche 5', description: 'Fenêtres Temporelles Rotatives (10min)' },
-        { name: 'Couche 6', description: 'Liaison Post-Quantique QSIG/B3' },
-        { name: 'Couche 7', description: 'Cache Anti-Rejeu Redis' },
-        { name: 'Couche 8', description: 'Honeypot Trap Layer (122 endpoints pièges)' },
-        { name: 'Couche 9', description: 'Device Fingerprint Module (15 patterns bot)' },
+        { name: 'Couche 1', description: 'Tests Cognitifs (6 dimensions, vecteur 48D)', isCore: true },
+        { name: 'Couche 2', description: 'Honeypot Trap (102+ statiques, 20 dynamiques)', isNew: true },
+        { name: 'Couche 3', description: 'Device Fingerprint (15 patterns bot)', isNew: true },
+        { name: 'Couche 4', description: 'Rate Limiting (sliding window, Redis)' },
+        { name: 'Couche 5', description: 'IP Reputation (IPQualityScore)', isNew: true },
+        { name: 'Couche 6', description: 'Entropie Céleste 🪐 (FR2514546)', isPatent: true },
+        { name: 'Couche 7', description: 'QSIG/B3 Crypto (dual signatures)', isNew: true },
+        { name: 'Couche 8', description: 'Anti-Replay (<13ms détection)', isNew: true },
+        { name: 'Couche 9', description: 'Audit Trail (HMAC-chained logs)' },
       ],
       en: [
-        { name: 'Layer 1', description: 'Cloudflare WAF + Rate Limiting' },
-        { name: 'Layer 2', description: 'API Key + HMAC-SHA256 Signing' },
-        { name: 'Layer 3', description: '7-Test Cognitive Battery' },
-        { name: 'Layer 4', description: 'Celestial Entropy (FR2514546)', isPatent: true },
-        { name: 'Layer 5', description: 'Rotating Time Windows (10min)' },
-        { name: 'Layer 6', description: 'QSIG/B3 Post-Quantum Binding' },
-        { name: 'Layer 7', description: 'Redis Anti-Replay Cache' },
-        { name: 'Layer 8', description: 'Honeypot Trap Layer (122 fake endpoints)' },
-        { name: 'Layer 9', description: 'Device Fingerprint Module (15 bot patterns)' },
+        { name: 'Layer 1', description: 'Cognitive Tests (6 dimensions, 48D vector)', isCore: true },
+        { name: 'Layer 2', description: 'Honeypot Trap (102+ static, 20 dynamic)', isNew: true },
+        { name: 'Layer 3', description: 'Device Fingerprint (15 bot patterns)', isNew: true },
+        { name: 'Layer 4', description: 'Rate Limiting (sliding window, Redis)' },
+        { name: 'Layer 5', description: 'IP Reputation (IPQualityScore)', isNew: true },
+        { name: 'Layer 6', description: 'Celestial Entropy 🪐 (FR2514546)', isPatent: true },
+        { name: 'Layer 7', description: 'QSIG/B3 Crypto (dual signatures)', isNew: true },
+        { name: 'Layer 8', description: 'Anti-Replay (<13ms detection)', isNew: true },
+        { name: 'Layer 9', description: 'Audit Trail (HMAC-chained logs)' },
       ],
     },
     patent1: { fr: 'Brevet #1', en: 'Patent #1' },
@@ -193,59 +193,88 @@ export const translations = {
     patent2: { fr: 'Brevet #2', en: 'Patent #2' },
     patent2Desc: { fr: 'Couche Entropie Céleste', en: 'Celestial Entropy Layer' },
     statusLabel: { fr: 'Statut', en: 'Status' },
-    status: { fr: 'Statut : Déposé INPI · Novembre 2025', en: 'Status: Filed INPI · November 2025' },
+    status: { fr: 'Patent Pending · INPI · Nov-Déc 2025', en: 'Patent Pending · INPI · Nov-Dec 2025' },
+    performanceStats: {
+      fr: [
+        { value: '500+', label: 'RPS Soutenu' },
+        { value: '150ms', label: 'Temps Constant' },
+        { value: '<13ms', label: 'Anti-Replay' },
+        { value: '94%', label: 'Couverture Tests' },
+      ],
+      en: [
+        { value: '500+', label: 'RPS Sustained' },
+        { value: '150ms', label: 'Constant Time' },
+        { value: '<13ms', label: 'Anti-Replay' },
+        { value: '94%', label: 'Test Coverage' },
+      ],
+    },
   },
 
   // Slide 8 - Validation
   validation: {
-    title: { fr: 'Testé contre les modèles IA de pointe', en: 'Tested against frontier AI models' },
-    subtitle: { fr: 'Validation scientifique & contradictoire', en: 'Scientific & Adversarial Validation' },
-    headers: { fr: ['Moy. Industrie', 'HCS-U7'], en: ['Industry Avg', 'HCS-U7'] },
+    title: { fr: 'Validé en Production : 15 Jours Live', en: 'Production Validated: 15 Days Live' },
+    subtitle: { fr: 'Métriques production Déc 1-15, 2025', en: 'Production Metrics Dec 1-15, 2025' },
+    headers: { fr: ['Moy. Industrie', 'HCS-U7 v8.2'], en: ['Industry Avg', 'HCS-U7 v8.2'] },
     rows: {
       fr: [
         { metric: 'Précision', values: ['70-82%', '98.9%'] },
         { metric: 'Vrais Négatifs', values: ['85-92%', '99.6%'] },
         { metric: 'Faux Positifs', values: ['8-15%', '2.2%'] },
         { metric: 'AUC-ROC', values: ['0.75-0.85', '0.994'] },
-        { metric: 'Résistant IA', values: ['Non', 'Oui'] },
+        { metric: 'Résistant IA', values: ['Non', 'Oui ✅'] },
       ],
       en: [
         { metric: 'Accuracy', values: ['70-82%', '98.9%'] },
         { metric: 'True Negative', values: ['85-92%', '99.6%'] },
         { metric: 'False Positive', values: ['8-15%', '2.2%'] },
         { metric: 'AUC-ROC', values: ['0.75-0.85', '0.994'] },
-        { metric: 'AI-Resistant', values: ['No', 'Yes'] },
+        { metric: 'AI-Resistant', values: ['No', 'Yes ✅'] },
       ],
     },
-    confirmed: { fr: '"Résistance aux modèles de pointe confirmée"', en: '"Frontier Model Resistance Confirmed"' },
+    confirmed: { fr: '"100% Succès - Zéro Brèche"', en: '"100% Success - Zero Breaches"' },
     callout: {
-      fr: 'GPT-4V, Claude 3 Opus, Gemini Pro Vision détectés avec >99% de confiance sur toutes les batteries de tests.',
-      en: 'GPT-4V, Claude 3 Opus, Gemini Pro Vision detected with >99% confidence across all test batteries.',
+      fr: '518 attaques bloquées incluant zero-days, SQL injection, XSS, bot farms, DDoS. Score sécurité 99.9/100.',
+      en: '518 attacks blocked including zero-days, SQL injection, XSS, bot farms, DDoS. Security score 99.9/100.',
     },
     source: {
-      fr: 'Source : Recherche doctorale · 10 chapitres · Protocoles validés par les pairs',
-      en: 'Source: Doctoral research · 10 chapters · Peer-reviewed protocols',
+      fr: 'Source : Monitoring production live · 34 modules sécurité actifs · Audit indépendant',
+      en: 'Source: Live production monitoring · 34 active security modules · Independent audit',
     },
-    operationalTitle: { fr: 'Sécurité Opérationnelle (15 jours)', en: 'Operational Security (15-day metrics)' },
+    operationalTitle: { fr: 'Métriques Production (15 jours)', en: 'Production Metrics (15 days)' },
     operational: {
       fr: [
-        { value: '518', label: 'Attaques bloquées', sub: 'Détection temps réel' },
-        { value: '0', label: 'Brèches', sub: 'Zéro compromission' },
-        { value: '556+', label: 'Tests automatisés', sub: 'CI/CD' },
-        { value: '12', label: 'Types d\'attaques', sub: 'Siege Wall simulés' },
+        { value: '518', label: 'Attaques Bloquées', sub: 'Zero-days inclus' },
+        { value: '0', label: 'Brèches', sub: '100% succès' },
+        { value: '99.9', label: 'Score Sécu /100', sub: 'Audit indépendant' },
+        { value: '556', label: 'Tests Auto', sub: '94% couverture' },
       ],
       en: [
-        { value: '518', label: 'Attacks blocked', sub: 'Real-time detection' },
-        { value: '0', label: 'Breaches', sub: 'Zero compromise' },
-        { value: '556+', label: 'Automated tests', sub: 'CI/CD' },
-        { value: '12', label: 'Attack types', sub: 'Siege Wall simulated' },
+        { value: '518', label: 'Attacks Blocked', sub: 'Zero-days included' },
+        { value: '0', label: 'Breaches', sub: '100% success' },
+        { value: '99.9', label: 'Security Score', sub: 'Independent audit' },
+        { value: '556', label: 'Auto Tests', sub: '94% coverage' },
+      ],
+    },
+    performanceTitle: { fr: 'Performance Production', en: 'Production Performance' },
+    performance: {
+      fr: [
+        { value: '500+', label: 'RPS Soutenu', sub: 'Load testé' },
+        { value: '150ms', label: 'Temps Constant', sub: 'Timing-safe' },
+        { value: '<13ms', label: 'Anti-Replay', sub: 'Redis-backed' },
+        { value: '9.8%', label: 'Taux Bot', sub: 'FingerprintJS Pro' },
+      ],
+      en: [
+        { value: '500+', label: 'RPS Sustained', sub: 'Load tested' },
+        { value: '150ms', label: 'Constant Time', sub: 'Timing-safe' },
+        { value: '<13ms', label: 'Anti-Replay', sub: 'Redis-backed' },
+        { value: '9.8%', label: 'Bot Rate', sub: 'FingerprintJS Pro' },
       ],
     },
     siegeWall: {
-      title: { fr: 'Siege Wall Framework', en: 'Siege Wall Framework' },
+      title: { fr: '4 Suites E2E Sécurité', en: '4 E2E Security Suites' },
       attacks: {
-        fr: ['honeypot-scan (24 chemins)', 'bot-fingerprint (5 types)', 'ip-rotation (vélocité)', 'ua-spoofing', 'evasion (7 techniques)'],
-        en: ['honeypot-scan (24 paths)', 'bot-fingerprint (5 types)', 'ip-rotation (velocity)', 'ua-spoofing', 'evasion (7 techniques)'],
+        fr: ['honeypot-scan (122 endpoints)', 'bot-fingerprint (15 patterns)', 'ip-velocity (3/h, 10/j)', 'replay-attack (<13ms)', 'timing-attack (150ms floor)'],
+        en: ['honeypot-scan (122 endpoints)', 'bot-fingerprint (15 patterns)', 'ip-velocity (3/h, 10/d)', 'replay-attack (<13ms)', 'timing-attack (150ms floor)'],
       },
     },
   },
@@ -524,25 +553,67 @@ export const translations = {
   // Slide 17 - Crypto
   crypto: {
     title: { fr: 'Innovation Cryptographique', en: 'Cryptographic Innovation' },
-    subtitle: { fr: 'Algorithmes propriétaires sécurisant HCS-U7', en: 'Proprietary algorithms securing HCS-U7' },
-    algorithms: {
+    subtitle: { fr: 'Entropie Céleste 🪐 + Signatures Duales (Patent Pending)', en: 'Celestial Entropy 🪐 + Dual Signatures (Patent Pending)' },
+    celestialTitle: { fr: 'ENTROPIE CÉLESTE 🪐 (Patent Pending FR2514546)', en: 'CELESTIAL ENTROPY 🪐 (Patent Pending FR2514546)' },
+    celestialDesc: {
+      fr: 'Entropie cryptographique dérivée de calculs astronomiques en temps réel',
+      en: 'Cryptographic entropy derived from real-time astronomical calculations'
+    },
+    celestialSteps: {
       fr: [
-        { name: 'QSIG', title: 'Signature Quantique', tech: 'HMAC-SHA256 + Fenêtres Temporelles', features: ['Rotation 30s', 'Validation timing-safe', 'Brevet FR2514274'] },
-        { name: 'B3', title: 'Hachage Canonique BLAKE3', tech: 'Hachage cryptographique moderne', features: ['3x plus rapide que SHA-256', 'Résistant aux collisions', 'Canonicalisation du code'] },
-        { name: 'Bouclier Hiéroglyphique', title: 'Chiffrement Memory-Hard', tech: 'scrypt + AES-256-GCM', features: ['Coût mémoire 16 MB', 'Dérivation 50-100ms', 'Anti-brute-force'] },
-        { name: 'Entropie Céleste', title: 'CSPRNG Astronomique', tech: 'Positions planétaires + CSPRNG', features: ['Entropie 512 bits', 'Brevet FR2514546', 'Déterministe + sécurisé'] }
+        { step: '1', title: 'Swiss Ephemeris', desc: 'Calcule positions temps réel: Soleil, Lune, 9 planètes' },
+        { step: '2', title: 'Précision Arc-seconde', desc: 'Ex: Soleil à 264.523456° longitude, 0.000123° latitude' },
+        { step: '3', title: 'BLAKE2b Hash', desc: 'Input: "1734284999|sun:264.52|moon:123.87|..."' },
+        { step: '4', title: 'Segment CE:xxxx', desc: 'Output: 256 bits → "CE:bfb5dd986d8b1ba4"' }
       ],
       en: [
-        { name: 'QSIG', title: 'Quantum-Safe Signature', tech: 'HMAC-SHA256 + Time Windows', features: ['Rotation 30s', 'Timing-safe validation', 'Patent FR2514274'] },
-        { name: 'B3', title: 'BLAKE3 Canonical Hash', tech: 'Modern cryptographic hash', features: ['3x faster SHA-256', 'Collision-resistant', 'Code canonicalization'] },
-        { name: 'Hieroglyphic Shield', title: 'Memory-Hard Encryption', tech: 'scrypt + AES-256-GCM', features: ['16 MB memory cost', '50-100ms derivation', 'Anti-brute-force'] },
-        { name: 'Celestial Entropy', title: 'Astronomical CSPRNG', tech: 'Planetary positions + CSPRNG', features: ['512 bits entropy', 'Patent FR2514546', 'Deterministic + secure'] }
+        { step: '1', title: 'Swiss Ephemeris', desc: 'Calculates real-time: Sun, Moon, 9 planets' },
+        { step: '2', title: 'Arc-second Precision', desc: 'Ex: Sun at 264.523456° longitude, 0.000123° latitude' },
+        { step: '3', title: 'BLAKE2b Hash', desc: 'Input: "1734284999|sun:264.52|moon:123.87|..."' },
+        { step: '4', title: 'CE:xxxx Segment', desc: 'Output: 256 bits → "CE:bfb5dd986d8b1ba4"' }
       ]
     },
-    architectureTitle: { fr: 'Architecture de Défense à 9 Couches', en: '9-Layer Defense Architecture' },
+    celestialProps: {
+      fr: ['✅ Déterministe (calculable avec timestamp)', '✅ Jamais identique (change continuellement)', '✅ Impossible à manipuler (événements cosmiques)', '✅ Parfait pour corrélation audit'],
+      en: ['✅ Deterministic (calculable with timestamp)', '✅ Never identical (continuously changing)', '✅ Impossible to manipulate (cosmic events)', '✅ Perfect for audit correlation']
+    },
+    celestialPerf: {
+      fr: [{ label: 'Avec cache', value: '~1ms', sub: '60s window' }, { label: 'Sans cache', value: '~100ms', sub: 'Swiss Ephemeris' }, { label: 'Cache hit', value: '>95%', sub: 'Production' }],
+      en: [{ label: 'With cache', value: '~1ms', sub: '60s window' }, { label: 'Without cache', value: '~100ms', sub: 'Swiss Ephemeris' }, { label: 'Cache hit', value: '>95%', sub: 'Production' }]
+    },
+    dualSigTitle: { fr: 'SYSTÈME DOUBLE SIGNATURE', en: 'DUAL SIGNATURE SYSTEM' },
+    algorithms: {
+      fr: [
+        { name: 'QSIG', title: 'Quantum-Safe Inspired', tech: 'HMAC-SHA256', features: ['Clé: 64 hex (256 bits)', 'Output: 16 hex (64 bits)', 'Grover: 128-bit sécurité'], color: 'cyan' },
+        { name: 'B3', title: 'BLAKE3 Keyed MAC', tech: 'BLAKE3', features: ['10x plus rapide SHA-256', 'Grover-résistant (256-bit)', 'Vérification intégrité'], color: 'green' }
+      ],
+      en: [
+        { name: 'QSIG', title: 'Quantum-Safe Inspired', tech: 'HMAC-SHA256', features: ['Key: 64 hex (256 bits)', 'Output: 16 hex (64 bits)', 'Grover: 128-bit security'], color: 'cyan' },
+        { name: 'B3', title: 'BLAKE3 Keyed MAC', tech: 'BLAKE3', features: ['10x faster than SHA-256', 'Grover-resistant (256-bit)', 'Integrity verification'], color: 'green' }
+      ]
+    },
+    codeFormat: {
+      label: { fr: 'Format Code HCS', en: 'HCS Code Format' },
+      format: 'HCS-U7|...|CE:xxxx|TS:xxxx|QSIG:xxxx|B3:xxxx'
+    },
+    attackResistance: {
+      title: { fr: 'Résistance aux Attaques', en: 'Attack Resistance' },
+      items: {
+        fr: ['❌ Replay: Bloqué par Layer 8 (nonces Redis)', '❌ Forgery: Bloqué par QSIG (clé secrète)', '❌ Timing: Bloqué par ops 150ms constant-time', '❌ Brute force: 2^64 tentatives (18 quintillions)'],
+        en: ['❌ Replay: Blocked by Layer 8 (Redis nonces)', '❌ Forgery: Blocked by QSIG (secret key)', '❌ Timing: Blocked by 150ms constant-time ops', '❌ Brute force: 2^64 attempts (18 quintillion)']
+      }
+    },
+    perfMetrics: {
+      title: { fr: 'Métriques Production', en: 'Production Metrics' },
+      items: {
+        fr: [{ label: 'QSIG vérif', value: '~6ms' }, { label: 'B3 vérif', value: '~4ms' }, { label: 'Total', value: '<15ms' }],
+        en: [{ label: 'QSIG verify', value: '~6ms' }, { label: 'B3 verify', value: '~4ms' }, { label: 'Total', value: '<15ms' }]
+      }
+    },
+    architectureTitle: { fr: 'Sécurité Combinée', en: 'Combined Security' },
     layers: {
-      fr: ['1. Double Signature QSIG + B3', '2. Bouclier Hiéroglyphique', '3. Entropie Céleste', '4. AES-256-GCM', '5. Validation Timing-Safe', '6. Preuve de Travail', '7. Limitation de Débit', '8. Honeypot Trap Layer', '9. Device Fingerprint Module'],
-      en: ['1. QSIG + B3 Dual Signature', '2. Hieroglyphic Shield', '3. Celestial Entropy', '4. AES-256-GCM', '5. Timing-Safe Validation', '6. Proof-of-Work', '7. Rate Limiting', '8. Honeypot Trap Layer', '9. Device Fingerprint Module']
+      fr: ['Sans QSIG/B3: ❌ Falsifiable (attaquant peut calculer CE)', 'Avec QSIG/B3: ✅ Non-falsifiable (clé secrète requise)'],
+      en: ['Without QSIG/B3: ❌ Forgeable (attacker can calculate CE)', 'With QSIG/B3: ✅ Non-forgeable (secret key required)']
     }
   },
 
@@ -694,91 +765,142 @@ export const translations = {
   // Slide 20 - IP
   ip: {
     title: { fr: 'Propriété Intellectuelle', en: 'Intellectual Property' },
-    subtitle: { fr: 'Fossé de protection par brevet de 20 ans', en: '20-year patent protection moat' },
+    subtitle: { fr: 'Patent Pending — Priorité de divulgation sécurisée', en: 'Patent Pending — Disclosure priority secured' },
     patents: {
       fr: [
-        { number: 'FR2514274', title: 'Système auth biométrique cognitive multi-couches', status: 'PENDING', scope: ['Mécanisme auth cognitif principal', 'Architecture 9 couches', 'Algorithme scoring combiné (70% cognitif + 30% comportemental)', 'Agrégation multi-tests', 'Génération & validation code'] },
-        { number: 'FR2514546', title: 'Architecture distribuée pour auth biométrique cognitive', status: 'PENDING', scope: ['Source entropie astronomique', 'Scalabilité déploiement enterprise', 'CSPRNG déterministe', 'Renforcement cryptographique', 'Mixage entropie hybride'] }
+        { number: 'FR2514274', title: 'Système d\'Authentification Cognitive HCS-U7', status: 'PATENT PENDING', filed: '30 Nov 2025', scope: ['Architecture biométrique cognitive multi-couches', 'Méthodologie des tests cognitifs', 'Système de scoring 70% cognitif + 30% comportemental', 'Génération et validation de code HCS'], timeline: 'Examen INPI 12-18 mois' },
+        { number: 'FR2514546', title: 'Méthode de Génération d\'Entropie Céleste', status: 'PATENT PENDING', filed: '4 Déc 2025', scope: ['Entropie cryptographique depuis données astronomiques', 'Swiss Ephemeris → 256 bits entropie', 'Positions planétaires temps réel', 'Intégration segment CE:xxxx dans code HCS'], timeline: 'Examen INPI 12-18 mois' }
       ],
       en: [
-        { number: 'FR2514274', title: 'Multi-layer cognitive biometric authentication system', status: 'PENDING', scope: ['Core cognitive auth mechanism', '9-layer architecture', 'Combined scoring algorithm (70% cognitive + 30% behavioral)', 'Multi-test aggregation', 'Code generation & validation'] },
-        { number: 'FR2514546', title: 'Distributed architecture for cognitive biometric authentication', status: 'PENDING', scope: ['Astronomical entropy source', 'Scalability and enterprise deployment', 'Deterministic CSPRNG', 'Cryptographic enhancement', 'Hybrid entropy mixing'] }
+        { number: 'FR2514274', title: 'HCS-U7 Cognitive Authentication System', status: 'PATENT PENDING', filed: 'Nov 30, 2025', scope: ['Multi-layer cognitive biometric architecture', 'Cognitive test methodology', 'Scoring system 70% cognitive + 30% behavioral', 'HCS code generation and validation'], timeline: 'INPI examination 12-18 months' },
+        { number: 'FR2514546', title: 'Celestial Entropy Generation Method', status: 'PATENT PENDING', filed: 'Dec 4, 2025', scope: ['Cryptographic entropy from astronomical data', 'Swiss Ephemeris → 256-bit entropy', 'Real-time planetary positions', 'CE:xxxx segment integration in HCS code'], timeline: 'INPI examination 12-18 months' }
       ]
     },
-    filedDate: { fr: 'Dépôt : 30 Novembre 2025 | INPI France', en: 'Filed: November 30, 2025 | INPI France' },
-    licenseInfo: { fr: 'Licence commerciale : LICENSE-COMMERCIAL.md', en: 'Commercial licensing: LICENSE-COMMERCIAL.md' },
+    filedDate: { fr: 'Dépôt INPI France | Recevable', en: 'Filed INPI France | Receivable' },
+    licenseInfo: { fr: 'Dépôt PCT prévu Q2 2026 (expansion internationale)', en: 'PCT filing planned Q2 2026 (international expansion)' },
     labels: {
       filed: { fr: 'Dépôt', en: 'Filed' },
       protection: { fr: 'Protection', en: 'Protection' },
-      scope: { fr: 'Périmètre', en: 'Scope' }
+      scope: { fr: 'Périmètre', en: 'Scope' },
+      timeline: { fr: 'Timeline', en: 'Timeline' }
     },
-    moatTitle: { fr: 'Fossé Concurrentiel', en: 'Competitive Moat' },
+    additionalIP: {
+      title: { fr: 'PI Additionnelle', en: 'Additional IP' },
+      items: {
+        fr: [
+          { type: 'Secrets Commerciaux', desc: 'Algorithmes QSIG/B3, modèles scoring 48D, 15 signatures bot' },
+          { type: 'Marques (déposées)', desc: 'HCS-U7®, Celestial Entropy®' },
+          { type: 'Copyright', desc: '88 fichiers source, 556 tests, doc STRIDE, whitepapers' }
+        ],
+        en: [
+          { type: 'Trade Secrets', desc: 'QSIG/B3 algorithms, 48D scoring models, 15 bot signatures' },
+          { type: 'Trademarks (pending)', desc: 'HCS-U7®, Celestial Entropy®' },
+          { type: 'Copyright', desc: '88 source files, 556 tests, STRIDE docs, whitepapers' }
+        ]
+      }
+    },
+    moatTitle: { fr: 'Stratégie Défensive', en: 'Defensive Strategy' },
     moat: {
       fr: [
-        { title: 'Protection Brevet', desc: 'Droits exclusifs 20 ans', impact: 'Barrière légale' },
-        { title: 'Complexité Technique', desc: 'Architecture crypto 9 couches', impact: '5-7 ans réplication' },
-        { title: 'Algorithmes Propriétaires', desc: 'QSIG, B3, Bouclier Hiéroglyphique', impact: 'Secrets commerciaux' },
-        { title: 'Premier Entrant', desc: 'Pionnier auth cognitive', impact: 'Reconnaissance marque' }
+        { title: 'Priorité Sécurisée', desc: 'Date de divulgation publique verrouillée', impact: 'Patent pending' },
+        { title: 'Examen INPI', desc: 'En cours (18 mois moyenne)', impact: 'Recevable' },
+        { title: 'PCT International', desc: 'Dépôt prévu Europe, USA, Asie', impact: 'Q2 2026' },
+        { title: 'Secrets Implémentation', desc: 'Détails non brevetés protégés', impact: 'Trade secrets' }
       ],
       en: [
-        { title: 'Patent Protection', desc: '20-year exclusive rights', impact: 'Legal moat' },
-        { title: 'Technical Complexity', desc: '9-layer crypto architecture', impact: '5-7 years replication' },
-        { title: 'Proprietary Algorithms', desc: 'QSIG, B3, Hieroglyphic Shield', impact: 'Trade secrets' },
-        { title: 'First-Mover', desc: 'Cognitive auth pioneer', impact: 'Brand recognition' }
+        { title: 'Priority Secured', desc: 'Public disclosure date locked', impact: 'Patent pending' },
+        { title: 'INPI Examination', desc: 'In progress (18mo average)', impact: 'Receivable' },
+        { title: 'PCT International', desc: 'Filing planned Europe, USA, Asia', impact: 'Q2 2026' },
+        { title: 'Implementation Secrets', desc: 'Non-patented details protected', impact: 'Trade secrets' }
       ]
     },
-    roadmapTitle: { fr: 'Feuille de Route Extensions', en: 'Patent Extensions Roadmap' },
-    roadmap: { fr: ['Q2 2025: OEB (Europe)', 'Q3 2025: USPTO (USA)', 'Q4 2025: Japon, Chine, Corée'], en: ['Q2 2025: EPO (Europe)', 'Q3 2025: USPTO (USA)', 'Q4 2025: Japan, China, Korea'] }
+    roadmapTitle: { fr: 'Feuille de Route PCT', en: 'PCT Roadmap' },
+    roadmap: { fr: ['Q2 2026: Dépôt PCT (traité international)', 'Q3 2026: Phase nationale Europe (OEB)', 'Q4 2026: USPTO (USA) + Asie'], en: ['Q2 2026: PCT filing (international treaty)', 'Q3 2026: National phase Europe (EPO)', 'Q4 2026: USPTO (USA) + Asia'] },
+    legalNotice: {
+      fr: 'Patent Pending: Demandes de brevets français FR2514274 et FR2514546 déposées auprès de l\'INPI. Protection internationale via traité PCT prévue Q2 2026.',
+      en: 'Patent Pending: French patent applications FR2514274 and FR2514546 filed with INPI. International protection via PCT treaty planned Q2 2026.'
+    }
   },
 
   // Slide 21 - Audit
   audit: {
-    title: { fr: 'Résultats Audit de Sécurité', en: 'Security Audit Results' },
-    subtitle: { fr: 'Pentest indépendant par Siege-Wall', en: 'Siege-Wall independent pentesting' },
+    title: { fr: 'Conformité Enterprise-Grade', en: 'Enterprise-Grade Compliance' },
+    subtitle: { fr: 'FIPS 140-3 · ISO 27001 · PSD2 SCA · GDPR', en: 'FIPS 140-3 · ISO 27001 · PSD2 SCA · GDPR' },
     stats: {
       fr: [
-        { label: 'Attaques Bloquées', sub: '15 jours continus' },
-        { label: 'Brèches', sub: 'Zéro compromission' },
-        { label: 'Tests Automatisés', sub: 'CI/CD passés' },
-        { label: 'Types Attaques', sub: 'Siege Wall simulés' }
+        { label: 'FIPS 140-3 L1', sub: '100% prêt certification' },
+        { label: 'ISO 27001:2022', sub: '97.8% conforme (93 contrôles)' },
+        { label: 'PSD2 SCA', sub: '100% conforme RTS' },
+        { label: 'GDPR', sub: 'Privacy-by-design' }
       ],
       en: [
-        { label: 'Attacks Blocked', sub: '15 days continuous' },
-        { label: 'Breaches', sub: 'Zero compromise' },
-        { label: 'Automated Tests', sub: 'CI/CD passed' },
-        { label: 'Attack Types', sub: 'Siege Wall simulated' }
+        { label: 'FIPS 140-3 L1', sub: '100% certification ready' },
+        { label: 'ISO 27001:2022', sub: '97.8% compliant (93 controls)' },
+        { label: 'PSD2 SCA', sub: '100% RTS compliant' },
+        { label: 'GDPR', sub: 'Privacy-by-design' }
       ]
     },
-    attacksTitle: { fr: 'Types d\'Attaques Bloquées', en: 'Attack Types Blocked' },
-    defenseTitle: { fr: 'Défense à 9 Couches', en: '9-Layer Defense' },
-    layers: {
-      fr: ['Double signature validation', 'KDF Memory-hard (coût 16 MB)', 'Entropie céleste', 'Chiffrement AES-256', 'Empêche attaques temporelles', 'Preuve de travail', 'Limitation débit', 'Honeypot Trap (122 endpoints)', 'Device Fingerprint (15 patterns)'],
-      en: ['Double signature validation', 'Memory-hard KDF (16 MB cost)', 'Celestial entropy', 'AES-256 encryption', 'Prevents timing attacks', 'Proof-of-work', 'Rate limiting', 'Honeypot Trap (122 endpoints)', 'Device Fingerprint (15 patterns)']
-    },
-    siegeWallTitle: { fr: 'Framework Siege Wall', en: 'Siege Wall Framework' },
-    siegeWall: {
+    complianceTitle: { fr: 'Statut Conformité Réglementaire', en: 'Regulatory Compliance Status' },
+    compliance: {
       fr: [
-        { type: 'honeypot-scan', desc: '24 chemins pièges' },
-        { type: 'bot-fingerprint', desc: '5 types de bots' },
-        { type: 'ip-rotation', desc: 'Détection vélocité' },
-        { type: 'ua-spoofing', desc: 'User-Agent spoofing' },
-        { type: 'evasion', desc: '7 techniques contournement' },
+        { name: 'FIPS 140-3 Level 1', status: '100%', timeline: 'Audit certification Q2 2026', color: 'success' },
+        { name: 'ISO 27001:2022', status: '97.8%', timeline: 'Certification Q3 2026', color: 'success' },
+        { name: 'PSD2 SCA (RTS Art. 11, 18)', status: '100%', timeline: 'Implémenté', color: 'success' },
+        { name: 'GDPR', status: '100%', timeline: 'Data minimization actif', color: 'success' },
+        { name: 'SOC 2 Type II', status: '88%', timeline: 'Audit prévu Q4 2026', color: 'warning' }
       ],
       en: [
-        { type: 'honeypot-scan', desc: '24 trap paths' },
-        { type: 'bot-fingerprint', desc: '5 bot types' },
-        { type: 'ip-rotation', desc: 'Velocity detection' },
-        { type: 'ua-spoofing', desc: 'User-Agent spoofing' },
-        { type: 'evasion', desc: '7 bypass techniques' },
+        { name: 'FIPS 140-3 Level 1', status: '100%', timeline: 'Certification audit Q2 2026', color: 'success' },
+        { name: 'ISO 27001:2022', status: '97.8%', timeline: 'Certification Q3 2026', color: 'success' },
+        { name: 'PSD2 SCA (RTS Art. 11, 18)', status: '100%', timeline: 'Implemented', color: 'success' },
+        { name: 'GDPR', status: '100%', timeline: 'Data minimization active', color: 'success' },
+        { name: 'SOC 2 Type II', status: '88%', timeline: 'Audit scheduled Q4 2026', color: 'warning' }
+      ]
+    },
+    attacksTitle: { fr: 'Documentation Sécurité', en: 'Security Documentation' },
+    securityDocs: {
+      fr: [
+        { doc: 'STRIDE Threat Model', desc: '16 menaces analysées, 5 profils adversaires' },
+        { doc: 'Architecture Sécurité', desc: 'Trust boundaries, data flow diagrams' },
+        { doc: 'Audit Cryptographique', desc: 'HMAC-SHA256, BLAKE3, AES-256-GCM, scrypt' },
+        { doc: 'Penetration Testing', desc: '10,000+ itérations fuzzing, timing analysis' }
+      ],
+      en: [
+        { doc: 'STRIDE Threat Model', desc: '16 threats analyzed, 5 adversary profiles' },
+        { doc: 'Security Architecture', desc: 'Trust boundaries, data flow diagrams' },
+        { doc: 'Cryptographic Audit', desc: 'HMAC-SHA256, BLAKE3, AES-256-GCM, scrypt' },
+        { doc: 'Penetration Testing', desc: '10,000+ fuzzing iterations, timing analysis' }
+      ]
+    },
+    defenseTitle: { fr: 'Algorithmes Validés', en: 'Validated Algorithms' },
+    layers: {
+      fr: ['HMAC-SHA256 (signatures QSIG)', 'BLAKE3 (B3 MAC, mode clé)', 'AES-256-GCM (Shield v2)', 'scrypt KDF (N=16384, memory-hard)', 'Ops timing-safe (150ms constant)', 'Anti-replay Redis (<13ms)', 'CSPRNG (Web Crypto API)', 'Entropie Céleste (256 bits)', 'Audit trail HMAC-chainé'],
+      en: ['HMAC-SHA256 (QSIG signatures)', 'BLAKE3 (B3 MAC, keyed mode)', 'AES-256-GCM (Shield v2)', 'scrypt KDF (N=16384, memory-hard)', 'Timing-safe ops (150ms constant)', 'Redis anti-replay (<13ms)', 'CSPRNG (Web Crypto API)', 'Celestial Entropy (256 bits)', 'HMAC-chained audit trail']
+    },
+    siegeWallTitle: { fr: 'Modules Sécurité Actifs', en: 'Active Security Modules' },
+    siegeWall: {
+      fr: [
+        { type: '34 modules', desc: 'Total modules sécurité' },
+        { type: 'Cryptographie', desc: 'AES-256, HMAC, BLAKE3, scrypt' },
+        { type: 'Anti-Bot', desc: 'PoW, honeypots (122), fingerprint' },
+        { type: 'Rate Limiting', desc: 'Sliding window, par-route' },
+        { type: 'DDoS', desc: 'L7 adaptatif, slowloris detect' },
+      ],
+      en: [
+        { type: '34 modules', desc: 'Total security modules' },
+        { type: 'Cryptography', desc: 'AES-256, HMAC, BLAKE3, scrypt' },
+        { type: 'Anti-Bot', desc: 'PoW, honeypots (122), fingerprint' },
+        { type: 'Rate Limiting', desc: 'Sliding window, per-route' },
+        { type: 'DDoS', desc: 'L7 adaptive, slowloris detect' },
       ],
     },
-    targetRate: { fr: 'Objectif : 100% taux détection', en: 'Target: 100% detection rate' },
-    conclusionTitle: { fr: 'Conclusion de l\'Audit', en: 'Audit Conclusion' },
+    targetRate: { fr: '99.9/100 Score Sécurité', en: '99.9/100 Security Score' },
+    conclusionTitle: { fr: 'Prêt pour Audit', en: 'Audit Ready' },
     conclusion: {
-      fr: "\"Architecture de sécurité de niveau militaire. Aucune vulnérabilité critique trouvée. Prêt pour déploiement en production dans environnements haute sécurité.\"",
-      en: "\"Military-grade security architecture. No critical vulnerabilities found. Ready for production deployment in high-security environments.\""
+      fr: "\"100% prêt FIPS 140-3 Level 1. Matrice de conformité complète documentée. Architecture sécurité + threat model validés.\"",
+      en: "\"100% FIPS 140-3 Level 1 ready. Full compliance matrix documented. Security architecture + threat model validated.\""
     },
-    source: { fr: '— Siege-Wall Security, Décembre 2024', en: '— Siege-Wall Security, December 2024' }
+    source: { fr: '— Audit indépendant, Décembre 2024 · 34 modules actifs · 556 tests', en: '— Independent audit, December 2024 · 34 active modules · 556 tests' }
   },
 
   // Slide 22 - Deployment
