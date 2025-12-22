@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HCS-U7 Investor Pitch</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background-color: #0a0a0a;
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #111;
+            border-bottom: 1px solid #222;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #fff;
+            letter-spacing: 0.05em;
+        }
+
+        header p {
+            color: #666;
+            font-size: 0.875rem;
+            margin-top: 0.5rem;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        section {
+            background-color: #111;
+            border: 1px solid #222;
+            border-radius: 4px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        section:last-child {
+            margin-bottom: 0;
+        }
+
+        .slide-number {
+            font-size: 0.75rem;
+            color: #555;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.5rem;
+        }
+
+        h2 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid #222;
+        }
+
+        .tagline {
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: #ccc;
+        }
+
+        li::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: #444;
+        }
+
+        .funds-breakdown {
+            margin-top: 1rem;
+            margin-left: 1.5rem;
+        }
+
+        .funds-breakdown li {
+            padding: 0.25rem 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #444;
+            font-size: 0.75rem;
+            border-top: 1px solid #222;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>HCS-U7</h1>
+        <p>Investor Pitch — Seed Round</p>
+    </header>
+
+    <main>
+        <section>
+            <div class="slide-number">Slide 1</div>
+            <h2>One-Liner</h2>
+            <p class="tagline">Authentication is broken by AI. We built a new security layer.</p>
+            <ul>
+                <li>HCS-U7 is a cognitive authentication primitive</li>
+                <li>Designed to distinguish humans from AI agents at the protocol level</li>
+                <li>Works where CAPTCHA, MFA, and device fingerprinting now fail</li>
+                <li>Drop-in security layer for high-stakes authentication flows</li>
+            </ul>
+        </section>
+
+        <section>
+            <div class="slide-number">Slide 2</div>
+            <h2>The Problem</h2>
+            <p style="color: #999; margin-bottom: 1rem;">AI agents have rendered existing authentication mechanisms obsolete.</p>
+            <ul>
+                <li>CAPTCHA: Solved by vision models in milliseconds at scale</li>
+                <li>MFA/OTP: Vulnerable to SIM-swap, phishing, and session hijacking</li>
+                <li>Device fingerprinting: Trivially spoofed by automation frameworks</li>
+                <li>Behavioral biometrics: Generative AI can now replicate human patterns</li>
+                <li>Fraud losses from automated attacks exceeded $48B globally in 2023</li>
+                <li>Attackers now deploy agent swarms that pass every human-detection gate</li>
+            </ul>
+        </section>
+
+        <section>
+            <div class="slide-number">Slide 3</div>
+            <h2>Core Insight</h2>
+            <p style="color: #999; margin-bottom: 1rem;">Cognition is the last non-forgeable signal.</p>
+            <ul>
+                <li>AI can mimic outputs, but cannot replicate human cognitive processing</li>
+                <li>The timing, variability, and error-correction patterns of human cognition are measurable</li>
+                <li>These signals exist at a layer that LLMs and automation cannot yet simulate</li>
+                <li>Authentication must shift from "what you have" to "how you think"</li>
+                <li>Cognitive invariants are hardware-bound to human neurology</li>
+                <li>This is a defensible asymmetry: humans produce signals AI cannot fake cost-effectively</li>
+            </ul>
+        </section>
+
+        <section>
+            <div class="slide-number">Slide 4</div>
+            <h2>The Solution</h2>
+            <p style="color: #999; margin-bottom: 1rem;">HCS-U7: A cognitive authentication layer for AI-resistant security.</p>
+            <ul>
+                <li>Embeds lightweight cognitive challenges into authentication flows</li>
+                <li>Measures response dynamics that encode human cognitive signatures</li>
+                <li>Produces a cryptographic attestation of human presence</li>
+                <li>Operates as a stateless verification primitive—no PII stored</li>
+                <li>Integrates at the API level with existing identity infrastructure</li>
+                <li>Designed for adversarial environments where bots are sophisticated</li>
+            </ul>
+        </section>
+
+        <section>
+            <div class="slide-number">Slide 5</div>
+            <h2>How It Works</h2>
+            <p style="color: #999; margin-bottom: 1rem;">Constant-time verification with anti-replay and risk decisioning.</p>
+            <ul>
+                <li>Challenge Generation: Cryptographically unique per session, non-replayable</li>
+                <li>Signal Capture: Sub-second interaction yields cognitive timing data</li>
+                <li>Verification: Constant-time analysis prevents timing side-channels</li>
+                <li>Anti-Replay: Challenges expire and cannot be precomputed or reused</li>
+                <li>Risk Score: Binary human/non-human decision or continuous confidence score</li>
+                <li>Attestation: Signed token for downstream systems to consume</li>
+            </ul>
+        </section>
+
+        <section>
+            <div class="slide-number">Slide 6</div>
+            <h2>Defensibility</h2>
+            <p style="color: #999; margin-bottom: 1rem;">This is hard to copy correctly.</p>
+            <ul>
+                <li>Security-first architecture: Constant-time operations, no data leakage</li>
+                <li>Cryptographic anti-replay prevents challenge farming</li>
+                <li>Signal extraction requires proprietary calibration across populations</li>
+                <li>Threshold tuning balances false-positive and false-negative rates for production</li>
+                <li>Provisional patent filed on cognitive verification protocol</li>
+                <li>18+ months of hardening against adversarial edge cases</li>
+            </ul>
+        </section>
+
+        <section>
+            <div class="slide-number">Slide 7</div>
+            <h2>Market Entry</h2>
+            <p style="color: #999; margin-bottom: 1rem;">Cybersecurity infrastructure first. Fintech compliance second.</p>
+            <ul>
+                <li>Initial target: Security-first platforms facing bot/automation attacks</li>
+                <li>Wedge: Account takeover prevention, fraud-sensitive flows</li>
+                <li>Expansion: PSD2 Strong Customer Authentication compliance in EU fintech</li>
+                <li>Adjacent: Identity providers, zero-trust vendors, API security platforms</li>
+                <li>Go-to-market: Developer-first SDK, self-serve trial, enterprise contracts</li>
+                <li>Land in security teams, expand to compliance and fraud prevention</li>
+            </ul>
+        </section>
+
+        <section>
+            <div class="slide-number">Slide 8</div>
+            <h2>Traction</h2>
+            <p style="color: #999; margin-bottom: 1rem;">Execution signals.</p>
+            <ul>
+                <li>Production-ready core verification engine</li>
+                <li>Comprehensive test coverage including adversarial scenarios</li>
+                <li>Security hardening: Constant-time operations, input validation, anti-replay</li>
+                <li>Architecture reviewed against OWASP and authentication best practices</li>
+                <li>Documentation and integration guides complete</li>
+                <li>Early conversations with security-focused design partners</li>
+            </ul>
+        </section>
+
+        <section>
+            <div class="slide-number">Slide 9</div>
+            <h2>Why Now</h2>
+            <p style="color: #999; margin-bottom: 1rem;">The window is open. It will not stay open.</p>
+            <ul>
+                <li>GPT-4V and successors have broken visual CAPTCHA at scale</li>
+                <li>AI agent frameworks (AutoGPT, Claude agents) are proliferating</li>
+                <li>Regulatory pressure: PSD2, NIST 800-63, upcoming AI liability rules</li>
+                <li>Enterprises are actively seeking next-generation authentication primitives</li>
+                <li>Incumbents (CAPTCHA vendors, legacy MFA) are patching, not rebuilding</li>
+                <li>12-18 month window before AI catches up to any new primitive</li>
+            </ul>
+        </section>
+
+        <section>
+            <div class="slide-number">Slide 10</div>
+            <h2>The Ask</h2>
+            <p style="color: #999; margin-bottom: 1rem;">Seed Round: $2.5M</p>
+            <ul>
+                <li>Use of funds:
+                    <ul class="funds-breakdown">
+                        <li>Security engineering team expansion (50%)</li>
+                        <li>Adversarial testing and red-team engagements (20%)</li>
+                        <li>Design partner pilots and integration support (20%)</li>
+                        <li>Patent prosecution and IP protection (10%)</li>
+                    </ul>
+                </li>
+                <li>Milestones:
+                    <ul class="funds-breakdown">
+                        <li>3 production design partners within 12 months</li>
+                        <li>SOC 2 Type II certification</li>
+                        <li>First enterprise contract</li>
+                    </ul>
+                </li>
+                <li>Long-term vision:
+                    <ul class="funds-breakdown">
+                        <li>Become the authentication primitive that survives the AI era</li>
+                        <li>Standard layer for human verification across identity infrastructure</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        HCS-U7 — Confidential
+    </footer>
+</body>
+</html>
