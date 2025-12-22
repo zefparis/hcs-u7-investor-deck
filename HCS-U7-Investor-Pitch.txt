@@ -1,0 +1,158 @@
+================================================================================
+HCS-U7 INVESTOR PITCH — SEED ROUND
+================================================================================
+
+
+--------------------------------------------------------------------------------
+SLIDE 1 — ONE-LINER
+--------------------------------------------------------------------------------
+
+Authentication is broken by AI. We built a new security layer.
+
+- HCS-U7 is a cognitive authentication primitive
+- Designed to distinguish humans from AI agents at the protocol level
+- Works where CAPTCHA, MFA, and device fingerprinting now fail
+- Drop-in security layer for high-stakes authentication flows
+
+
+--------------------------------------------------------------------------------
+SLIDE 2 — THE PROBLEM
+--------------------------------------------------------------------------------
+
+AI agents have rendered existing authentication mechanisms obsolete.
+
+- CAPTCHA: Solved by vision models in milliseconds at scale
+- MFA/OTP: Vulnerable to SIM-swap, phishing, and session hijacking
+- Device fingerprinting: Trivially spoofed by automation frameworks
+- Behavioral biometrics: Generative AI can now replicate human patterns
+- Fraud losses from automated attacks exceeded $48B globally in 2023
+- Attackers now deploy agent swarms that pass every human-detection gate
+
+
+--------------------------------------------------------------------------------
+SLIDE 3 — CORE INSIGHT
+--------------------------------------------------------------------------------
+
+Cognition is the last non-forgeable signal.
+
+- AI can mimic outputs, but cannot replicate human cognitive processing
+- The timing, variability, and error-correction patterns of human cognition are measurable
+- These signals exist at a layer that LLMs and automation cannot yet simulate
+- Authentication must shift from "what you have" to "how you think"
+- Cognitive invariants are hardware-bound to human neurology
+- This is a defensible asymmetry: humans produce signals AI cannot fake cost-effectively
+
+
+--------------------------------------------------------------------------------
+SLIDE 4 — THE SOLUTION
+--------------------------------------------------------------------------------
+
+HCS-U7: A cognitive authentication layer for AI-resistant security.
+
+- Embeds lightweight cognitive challenges into authentication flows
+- Measures response dynamics that encode human cognitive signatures
+- Produces a cryptographic attestation of human presence
+- Operates as a stateless verification primitive—no PII stored
+- Integrates at the API level with existing identity infrastructure
+- Designed for adversarial environments where bots are sophisticated
+
+
+--------------------------------------------------------------------------------
+SLIDE 5 — HOW IT WORKS
+--------------------------------------------------------------------------------
+
+Constant-time verification with anti-replay and risk decisioning.
+
+- Challenge Generation: Cryptographically unique per session, non-replayable
+- Signal Capture: Sub-second interaction yields cognitive timing data
+- Verification: Constant-time analysis prevents timing side-channels
+- Anti-Replay: Challenges expire and cannot be precomputed or reused
+- Risk Score: Binary human/non-human decision or continuous confidence score
+- Attestation: Signed token for downstream systems to consume
+
+
+--------------------------------------------------------------------------------
+SLIDE 6 — DEFENSIBILITY
+--------------------------------------------------------------------------------
+
+This is hard to copy correctly.
+
+- Security-first architecture: Constant-time operations, no data leakage
+- Cryptographic anti-replay prevents challenge farming
+- Signal extraction requires proprietary calibration across populations
+- Threshold tuning balances false-positive and false-negative rates for production
+- Provisional patent filed on cognitive verification protocol
+- 18+ months of hardening against adversarial edge cases
+- Correctness requires security engineering discipline most teams lack
+
+
+--------------------------------------------------------------------------------
+SLIDE 7 — MARKET ENTRY
+--------------------------------------------------------------------------------
+
+Cybersecurity infrastructure first. Fintech compliance second.
+
+- Initial target: Security-first platforms facing bot/automation attacks
+- Wedge: Account takeover prevention, fraud-sensitive flows
+- Expansion: PSD2 Strong Customer Authentication compliance in EU fintech
+- Adjacent: Identity providers, zero-trust vendors, API security platforms
+- Go-to-market: Developer-first SDK, self-serve trial, enterprise contracts
+- Land in security teams, expand to compliance and fraud prevention
+
+
+--------------------------------------------------------------------------------
+SLIDE 8 — TRACTION
+--------------------------------------------------------------------------------
+
+Execution signals.
+
+- Production-ready core verification engine
+- Comprehensive test coverage including adversarial scenarios
+- Security hardening: Constant-time operations, input validation, anti-replay
+- Architecture reviewed against OWASP and authentication best practices
+- Documentation and integration guides complete
+- Early conversations with security-focused design partners
+- No fabricated customer logos or revenue claims
+
+
+--------------------------------------------------------------------------------
+SLIDE 9 — WHY NOW
+--------------------------------------------------------------------------------
+
+The window is open. It will not stay open.
+
+- GPT-4V and successors have broken visual CAPTCHA at scale
+- AI agent frameworks (AutoGPT, Claude agents) are proliferating
+- Regulatory pressure: PSD2, NIST 800-63, upcoming AI liability rules
+- Enterprises are actively seeking next-generation authentication primitives
+- Incumbents (CAPTCHA vendors, legacy MFA) are patching, not rebuilding
+- First-mover who nails security + UX captures the new standard
+- 12-18 month window before AI catches up to any new primitive
+
+
+--------------------------------------------------------------------------------
+SLIDE 10 — THE ASK
+--------------------------------------------------------------------------------
+
+Seed Round: $2.5M
+
+- Use of funds:
+  - Security engineering team expansion (50%)
+  - Adversarial testing and red-team engagements (20%)
+  - Design partner pilots and integration support (20%)
+  - Patent prosecution and IP protection (10%)
+
+- Milestones:
+  - 3 production design partners within 12 months
+  - SOC 2 Type II certification
+  - First enterprise contract
+
+- Long-term vision:
+  - Become the authentication primitive that survives the AI era
+  - Standard layer for human verification across identity infrastructure
+  - Acquisition target for identity/security platform consolidators
+
+
+================================================================================
+END OF PITCH
+================================================================================
