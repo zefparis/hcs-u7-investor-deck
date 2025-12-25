@@ -203,6 +203,154 @@
 
         <section>
             <div class="slide-number">Slide 6</div>
+            <h2>Threat Model</h2>
+            <p style="color: #999; margin-bottom: 1rem;">4-tier defense from script kiddies to nation-state actors.</p>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                <div>
+                    <p style="color: #4ade80; font-weight: 600; margin-bottom: 0.5rem;">Tier 1: Automated Attacks</p>
+                    <ul style="font-size: 0.9rem;">
+                        <li>Credential stuffing (99.7% detection)</li>
+                        <li>Bot farms (15 patterns detected)</li>
+                        <li>Replay attacks (Redis-atomic)</li>
+                    </ul>
+                </div>
+                <div>
+                    <p style="color: #facc15; font-weight: 600; margin-bottom: 0.5rem;">Tier 2: Sophisticated Adversaries</p>
+                    <ul style="font-size: 0.9rem;">
+                        <li>Side-channel (timing-safe ops)</li>
+                        <li>MITM (Shield v2 AES-256-GCM)</li>
+                        <li>Device spoofing (fingerprint)</li>
+                    </ul>
+                </div>
+                <div>
+                    <p style="color: #f97316; font-weight: 600; margin-bottom: 0.5rem;">Tier 3: Nation-State Actors</p>
+                    <ul style="font-size: 0.9rem;">
+                        <li>IMSI catchers (FalconOne detection)</li>
+                        <li>Geolocation tracking (impossible travel)</li>
+                        <li>Network downgrade (5G→2G)</li>
+                    </ul>
+                </div>
+                <div>
+                    <p style="color: #a78bfa; font-weight: 600; margin-bottom: 0.5rem;">Tier 4: Post-Quantum Threats</p>
+                    <ul style="font-size: 0.9rem;">
+                        <li>Quantum cryptanalysis (Dilithium3)</li>
+                        <li>Harvest-now-decrypt-later (Kyber768)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="slide-number">Slide 7</div>
+            <h2>🛡️ Shield Module: Anti-FalconOne</h2>
+            <p style="color: #999; margin-bottom: 1rem;">Unique to market: Protection against state-level network attacks.</p>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                <div>
+                    <p style="color: #f97316; font-weight: 600; margin-bottom: 0.5rem;">The Problem</p>
+                    <ul style="font-size: 0.8rem;">
+                        <li>IMSI catchers (Stingray, FalconOne)</li>
+                        <li>High-precision geolocation (<10m)</li>
+                        <li>VoLTE interception</li>
+                        <li style="color: #ef4444;"><em>Bypasses ALL classic auth solutions</em></li>
+                    </ul>
+                </div>
+                <div>
+                    <p style="color: #4ade80; font-weight: 600; margin-bottom: 0.5rem;">IMSI Catcher Detection</p>
+                    <ul style="font-size: 0.8rem;">
+                        <li>✅ Suspicious LAC analysis</li>
+                        <li>✅ Abnormal signals (>-40 dBm)</li>
+                        <li>✅ Handover rate (>5/min)</li>
+                        <li>→ Recommends airplane mode</li>
+                    </ul>
+                </div>
+                <div>
+                    <p style="color: #4ade80; font-weight: 600; margin-bottom: 0.5rem;">Geolocation Attack Detection</p>
+                    <ul style="font-size: 0.8rem;">
+                        <li>✅ Impossible travel (>900 km/h)</li>
+                        <li>✅ Precision tracking (3+ <10m)</li>
+                        <li>✅ GPS spoofing detection</li>
+                    </ul>
+                </div>
+                <div>
+                    <p style="color: #a78bfa; font-weight: 600; margin-bottom: 0.5rem;">Target Use Cases</p>
+                    <ul style="font-size: 0.8rem;">
+                        <li>🏢 Executives in hostile zones</li>
+                        <li>📰 Journalists in conflict areas</li>
+                        <li>🏛️ Government agents, diplomats</li>
+                        <li>💳 Mobile banking in high-risk countries</li>
+                    </ul>
+                </div>
+            </div>
+            <p style="color: #facc15; font-size: 0.85rem; margin-top: 1rem; text-align: center; font-style: italic;">
+                "The only auth solution protecting users when their mobile network is compromised by state-level adversaries."
+            </p>
+            <p style="color: #666; font-size: 0.75rem; text-align: center;">Patent pending: FR2515560</p>
+        </section>
+
+        <section>
+            <div class="slide-number">Slide 8</div>
+            <h2>Competitive Analysis</h2>
+            <p style="color: #999; margin-bottom: 1rem;">Behavioral biometrics market: HCS-U7 vs incumbents.</p>
+            <div style="overflow-x: auto;">
+                <table style="width: 100%; border-collapse: collapse; font-size: 0.85rem;">
+                    <thead>
+                        <tr style="border-bottom: 1px solid #333;">
+                            <th style="text-align: left; padding: 0.5rem; color: #888;">Criteria</th>
+                            <th style="text-align: center; padding: 0.5rem; color: #888;">BehavioSec</th>
+                            <th style="text-align: center; padding: 0.5rem; color: #888;">BioCatch</th>
+                            <th style="text-align: center; padding: 0.5rem; color: #4ade80;">HCS-U7</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="border-bottom: 1px solid #222;">
+                            <td style="padding: 0.5rem;">SCA Resistance</td>
+                            <td style="text-align: center; color: #ef4444;">❌ Extractable</td>
+                            <td style="text-align: center; color: #ef4444;">❌ Extractable</td>
+                            <td style="text-align: center; color: #4ade80;">✅ No atomic secret</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #222;">
+                            <td style="padding: 0.5rem;">IMSI Catcher Defense</td>
+                            <td style="text-align: center; color: #ef4444;">❌ Out of scope</td>
+                            <td style="text-align: center; color: #ef4444;">❌ Out of scope</td>
+                            <td style="text-align: center; color: #4ade80;">✅ Shield module</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #222;">
+                            <td style="padding: 0.5rem;">Post-Quantum Ready</td>
+                            <td style="text-align: center; color: #ef4444;">❌ No</td>
+                            <td style="text-align: center; color: #facc15;">⚠️ Roadmap</td>
+                            <td style="text-align: center; color: #4ade80;">✅ Dilithium3 + Kyber768</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #222;">
+                            <td style="padding: 0.5rem;">PSD2 SCA Native</td>
+                            <td style="text-align: center; color: #facc15;">⚠️ Addon</td>
+                            <td style="text-align: center; color: #4ade80;">✅ Integrated</td>
+                            <td style="text-align: center; color: #4ade80;">✅ Integrated + TRA</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #222;">
+                            <td style="padding: 0.5rem;">IP Protection</td>
+                            <td style="text-align: center; color: #888;">US Patents</td>
+                            <td style="text-align: center; color: #888;">US Patents</td>
+                            <td style="text-align: center; color: #4ade80;"><strong>2 FR Patents</strong></td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #222;">
+                            <td style="padding: 0.5rem;">Timing-Safe</td>
+                            <td style="text-align: center; color: #facc15;">⚠️ Unverified</td>
+                            <td style="text-align: center; color: #facc15;">⚠️ Unverified</td>
+                            <td style="text-align: center; color: #4ade80;">✅ 150ms floor certified</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0.5rem;">Anti-Replay</td>
+                            <td style="text-align: center; color: #facc15;">⚠️ Session-based</td>
+                            <td style="text-align: center; color: #facc15;">⚠️ Session-based</td>
+                            <td style="text-align: center; color: #4ade80;">✅ Redis-atomic</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section>
+            <div class="slide-number">Slide 9</div>
             <h2>Defensibility</h2>
             <p style="color: #999; margin-bottom: 1rem;">34 security modules. 2 granted patents. Post-quantum ready.</p>
             <ul>
@@ -216,7 +364,79 @@
         </section>
 
         <section>
-            <div class="slide-number">Slide 7</div>
+            <div class="slide-number">Slide 10</div>
+            <h2>Integration Architecture</h2>
+            <p style="color: #999; margin-bottom: 1rem;">Enterprise-ready. Drop-in or addon. Any deployment model.</p>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                <div>
+                    <p style="color: #60a5fa; font-weight: 600; margin-bottom: 0.5rem;">API REST Standard</p>
+                    <ul style="font-size: 0.85rem;">
+                        <li>OpenAPI 3.0 spec</li>
+                        <li>SDKs: JavaScript, Python, Java</li>
+                        <li>Latency p95: 155ms (SLA)</li>
+                    </ul>
+                </div>
+                <div>
+                    <p style="color: #60a5fa; font-weight: 600; margin-bottom: 0.5rem;">SIEM / SOC Integration</p>
+                    <ul style="font-size: 0.85rem;">
+                        <li>Logs: Syslog, CEF, LEEF</li>
+                        <li>Real-time webhooks</li>
+                        <li>Prometheus metrics native</li>
+                    </ul>
+                </div>
+                <div>
+                    <p style="color: #60a5fa; font-weight: 600; margin-bottom: 0.5rem;">Existing Auth Stack</p>
+                    <ul style="font-size: 0.85rem;">
+                        <li>✅ Drop-in replacement</li>
+                        <li>✅ Addon (2FA/MFA)</li>
+                        <li>✅ SSO: SAML, OAuth, OIDC</li>
+                    </ul>
+                </div>
+                <div>
+                    <p style="color: #60a5fa; font-weight: 600; margin-bottom: 0.5rem;">Deployment Options</p>
+                    <ul style="font-size: 0.85rem;">
+                        <li>✅ SaaS (cloud HCS-U7)</li>
+                        <li>✅ On-premise (air-gapped)</li>
+                        <li>✅ Hybrid (data on-prem)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="slide-number">Slide 11</div>
+            <h2>Compliance & Certifications</h2>
+            <p style="color: #999; margin-bottom: 1rem;">Audit-ready. Standards-aligned. Enterprise-trusted.</p>
+            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem;">
+                <div>
+                    <p style="color: #facc15; font-weight: 600; margin-bottom: 0.5rem;">🔄 Certifications In Progress</p>
+                    <ul style="font-size: 0.8rem;">
+                        <li>FIPS 140-3 L1: Q2 2026 (100% ready)</li>
+                        <li>ISO 27001: Q3 2026 (97.8%)</li>
+                        <li>SOC 2 Type II: Q4 2026 (88%)</li>
+                    </ul>
+                </div>
+                <div>
+                    <p style="color: #4ade80; font-weight: 600; margin-bottom: 0.5rem;">✅ Operational Compliance</p>
+                    <ul style="font-size: 0.8rem;">
+                        <li>PSD2 SCA (RTS): 100%</li>
+                        <li>GDPR: Privacy-by-design</li>
+                        <li>NIS2: Controls aligned</li>
+                    </ul>
+                </div>
+                <div>
+                    <p style="color: #60a5fa; font-weight: 600; margin-bottom: 0.5rem;">📘 Technical Standards</p>
+                    <ul style="font-size: 0.8rem;">
+                        <li>NIST SP 800-63B (Identity)</li>
+                        <li>NIST SP 800-108 (KDF)</li>
+                        <li>RFC 5869 (HKDF)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="slide-number">Slide 12</div>
             <h2>Market Entry</h2>
             <p style="color: #999; margin-bottom: 1rem;">PSD2 SCA compliance built-in. Enterprise-ready from day one.</p>
             <ul>
@@ -230,7 +450,7 @@
         </section>
 
         <section>
-            <div class="slide-number">Slide 8</div>
+            <div class="slide-number">Slide 13</div>
             <h2>Traction</h2>
             <p style="color: #999; margin-bottom: 1rem;">Production-grade. Battle-tested. Audit-ready.</p>
             <ul>
@@ -244,7 +464,7 @@
         </section>
 
         <section>
-            <div class="slide-number">Slide 9</div>
+            <div class="slide-number">Slide 14</div>
             <h2>Why Now</h2>
             <p style="color: #999; margin-bottom: 1rem;">Regulatory tailwinds + AI threat acceleration.</p>
             <ul>
@@ -258,7 +478,7 @@
         </section>
 
         <section>
-            <div class="slide-number">Slide 10</div>
+            <div class="slide-number">Slide 15</div>
             <h2>The Ask</h2>
             <p style="color: #999; margin-bottom: 1rem;">Seed Round: €2.5M</p>
             <ul>
